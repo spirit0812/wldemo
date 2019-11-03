@@ -3,26 +3,16 @@
 <div style="float:left;color:#FFFFFF;font-size:30px;margin-bottom:30px;">
   项目名称: 2019年昙石山博物馆建设
 </div>
-    <div style="width:450px;">
-    <el-tag style="margin-bottom:15px;">基础信息</el-tag>
-    <el-tag type="" style="margin-left:25px;margin-bottom:15px;">资金情况</el-tag>
-    <el-tag type="" style="margin-left:25px;margin-bottom:15px;">建设情况</el-tag>
-    <el-tag type="" style="margin-left:25px;margin-bottom:15px;">相关文件</el-tag>
-    <!-- <el-tag style="margin-left:15px;margin-bottom:15px;"
-        v-for="item in items"
-        :key="item.label"
-        :type="item.type"
-        effect="plain" hit="false" >
-        {{ item.label }}
-    </el-tag> -->
-    </div>
-
-
-    <div class="pageMain">
+<br/><br/><br/><br/>
+<div style="float:left;padding-left:10px;width:100%;background-color:#FFFFFF;">
+  <el-tabs v-model="activeName" @tab-click="handleClick" >
+    <el-tab-pane label="基础信息" name="first" style="padding-left:10px;">
+      <div class="pageMain">
 <el-form ref="form" :model="form" label-width="100px" style="padding-top:20px;">
     <el-form-item>
         <el-col :span="7">
             <el-form-item label="预算单位: ">
+              <div style="float:left;">
                 <el-select v-model="form.ysdw" placeholder="选择预算单位">
                     <el-option
                     v-for="item in ysdwOptions"
@@ -31,10 +21,12 @@
                     :value="item.value">
                     </el-option>
                 </el-select>
+              </div>
             </el-form-item>
         </el-col>
         <el-col :span="9">
             <el-form-item label="业务处室: " style="margin-left:100px;">
+              <div style="float:left;">
                 <el-select v-model="form.ywcs" placeholder="选择业务处室">
                     <el-option
                     v-for="item in ywcsOptions"
@@ -43,33 +35,41 @@
                     :value="item.value">
                     </el-option>
                 </el-select>
+              </div>
             </el-form-item>
         </el-col>
     </el-form-item>
     <el-form-item>
         <el-col :span="7">
             <el-form-item label="指标文号: ">
+                <div style="float:left;">
                 <el-input v-model="zbwh" placeholder="输入指标文号"></el-input>
+                </div>
             </el-form-item>
         </el-col>
         <el-col :span="9">
             <el-form-item label="登记日期: " style="margin-left:100px;">
+              <div style="float:left;">
                 <el-date-picker
                 v-model="date1"
                 type="date"
                 placeholder="选择日期">
                 </el-date-picker>
+              </div>
             </el-form-item>
         </el-col>
     </el-form-item>
     <el-form-item>
         <el-col :span="7">
             <el-form-item label="项目立项编号: ">
+              <div style="float:left;">
                 <el-input v-model="lxbh" placeholder="输入项目立项编号"></el-input>
+              </div>
             </el-form-item>
         </el-col>
         <el-col :span="9">
             <el-form-item label="项目年份: " style="margin-left:100px;">
+                <div style="float:left;">
                 <el-select v-model="form.xmnf" placeholder="选择项目年份">
                     <el-option
                     v-for="item in xmnfOptions"
@@ -78,26 +78,31 @@
                     :value="item.value">
                     </el-option>
                 </el-select>
+                </div>
             </el-form-item>
         </el-col>
     </el-form-item>
     <el-form-item>
         <el-col :span="7">
             <el-form-item label="项目开始时间: ">
+              <div style="float:left;">
                 <el-date-picker
                     v-model="date2"
                     type="date"
                     placeholder="选择项目开始时间">
                 </el-date-picker>
+              </div>
             </el-form-item>
         </el-col>
         <el-col :span="9">
             <el-form-item label="项目结束时间: " style="margin-left:100px;">
+              <div style="float:left;">
                 <el-date-picker
                     v-model="date3"
                     type="date"
                     placeholder="选择项目结束时间">
                 </el-date-picker>
+              </div>
             </el-form-item>
         </el-col>
     </el-form-item>
@@ -114,6 +119,13 @@
     </el-form-item>
 </el-form>
     </div>
+    </el-tab-pane>
+    <el-tab-pane label="资金情况" name="second">资金情况</el-tab-pane>
+    <el-tab-pane label="建设情况" name="third">建设情况</el-tab-pane>
+    <el-tab-pane label="相关文件" name="fourth">相关文件</el-tab-pane>
+  </el-tabs>
+</div>
+
 </div>
 </template>
 <script>
@@ -169,7 +181,8 @@ export default {
       form: {
         name: '',
         region: '',
-      }
+      },
+      activeName: 'first'
     }
   }
 }
