@@ -27,6 +27,8 @@
         "@vue/eslint-config-typescript": "^4.0.0",
         "eslint": "^5.16.0",
         "eslint-plugin-vue": "^5.0.0",
+        "node-sass": "^4.13.0",
+        "sass-loader": "^8.0.0",
         "typescript": "~3.5.3",
         "vue-template-compiler": "^2.6.10"
     },
@@ -40,7 +42,12 @@
             "@vue/airbnb",
             "@vue/typescript"
         ],
-        "rules": {},
+        "rules": {
+            "semi": [0],
+            "no-multiple-empty-lines": [0, { "max": 100 }],
+            "no-mixed-spaces-and-tabs": [0],
+            "comma-dangle": [0]
+        },
         "parserOptions": {
             "parser": "@typescript-eslint/parser"
         }
