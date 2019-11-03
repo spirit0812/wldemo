@@ -1,5 +1,8 @@
 <template>
 <div>
+<div style="float:left;color:#FFFFFF;font-size:30px;margin-bottom:30px;">
+  项目名称: 2019年昙石山博物馆建设
+</div>
     <div style="width:450px;">
     <el-tag style="margin-bottom:15px;">基础信息</el-tag>
     <el-tag type="" style="margin-left:25px;margin-bottom:15px;">资金情况</el-tag>
