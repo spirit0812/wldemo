@@ -28,7 +28,7 @@
             </template>
             <el-menu-item index="/projectList">专项管理</el-menu-item>
             <el-menu-item index="/projectList">项目列表</el-menu-item>
-            <el-menu-item index="1-3">项目查重</el-menu-item>
+            <el-menu-item index="/projectView">项目查重</el-menu-item>
             <el-menu-item index="/projectImport">项目导入</el-menu-item>
           </el-submenu>
           <el-submenu index="2">
