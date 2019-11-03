@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import ProjectList from '../views/projectManager/projectList.vue';
 import ProjectImport from '../views/projectManager/projectImport.vue';
 import IndexPage from '../views/indexPage.vue';
+import ProjectView from '../views/projectManager/projectView.vue';
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,11 @@ const routes = [
         name: 'projectImport',
         component: ProjectImport,
       },
+      {
+        path: '/projectView',
+        name: 'projectView',
+        component: ProjectView,
+      }
     ]
   },
   {
