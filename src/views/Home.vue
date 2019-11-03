@@ -10,11 +10,12 @@
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
+          @select="handleSelect"
           background-color="#ffffff"
           text-color="#5C648B"
-          active-text-color="#ffd04b"
-          unique-opened="true"
-          router="ture"
+          active-text-color="#039849"
+          :unique-opened="uniqueOpened"
+          :router="isUseRounter"
         >
           <el-menu-item index="/indexPage">
             <i class="el-icon-discount"></i>
@@ -35,10 +36,8 @@
               <i class="el-icon-data-line"></i>
               <span slot="title">绩效管理</span>
             </template>
-            <el-menu-item index="2-1">专项管理</el-menu-item>
-            <el-menu-item index="2-2">项目列表</el-menu-item>
-            <el-menu-item index="2-3">项目查重</el-menu-item>
-            <el-menu-item index="2-4">项目导入</el-menu-item>
+            <el-menu-item index="2-1">考评列表</el-menu-item>
+            <el-menu-item index="2-2">自评报告</el-menu-item>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
@@ -61,14 +60,12 @@
             <el-menu-item index="4-2">组织机构管理</el-menu-item>
             <el-menu-item index="4-3">权限管理</el-menu-item>
             <el-menu-item index="4-4">角色管理</el-menu-item>
-            <el-menu-item index="4-5">系统接口管理</el-menu-item>
             <el-menu-item index="4-6">日志管理</el-menu-item>
           </el-submenu>
         </el-menu>
       </el-aside>
       <el-container class="main_container">
-        <el-header style="text-align: left; font-size: 12px" class="main_head">
-        </el-header>
+        <el-header style="text-align: left; font-size: 12px" class="main_head"></el-header>
         <el-main class="main_page">
           <router-view></router-view>
         </el-main>
@@ -85,12 +82,23 @@
 
 export default {
   name: 'home',
+  data() {
+    return {
+      uniqueOpened: true,
+      isUseRounter: true
+    };
+  },
   methods: {
     handleOpen: (key, keyPath) => {
-      // console.log(key, keyPath);
+      console.log(key, keyPath);
+      console.log(key);
     },
     handleClose: (key, keyPath) => {
       // console.log(key, keyPath);
+    },
+    handleSelect: (index, indexPath) => {
+      console.log(index);
+      console.log(indexPath);
     }
   }
 };
@@ -109,11 +117,11 @@ export default {
   background-repeat: no-repeat;
   background-position: left top;
 }
-.main_head{
+.main_head {
   border-bottom: 1px solid;
   border-bottom-color: #979797;
 }
-.main_page{
-  margin: 20px 20px 20px 20px ;
+.main_page {
+  margin: 20px 20px 20px 20px;
 }
 </style>

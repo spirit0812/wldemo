@@ -31,16 +31,6 @@ const routes = [
     ]
   },
   {
-    path: '/projectList',
-    name: 'projectList',
-    component: ProjectList,
-  },
-  {
-    path: '/projectList',
-    name: 'projectList',
-    component: Home,
-  },
-  {
     path: '/about',
     name: 'about',
     // route level code-splitting
