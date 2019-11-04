@@ -1,6 +1,6 @@
 <template>
 <div>
-<el-table :data="tableData" style="width:100%;padding-left:20px;">
+<el-table :data="tableData" style="width:100%;padding-left:20px;padding-right:15px;">
     <el-table-column prop="xh" label="序号" width="50"></el-table-column>
     <el-table-column prop="drry" label="导入人员" style="width:20%;"></el-table-column>
     <el-table-column prop="drlx" label="导入类型" style="width:20%;"></el-table-column>
