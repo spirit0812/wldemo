@@ -92,7 +92,7 @@
     </div>
 </el-row>
 <el-row>
-<el-col :span="8" style="margin-top:10px;">
+<el-col :span="5" style="margin-top:10px;">
     <el-button type="warning"> 清 空 </el-button>
     <el-button type="success"> 查 询 </el-button>
     </el-col>
