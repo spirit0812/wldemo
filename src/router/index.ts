@@ -5,6 +5,7 @@ import ProjectList from '../views/projectManager/projectList.vue';
 import ProjectImport from '../views/projectManager/projectImport.vue';
 import IndexPage from '../views/indexPage.vue';
 import ProjectView from '../views/projectManager/projectView.vue';
+import SpecialManage from '../views/projectManager/specialManage.vue';
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
         path: '/projectView',
         name: 'projectView',
         component: ProjectView,
+      },
+      {
+        path: '/specialManage',
+        name: 'specialManage',
+        component: SpecialManage
       }
     ]
   },

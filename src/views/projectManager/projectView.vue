@@ -7,11 +7,15 @@
 <div style="float:left;padding-left:10px;width:100%;background-color:#FFFFFF;">
   <el-tabs v-model="activeName" @tab-click="handleClick" >
     <el-tab-pane label="基础信息" name="first" style="padding-left:10px;">
-      <div id="project"><PorjectViewFirst/></div>
+      <div><PorjectViewFirst/></div>
     </el-tab-pane>
-    <el-tab-pane label="资金情况" name="second">资金情况</el-tab-pane>
+    <el-tab-pane label="资金情况" name="second">
+      <div><PorjectViewSecond/></div>
+    </el-tab-pane>
     <el-tab-pane label="建设情况" name="third">建设情况</el-tab-pane>
-    <el-tab-pane label="相关文件" name="fourth">相关文件</el-tab-pane>
+    <el-tab-pane label="相关文件" name="fourth">
+      <div><PorjectViewFour/></div>
+    </el-tab-pane>
   </el-tabs>
 </div>
 
@@ -19,11 +23,15 @@
 </template>
 <script>
 import PorjectViewFirst from '../../components/ProjectViewFirst.vue'
+import PorjectViewSecond from '../../components/PorjectViewSecond.vue'
+import PorjectViewFour from '../../components/ProjectViewFour.vue'
 
 export default {
   name: 'projectView',
   components: {
-    PorjectViewFirst
+    PorjectViewFirst,
+    PorjectViewSecond,
+    PorjectViewFour
   },
   data() {
     return {

@@ -26,7 +26,7 @@
               <i class="el-icon-data-analysis"></i>
               <span>项目管理</span>
             </template>
-            <el-menu-item index="/projectList">专项管理</el-menu-item>
+            <el-menu-item index="/specialManage">专项管理</el-menu-item>
             <el-menu-item index="/projectList">项目列表</el-menu-item>
             <el-menu-item index="/projectView">项目查重</el-menu-item>
             <el-menu-item index="/projectImport">项目导入</el-menu-item>

@@ -1,22 +1,22 @@
 <template>
   <div class="pageMain">
-    <ProjectListHead/>
-    <ProjectListTable/>
+    <SpecialManageHead/>
+    <SecialManageTable/>
     <PageNavigation/>
   </div>
 </template>
 
 
 <script>
-import ProjectListHead from '../../components/ProjectListHead.vue'
-import ProjectListTable from '../../components/ProjectListTable.vue'
+import SpecialManageHead from '../../components/SpecialManageHead.vue'
+import SecialManageTable from '../../components/SpecialManageTable.vue'
 import PageNavigation from '../../components/PageNavigation.vue'
 
 export default {
-  name: 'projectList',
+  name: 'specialManage',
   components: {
-    ProjectListHead,
-    ProjectListTable,
+    SpecialManageHead,
+    SecialManageTable,
     PageNavigation
   }
 };
