@@ -1,7 +1,15 @@
 <template>
 <div>
+  <div>
 <div style="float:left;color:#FFFFFF;font-size:30px;margin-bottom:30px;">
   项目名称: 2019年昙石山博物馆建设
+</div>
+<div style="float:right;">
+  <el-button size="medium" round  @click="goback();">
+<span>
+<i class="el-icon-back" style="font-weight:bold;padding-right:5px;"></i>
+</span>返回</el-button>
+</div>
 </div>
 <br/><br/><br/><br/>
 <div style="float:left;padding-left:10px;width:100%;background-color:#FFFFFF;">
@@ -32,6 +40,11 @@ export default {
     PorjectViewFirst,
     PorjectViewSecond,
     PorjectViewFour
+  },
+  methods: {
+    goback() {
+      this.$router.go(-1);
+    }
   },
   data() {
     return {
