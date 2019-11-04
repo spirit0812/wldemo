@@ -1,6 +1,6 @@
 <template>
 <div class="pageMain">
-  <div style="text-align:left;">
+  <div style="text-align:left;padding-top:20px;">
     <el-divider direction="vertical"></el-divider><span>数据导入模板</span>
   </div>
   <br/>
