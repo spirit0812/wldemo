@@ -3,7 +3,7 @@
 <div style="text-align:left;">
   <el-divider direction="vertical"></el-divider><span>资金概况</span>
 </div>
-  <el-table :data="tableData1" style="width:100%;">
+  <el-table :data="tableData1" style="width:100%;padding-left:10px;padding-right:10px;">
     <el-table-column prop="zbly1" label="指标来源" style="width:20%;"></el-table-column>
     <el-table-column prop="zbje1" label="指标金额(元)" style="width:20%;"></el-table-column>
     <el-table-column prop="tfje1" label="确认提付金额" style="width:20%;"></el-table-column>
@@ -12,7 +12,7 @@
 <div style="text-align:left;margin-top:50px;">
   <el-divider direction="vertical"></el-divider><span>资金明细(流水)</span>
 </div>
-  <el-table :data="tableData2" style="width:100%;">
+  <el-table :data="tableData2" style="width:100%;padding-left:10px;padding-right:10px;">
     <el-table-column prop="xh2" label="序号" width="50"></el-table-column>
     <el-table-column prop="zbly2" label="指标来源" width="200"></el-table-column>
     <el-table-column prop="zbje2" label="指标金额(元)" width="150"></el-table-column>
