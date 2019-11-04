@@ -28,7 +28,7 @@
 <el-row>
 <el-col :span="5" style="margin-top:10px;float:left;">
     <el-button type="success" style="margin-left:30px;"> 搜 索 </el-button>
-    <el-button type=""> 添 加 </el-button>
+    <el-button type="primary" plain> 添 加 </el-button>
     </el-col>
 </el-row>
 </div>

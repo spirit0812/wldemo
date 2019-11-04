@@ -9,7 +9,7 @@
     <el-table-column prop="oper" label="操作" style="width:5%;">
     <template slot-scope="">
         <router-link to='/projectView'>
-        <el-button type="text" size="small">查看</el-button>
+        <el-button type="primary" plain>查看</el-button>
         </router-link>
     </template>
     </el-table-column>
