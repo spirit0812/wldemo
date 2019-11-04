@@ -3,15 +3,15 @@
 <el-row>
     <div style="margin-top:30px;">
     <el-col :span="8" >
-        <div style="display:inline-block;">项目名称:</div>
-        <div style="display:inline-block;margin-left:5px;">
+        <div style="display:inline-block;float:left;">项目名称:</div>
+        <div style="display:inline-block;margin-left:5px;float:left;">
         <el-input v-model="xmmc" placeholder="输入查询项目名称">
         </el-input>
         </div>
     </el-col>
     <el-col :span="8" >
-        <div style="display:inline-block;">预算单位:</div>
-        <div style="display:inline-block;margin-left:5px;">
+        <div style="display:inline-block;float:left;">预算单位:</div>
+        <div style="display:inline-block;margin-left:5px;float:left;">
         <el-select v-model="ysdw" placeholder="选择预算单位">
         <el-option
             v-for="item in ysdwOptions"
@@ -23,8 +23,8 @@
         </div>
     </el-col>
     <el-col :span="8" >
-        <div style="display:inline-block;">业务处室:</div>
-        <div style="display:inline-block;margin-left:5px;">
+        <div style="display:inline-block;float:left;">业务处室:</div>
+        <div style="display:inline-block;margin-left:5px;float:left;">
         <el-select v-model="ywcs" placeholder="选择业务处室">
         <el-option
             v-for="item in ywcsOptions"
@@ -40,15 +40,15 @@
 <el-row>
     <div style="margin-top:10px;">
     <el-col :span="8" >
-        <div style="display:inline-block;">指标文号:</div>
-        <div style="display:inline-block;margin-left:5px;">
+        <div style="display:inline-block;float:left;">指标文号:</div>
+        <div style="display:inline-block;margin-left:5px;float:left;">
         <el-input v-model="zbwh" placeholder="输入指标文号">
         </el-input>
         </div>
     </el-col>
     <el-col :span="11" >
-        <div style="display:inline-block;">项目时间:</div>
-        <div style="display:inline-block;margin-left:5px;">
+        <div style="display:inline-block;float:left;">项目时间:</div>
+        <div style="display:inline-block;margin-left:5px;float:left;">
         <el-time-picker
         is-range
         v-model="date1"
@@ -64,8 +64,8 @@
 <el-row>
     <div style="margin-top:10px;">
     <el-col :span="8" >
-        <div style="display:inline-block;">项目年度:</div>
-        <div style="display:inline-block;margin-left:5px;">
+        <div style="display:inline-block;float:left;">项目年度:</div>
+        <div style="display:inline-block;margin-left:5px;float:left;">
         <el-select v-model="xmnd" placeholder="选择项目年度">
         <el-option
             v-for="item in xmndOptions"
@@ -77,8 +77,8 @@
         </div>
     </el-col>
     <el-col :span="11" >
-        <div style="display:inline-block;">项目时间:</div>
-        <div style="display:inline-block;margin-left:5px;">
+        <div style="display:inline-block;float:left;">项目时间:</div>
+        <div style="display:inline-block;margin-left:5px;float:left;">
         <el-time-picker
         is-range
         v-model="date2"
