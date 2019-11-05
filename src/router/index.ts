@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Login from '../views/Login.vue';
 import Home from '../views/Home.vue';
 import ProjectList from '../views/projectManager/projectList.vue';
 import ProjectImport from '../views/projectManager/projectImport.vue';
@@ -9,13 +10,14 @@ import SpecialManage from '../views/projectManager/specialManage.vue';
 import EvaluateList from '../views/evaluateManager/evaluateList.vue';
 import EvaluateEdit from '../views/evaluateManager/evaluateEdit.vue';
 import SelfList from '../views/evaluateManager/selfList.vue';
+import Analysis from '../views/bigData/analysis.vue';
 
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: Home,
     children: [
@@ -58,6 +60,11 @@ const routes = [
         path: '/selfList',
         name: 'selfList',
         component: SelfList
+      },
+      {
+        path: '/analysis',
+        name: 'analysis',
+        component: Analysis
       }
     ]
   },
@@ -69,6 +76,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
+  {
+    path: '/',
+    name: 'login',
+    component: Login
+  }
 ];
 
 const router = new VueRouter({

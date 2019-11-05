@@ -44,7 +44,7 @@
               <i class="el-icon-pie-chart"></i>
               <span slot="title">大数据分析</span>
             </template>
-            <el-menu-item index="3-1">决策分析</el-menu-item>
+            <el-menu-item index="/analysis">决策分析</el-menu-item>
             <el-menu-item index="3-2">应用接入</el-menu-item>
             <el-menu-item index="3-3">数据源管理</el-menu-item>
             <el-menu-item index="3-4">数据抓取配置</el-menu-item>
