@@ -53,7 +53,7 @@
               <template slot="title">
                 <span slot="title">自定义报表</span>
               </template>
-              <el-menu-item index="/commonReport">普通报表配置</el-menu-item>
+              <el-menu-item index="/plainReport">普通报表配置</el-menu-item>
               <el-menu-item index="31-4">规则报表配置</el-menu-item>
               <el-menu-item index="31-5">不规则报表配置</el-menu-item>
             </el-submenu>

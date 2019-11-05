@@ -17,6 +17,8 @@ import personManage from '../views/systemManager/personManage.vue';
 import CommonReport from '../views/bigData/commonReport.vue';
 import SelfEdit from '../views/evaluateManager/selfEdit.vue';
 import dataSetting from '../views/bigData/dataSetting.vue';
+import plainReport from '../views/bigData/plainReport.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -99,8 +101,15 @@ const routes = [
         path: '/dataSetting',
         name: 'dataSetting',
         component: dataSetting
-      }
+      },
+      {
+        path: '/plainReport',
+        name: 'plainReport',
+        component: plainReport
+      },
+
       
+
     ]
   },
   {
