@@ -9,12 +9,15 @@ import SpecialManage from '../views/projectManager/specialManage.vue';
 import roleManage from '../views/systemManager/roleManage.vue';
 import organizationManage from '../views/systemManager/organizationManage.vue';
 import personManage from '../views/systemManager/personManage.vue';
+import CommonReport from '../views/bigData/commonReport.vue';
+import SelfEdit from '../views/evaluateManager/selfEdit.vue';
+import Login from '../views/Login.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: Home,
     children: [
@@ -68,6 +71,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
+  {
+    path: '/',
+    name: 'login',
+    component: Login
+  }
 ];
 
 const router = new VueRouter({

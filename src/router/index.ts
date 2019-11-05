@@ -1,3 +1,5 @@
+
+    
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Login from '../views/Login.vue';
@@ -18,7 +20,6 @@ import CommonReport from '../views/bigData/commonReport.vue';
 import SelfEdit from '../views/evaluateManager/selfEdit.vue';
 import dataSetting from '../views/bigData/dataSetting.vue';
 import plainReport from '../views/bigData/plainReport.vue';
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -106,9 +107,7 @@ const routes = [
         path: '/plainReport',
         name: 'plainReport',
         component: plainReport
-      },
-
-      
+      }
 
     ]
   },
@@ -134,3 +133,4 @@ const router = new VueRouter({
 });
 
 export default router;
+

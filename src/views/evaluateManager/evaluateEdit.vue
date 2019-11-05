@@ -54,13 +54,13 @@
   <el-divider direction="vertical"></el-divider><span>投入指标</span>
 </div>
   <el-table :data="tableData1" style="width:100%;padding-left:10px;padding-right:10px;">
-    <el-table-column prop="yjfl1" label="考评标准一级分类" style="width:20%;"></el-table-column>
-    <el-table-column prop="ejfl1" label="考评标准二级分类" style="width:20%;"></el-table-column>
-    <el-table-column prop="bznr1" label="考评标准内容" style="width:20%;"></el-table-column>
-    <el-table-column prop="dbbz1" label="考评达标标准" style="width:20%;"></el-table-column>
-    <el-table-column prop="bzqz1" label="考评标准权重" style="width:20%;"></el-table-column>
-    <el-table-column prop="createTime1" label="创建时间" style="width:20%;"></el-table-column>
-    <el-table-column prop="oper" label="操作" style="width:20%;">
+    <el-table-column prop="yjfl1" label="考评标准一级分类" min-width="20%"></el-table-column>
+    <el-table-column prop="ejfl1" label="考评标准二级分类" min-width="20%"></el-table-column>
+    <el-table-column prop="bznr1" label="考评标准内容" min-width="15%"></el-table-column>
+    <el-table-column prop="dbbz1" label="考评达标标准" min-width="15%"></el-table-column>
+    <el-table-column prop="bzqz1" label="考评标准权重" min-width="15%;"></el-table-column>
+    <el-table-column prop="createTime1" label="创建时间" min-width="15%"></el-table-column>
+    <el-table-column prop="oper" label="操作" min-width="25%">
         <template slot-scope="">
             <router-link to=''>
             <el-button type="primary" plain> 编 辑 </el-button>
@@ -76,13 +76,13 @@
   <el-divider direction="vertical"></el-divider><span>产出成本</span>
 </div>
   <el-table :data="tableData2" style="width:100%;padding-left:10px;padding-right:10px;">
-    <el-table-column prop="yjfl2" label="考评标准一级分类" style="width:20%;"></el-table-column>
-    <el-table-column prop="ejfl2" label="考评标准二级分类" style="width:20%;"></el-table-column>
-    <el-table-column prop="bznr2" label="考评标准内容" style="width:20%;"></el-table-column>
-    <el-table-column prop="dbbz2" label="考评达标标准" style="width:20%;"></el-table-column>
-    <el-table-column prop="bzqz2" label="考评标准权重" style="width:20%;"></el-table-column>
-    <el-table-column prop="createTime2" label="创建时间" style="width:20%;"></el-table-column>
-    <el-table-column prop="oper" label="操作" style="width:5%;">
+    <el-table-column prop="yjfl2" label="考评标准一级分类" min-width="20%"></el-table-column>
+    <el-table-column prop="ejfl2" label="考评标准二级分类" min-width="20%"></el-table-column>
+    <el-table-column prop="bznr2" label="考评标准内容" min-width="15%"></el-table-column>
+    <el-table-column prop="dbbz2" label="考评达标标准" min-width="15%"></el-table-column>
+    <el-table-column prop="bzqz2" label="考评标准权重" min-width="15%"></el-table-column>
+    <el-table-column prop="createTime2" label="创建时间" min-width="15%"></el-table-column>
+    <el-table-column prop="oper" label="操作" min-width="25%">
         <template slot-scope="">
             <router-link to=''>
             <el-button type="primary" plain> 编 辑 </el-button>
@@ -98,13 +98,13 @@
   <el-divider direction="vertical"></el-divider><span>效益指标</span>
 </div>
   <el-table :data="tableData3" style="width:100%;padding-left:10px;padding-right:10px;">
-    <el-table-column prop="yjfl3" label="考评标准一级分类" style="width:20%;"></el-table-column>
-    <el-table-column prop="ejfl3" label="考评标准二级分类" style="width:20%;"></el-table-column>
-    <el-table-column prop="bznr3" label="考评标准内容" style="width:20%;"></el-table-column>
-    <el-table-column prop="dbbz3" label="考评达标标准" style="width:20%;"></el-table-column>
-    <el-table-column prop="bzqz3" label="考评标准权重" style="width:20%;"></el-table-column>
-    <el-table-column prop="createTime3" label="创建时间" style="width:20%;"></el-table-column>
-    <el-table-column prop="oper" label="操作" style="width:5%;">
+    <el-table-column prop="yjfl3" label="考评标准一级分类" min-width="20%"></el-table-column>
+    <el-table-column prop="ejfl3" label="考评标准二级分类" min-width="20%"></el-table-column>
+    <el-table-column prop="bznr3" label="考评标准内容" min-width="15%"></el-table-column>
+    <el-table-column prop="dbbz3" label="考评达标标准" min-width="15%"></el-table-column>
+    <el-table-column prop="bzqz3" label="考评标准权重" min-width="15%"></el-table-column>
+    <el-table-column prop="createTime3" label="创建时间" min-width="15%"></el-table-column>
+    <el-table-column prop="oper" label="操作" min-width="25%">
         <template slot-scope="">
             <router-link to=''>
             <el-button type="primary" plain> 编 辑 </el-button>
