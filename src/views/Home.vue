@@ -49,17 +49,24 @@
             <el-menu-item index="3-3">数据源管理</el-menu-item>
             <el-menu-item index="3-4">数据抓取配置</el-menu-item>
             <el-menu-item index="3-5">数据抓日志</el-menu-item>
-            <el-menu-item index="3-6">自定义报表</el-menu-item>
+            <el-submenu index="31">
+              <template slot="title">
+                <span slot="title">自定义报表</span>
+              </template>
+              <el-menu-item index="/commonReport">普通报表配置</el-menu-item>
+              <el-menu-item index="31-4">规则报表配置</el-menu-item>
+              <el-menu-item index="31-5">不规则报表配置</el-menu-item>
+            </el-submenu>
           </el-submenu>
           <el-submenu index="4">
             <template slot="title">
               <i class="el-icon-setting"></i>
               <span slot="title">系统管理</span>
             </template>
-            <el-menu-item index="4-1">人员管理</el-menu-item>
-            <el-menu-item index="4-2">组织机构管理</el-menu-item>
+            <!-- <el-menu-item index="/personManage">人员管理</el-menu-item> -->
+            <el-menu-item index="/organizationManage">组织机构管理</el-menu-item>
+            <el-menu-item index="/roleManage">角色管理</el-menu-item>
             <el-menu-item index="4-3">权限管理</el-menu-item>
-            <el-menu-item index="4-4">角色管理</el-menu-item>
             <el-menu-item index="4-6">日志管理</el-menu-item>
           </el-submenu>
         </el-menu>

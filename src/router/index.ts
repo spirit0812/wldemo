@@ -11,7 +11,10 @@ import EvaluateList from '../views/evaluateManager/evaluateList.vue';
 import EvaluateEdit from '../views/evaluateManager/evaluateEdit.vue';
 import SelfList from '../views/evaluateManager/selfList.vue';
 import Analysis from '../views/bigData/analysis.vue';
-
+import roleManage from '../views/systemManager/roleManage.vue';
+import organizationManage from '../views/systemManager/organizationManage.vue';
+import personManage from '../views/systemManager/personManage.vue';
+import CommonReport from '../views/bigData/commonReport.vue';
 
 Vue.use(VueRouter);
 
@@ -65,6 +68,26 @@ const routes = [
         path: '/analysis',
         name: 'analysis',
         component: Analysis
+      },
+      {
+        path: '/roleManage',
+        name: 'roleManage',
+        component: roleManage
+      },
+      {
+        path: '/organizationManage',
+        name: 'organizationManage',
+        component: organizationManage
+      },
+      {
+        path: '/personManage',
+        name: 'personManage',
+        component: personManage
+      },
+      {
+        path: '/commonReport',
+        name: 'commonReport',
+        component: CommonReport
       }
     ]
   },
