@@ -46,7 +46,7 @@
             </template>
             <el-menu-item index="/analysis">决策分析</el-menu-item>
             <el-menu-item index="3-2">应用接入</el-menu-item>
-            <el-menu-item index="3-3">数据源管理</el-menu-item>
+            <el-menu-item index="/dataSetting">数据源配置</el-menu-item>
             <el-menu-item index="3-4">数据抓取配置</el-menu-item>
             <el-menu-item index="3-5">数据抓日志</el-menu-item>
             <el-submenu index="31">

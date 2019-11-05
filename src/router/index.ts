@@ -16,7 +16,7 @@ import organizationManage from '../views/systemManager/organizationManage.vue';
 import personManage from '../views/systemManager/personManage.vue';
 import CommonReport from '../views/bigData/commonReport.vue';
 import SelfEdit from '../views/evaluateManager/selfEdit.vue';
-
+import dataSetting from '../views/bigData/dataSetting.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -94,7 +94,13 @@ const routes = [
         path: '/selfEdit',
         name: 'selfEdit',
         component: SelfEdit
+      },
+      {
+        path: '/dataSetting',
+        name: 'dataSetting',
+        component: dataSetting
       }
+      
     ]
   },
   {
