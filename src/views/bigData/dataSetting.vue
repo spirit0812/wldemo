@@ -24,11 +24,11 @@
                 <router-link to=''>
                 <el-button  @click="edit" type="primary" plain size="small">编辑 </el-button>
                 <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="primary" plain size="small">删除</el-button>
-                
+
                 </router-link>
             </template>
             </el-table-column>
-        
+
         </el-table>
             <div class="mydialog">
                 <el-dialog title="新增" :visible.sync="dialogFormVisible" >
@@ -39,7 +39,7 @@
                             { required: true, message: '数据源名称不能为空'}
                         ]">
                             <el-input v-model="form.sjymc" autocomplete="off" >
-                                
+
                             </el-input>
                         </el-form-item>
                         <el-form-item label="接口地址" :label-width="formLabelWidth" prop="jkdz"
@@ -81,7 +81,7 @@
                         <el-form-item label="描述" :label-width="formLabelWidth" >
                             <el-input v-model="form.ms" autocomplete="off" type="textarea" style="width:300px;" ></el-input>
                         </el-form-item>
-                       
+
                     </el-form>
                     <el-divider content-position="left">参数设置</el-divider>
                     <el-row style="padding: 0px 0px 20px 0px;">
@@ -104,7 +104,7 @@
 
             </div>
         </div>
-        
+
         </div>
     <PageNavigation/>
   </div>
@@ -121,23 +121,23 @@ export default {
   },
   data() {
     return {
-        radio1: '1',
-         activeName: 'first',
-         dialogFormVisible: false,
-        form: {
-          sjymc: '',
-          ms: '',
-          jkdz: '',
-          cs: '',
-          yhm:'',
-          mm:'',
-          qqlx:'',
-          ysbm:'',
-          mbbm:'',
-          gs:'',
-          
-        },
-        formLabelWidth: '120px',
+      radio1: '1',
+      activeName: 'first',
+      dialogFormVisible: false,
+      form: {
+        sjymc: '',
+        ms: '',
+        jkdz: '',
+        cs: '',
+        yhm: '',
+        mm: '',
+        qqlx: '',
+        ysbm: '',
+        mbbm: '',
+        gs: '',
+
+      },
+      formLabelWidth: '120px',
       tableData: [
         {
           sjymc: '财政一体化平台',
@@ -199,99 +199,98 @@ export default {
           jkdz: '192.168.1.30',
           cs: 'id=admin;pw=123456'
         }],
-        data: [{
-          label: '项目管理',
-          children: [{
-            label: '项目列表',
-          },
-          {
-            label: '项目查重',
-          },
-          {
-            label: '项目导入',
-          },
-          {
-            label: '资金管理',
-          }]
+      data: [{
+        label: '项目管理',
+        children: [{
+          label: '项目列表',
+        },
+        {
+          label: '项目查重',
+        },
+        {
+          label: '项目导入',
+        },
+        {
+          label: '资金管理',
+        }]
+      }, {
+        label: '绩效管理',
+        children: [{
+          label: '考评列表',
+
         }, {
-          label: '绩效管理',
-          children: [{
-            label: '考评列表',
-            
-          }, {
-            label: '自评报告',
-          }]
+          label: '自评报告',
+        }]
+      }, {
+        label: '大数据分析',
+        children: [{
+          label: '决策分析',
+
         }, {
-          label: '大数据分析',
-          children: [{
-            label: '决策分析',
-            
-          }, {
-            label: '数据源管理',
-          }]
+          label: '数据源管理',
+        }]
+      }, {
+        label: '系统管理',
+        children: [{
+          label: '人员管理',
         }, {
-          label: '系统管理',
-          children: [{
-            label: '人员管理',
-          }, {
-            label: '组织机构管理',
-          },{
-            label: '角色管理',
-          }]
-        }],
-         childTableData: [
+          label: '组织机构管理',
+        }, {
+          label: '角色管理',
+        }]
+      }],
+      childTableData: [
         {
           csmc: 'id',
           csms: '登录用户名',
           csmrz: '$fm_userid',
         },
-       {
+        {
           csmc: 'pw',
           csms: '登录密码',
           csmrz: '$fm_userid',
         }],
-        defaultProps: {
-          children: 'children',
-          label: 'label'
-        }
-        
-    };
-  }, 
-   methods: {
-      handleClick(tab, event) {
-        console.log(tab, event);
-      },
-      edit(){
-        this.dialogFormVisible=true;
-        this.form.sjymc= '财政一体化平台';
-        this.form.ms= '13ddfs';
-        this.form.jkdz= '192.168.1.30';
-        this.form.cs= '';
-        this.form.yhm='admin';
-         this.form.mm='32156sd';
-        this.form.qqlx='Post';
-        this.form.ysbm='UTF-8';
-        this.form.mbbm='GBK';
-        this.form.gs='JSON';
-
-      },
-      add(){
-        this.dialogFormVisible=true;
-        this.form.sjymc= '';
-        this.form.ms= '';
-        this.form.jkdz= '';
-        this.form.cs= '';
-        this.form.yhm='';
-         this.form.mm='';
-        this.form.qqlx='';
-        this.form.ysbm='';
-        this.form.mbbm='';
-        this.form.gs='';
-      },
-       deleteRow(index, rows) {
-        rows.splice(index, 1);
+      defaultProps: {
+        children: 'children',
+        label: 'label'
       }
+
+    };
+  },
+  methods: {
+    handleClick(tab, event) {
+      console.log(tab, event);
+    },
+    edit() {
+      this.dialogFormVisible = true;
+      this.form.sjymc = '财政一体化平台';
+      this.form.ms = '13ddfs';
+      this.form.jkdz = '192.168.1.30';
+      this.form.cs = '';
+      this.form.yhm = 'admin';
+      this.form.mm = '32156sd';
+      this.form.qqlx = 'Post';
+      this.form.ysbm = 'UTF-8';
+      this.form.mbbm = 'GBK';
+      this.form.gs = 'JSON';
+    },
+    add() {
+      this.dialogFormVisible = true;
+      this.form.sjymc = '';
+      this.form.ms = '';
+      this.form.jkdz = '';
+      this.form.cs = '';
+      this.form.yhm = '';
+      this.form.mm = '';
+      this.form.qqlx = '';
+      this.form.ysbm = '';
+      this.form.mbbm = '';
+      this.form.gs = '';
+    },
+    deleteRow(index, rows) {
+      rows.splice(index, 1);
     }
+  }
 
 };
 </script>

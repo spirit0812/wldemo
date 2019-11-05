@@ -39,7 +39,7 @@
 <div class="pageMain" style="margin-top:30px;">
 <div>
 <div style="width:100%;height:360px">
-  <div style="width:50%;height:100%;display:inline-block;padding-top:30px;">
+  <div style="width:50%;height:100%;display:inline-block;">
     <div>
     <el-select v-model="nf" placeholder=""
     style="z-index:999;width:100px;float:right;postion:absolute;top:35px;right:80px;">
@@ -53,11 +53,11 @@
   </div>
     <div id="chart5" style="width:100%;height:100%;"></div>
   </div>
-  <div style="width:50%;height:100%;display:inline-block;padding-top:30px;">
+  <div style="width:50%;height:100%;display:inline-block;">
     <div id="chart6" style="width:100%;height:100%;"></div>
   </div>
 </div>
-<div style="width:100%;height:300px;margin-top:30px;">
+<div style="width:100%;height:300px;margin-top:30px;padding-bottom:30px;">
   <div style="width:33%;height:100%;display:inline-block;">
     <div id="chart7" style="width:100%;height:100%;"></div>
   </div>
