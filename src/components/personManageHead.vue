@@ -167,6 +167,9 @@ export default {
 .el-dialog__body .el-textarea__inner {
     width: 300px;
 }
+.el-dialog {
+       width: 960px ;
+   }
 .mydialog .el-dialog {
     width: 30% ;
 }

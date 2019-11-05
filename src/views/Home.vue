@@ -125,8 +125,8 @@ export default {
   background-position: left top;
 }
 .main_head {
-  border-bottom: 1px solid;
-border-bottom-color: #979797;
+border-bottom: 1px solid;
+ border-bottom-color: #979797;
 }
 .main_page {
   margin: 20px 20px 20px 20px;
