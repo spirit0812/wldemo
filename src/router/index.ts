@@ -15,6 +15,7 @@ import roleManage from '../views/systemManager/roleManage.vue';
 import organizationManage from '../views/systemManager/organizationManage.vue';
 import personManage from '../views/systemManager/personManage.vue';
 import CommonReport from '../views/bigData/commonReport.vue';
+import SelfEdit from '../views/evaluateManager/selfEdit.vue';
 
 Vue.use(VueRouter);
 
@@ -88,6 +89,11 @@ const routes = [
         path: '/commonReport',
         name: 'commonReport',
         component: CommonReport
+      },
+      {
+        path: '/selfEdit',
+        name: 'selfEdit',
+        component: SelfEdit
       }
     ]
   },

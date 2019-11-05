@@ -40,6 +40,17 @@
 <div>
 <div style="width:100%;height:360px">
   <div style="width:50%;height:100%;display:inline-block;padding-top:30px;">
+    <div>
+    <el-select v-model="nf" placeholder=""
+    style="z-index:999;width:100px;float:right;postion:absolute;top:35px;right:80px;">
+        <el-option
+            v-for="item in nfOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+        </el-option>
+        </el-select>
+  </div>
     <div id="chart5" style="width:100%;height:100%;"></div>
   </div>
   <div style="width:50%;height:100%;display:inline-block;padding-top:30px;">
@@ -48,13 +59,35 @@
 </div>
 <div style="width:100%;height:300px;margin-top:30px;">
   <div style="width:33%;height:100%;display:inline-block;">
-    <div id="chart7" style="width:100%;height:100%;">sd</div>
+    <div id="chart7" style="width:100%;height:100%;"></div>
   </div>
   <div style="width:33%;height:100%;display:inline-block;">
-    <div id="chart8" style="width:100%;height:100%;">sd2</div>
+    <div>
+    <el-select v-model="nf2" placeholder=""
+    style="z-index:999;width:100px;float:right;postion:absolute;top:35px;right:10px;">
+        <el-option
+            v-for="item in nf2Options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+        </el-option>
+        </el-select>
+  </div>
+    <div id="chart8" style="width:100%;height:100%;"></div>
   </div>
   <div style="width:33%;height:100%;display:inline-block;">
-    <div id="chart9" style="width:100%;height:100%;">sd3</div>
+    <div>
+    <el-select v-model="nf3" placeholder=""
+    style="z-index:999;width:100px;float:right;postion:absolute;top:35px;right:0px;">
+        <el-option
+            v-for="item in nf3Options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+        </el-option>
+        </el-select>
+  </div>
+    <div id="chart9" style="width:100%;height:100%;"></div>
   </div>
 </div>
 </div>
@@ -66,7 +99,34 @@ export default {
   name: 'analysisChart',
   data() {
     return {
-      rmac: ''
+      rmac: '',
+      nf: '',
+      nfOptions: [{
+        value: '2018',
+        label: '2018'
+      },
+      {
+        value: '2019',
+        label: '2019'
+      }],
+      nf2: '',
+      nf2Options: [{
+        value: '2018',
+        label: '2018'
+      },
+      {
+        value: '2019',
+        label: '2019'
+      }],
+      nf3: '',
+      nf3Options: [{
+        value: '2018',
+        label: '2018'
+      },
+      {
+        value: '2019',
+        label: '2019'
+      }]
     }
   },
   mounted() {

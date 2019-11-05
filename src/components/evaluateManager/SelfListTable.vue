@@ -9,7 +9,7 @@
     <el-table-column prop="kpsj" label="考评时间" width="100"></el-table-column>
     <el-table-column prop="oper" label="操作" style="width:20%;">
     <template slot-scope="">
-        <router-link to=''>
+        <router-link to='/selfEdit'>
         <el-button type="primary" plain> 详 情 </el-button>
         </router-link>
         &nbsp;
