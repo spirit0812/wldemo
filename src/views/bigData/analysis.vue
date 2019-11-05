@@ -36,8 +36,28 @@
 </el-col>
 </el-row>
 </div>
-<div class="pageMain">
-
+<div class="pageMain" style="margin-top:30px;">
+<div>
+<div style="width:100%;height:360px">
+  <div style="width:50%;height:100%;display:inline-block;padding-top:30px;">
+    <div id="chart5" style="width:100%;height:100%;"></div>
+  </div>
+  <div style="width:50%;height:100%;display:inline-block;padding-top:30px;">
+    <div id="chart6" style="width:100%;height:100%;"></div>
+  </div>
+</div>
+<div style="width:100%;height:300px;margin-top:30px;">
+  <div style="width:33%;height:100%;display:inline-block;">
+    <div id="chart7" style="width:100%;height:100%;">sd</div>
+  </div>
+  <div style="width:33%;height:100%;display:inline-block;">
+    <div id="chart8" style="width:100%;height:100%;">sd2</div>
+  </div>
+  <div style="width:33%;height:100%;display:inline-block;">
+    <div id="chart9" style="width:100%;height:100%;">sd3</div>
+  </div>
+</div>
+</div>
 </div>
 </div>
 </template>
@@ -239,6 +259,159 @@ export default {
           },
           {
             value: 0, name: '已核准 0项'
+          }]
+        }]
+      });
+      const chart5 = this.$echarts.init(document.getElementById('chart5'))
+      chart5.setOption({
+        title: {
+          text: '文旅专项各市分布(单位: 万元)'
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        itemStyle: {
+          color: 'green'
+        },
+        xAxis: {
+          type: 'category',
+          data: ['福州市350100', '厦门市350100', '莆田市350100', '三明市350100', '泉州市350100', '漳州市350100', '南平市350100', '龙岩市350100']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          data: [1600, 1300, 1800, 1900, 1200, 1100, 800, 900],
+          type: 'line',
+          smooth: true
+        }]
+      });
+      const chart6 = this.$echarts.init(document.getElementById('chart6'))
+      chart6.setOption({
+        title: {
+          text: '文旅专项各市分布(单位: 万元)'
+        },
+        color: ['#0E9345', '#13ACE5'],
+        tooltip: {
+          trigger: 'axis'
+        },
+        legend: {
+          x: 'right',
+          data: ['2017', '2018']
+        },
+        xAxis: {
+          type: 'category',
+          data: ['福州市350100', '厦门市350100', '莆田市350100', '三明市350100', '泉州市350100', '漳州市350100', '南平市350100', '龙岩市350100']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          name: '2017',
+          type: 'bar',
+          barGap: 0,
+          data: [1300, 1600, 1500, 1200, 1100, 2000, 2000, 1000]
+        },
+        {
+          name: '2018',
+          type: 'bar',
+          data: [1600, 1300, 1800, 1900, 1200, 1100, 800, 900]
+        }]
+      });
+      const chart7 = this.$echarts.init(document.getElementById('chart7'))
+      chart7.setOption({
+        title: {
+          text: '旅游宣传经费(单位: 万元)'
+        },
+        color: ['#13ACE5'],
+        tooltip: {
+          trigger: 'axis'
+        },
+        xAxis: {
+          type: 'category',
+          data: ['2015', '2016', '2017', '2018', '2019']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          data: [2900, 3900, 4500, 6200, 7500],
+          type: 'bar'
+        }]
+      });
+      const chart8 = this.$echarts.init(document.getElementById('chart8'))
+      chart8.setOption({
+        title: {
+          text: '文旅专项绩效评分分布'
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        itemStyle: {
+          color: 'green'
+        },
+        xAxis: {
+          type: 'category',
+          data: ['90-100', '80-89', '30-79', '不合格']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          data: [152, 136, 235, 0],
+          type: 'line',
+          smooth: true
+        }]
+      });
+      const chart9 = this.$echarts.init(document.getElementById('chart9'))
+      chart9.setOption({
+        title: {
+          text: '文旅专项评分到位情况'
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{b}'
+        },
+        color: ['#0E9345', '#13ACE5', '#FF7D4B'],
+        legend: {
+          type: 'scroll',
+          orient: 'vertical',
+          x: 'right',
+          top: 100,
+          right: -10,
+          data: ['拨付中资金总额 100万元', '已确认到位资金总额59000万元', '未发放资金总额 900万元']
+        },
+        series: [{
+          type: 'pie',
+          center: ['30%', '50%'],
+          radius: ['30%', '50%'],
+          avoidLabelOverlap: false,
+          label: {
+            normal: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              show: false,
+              textStyle: {
+                fontSize: '30',
+                fontWeight: 'bold'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              show: true
+            }
+          },
+          data: [{
+            value: 100, name: '拨付中资金总额 100万元'
+          },
+          {
+            value: 59000, name: '已确认到位资金总额59000万元'
+          },
+          {
+            value: 900, name: '未发放资金总额 900万元'
           }]
         }]
       });
