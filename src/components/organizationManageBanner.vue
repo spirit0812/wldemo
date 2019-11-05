@@ -1,19 +1,19 @@
 <template>
     <div>
-    <el-row style="padding:30px 0px">
-        <p style="padding:20px; text-align:left;" >
+    <div style="padding:50px 0px 0px 0px">
+        <p style="padding:0px 20px; text-align:left;" >
             <el-button @click.native="addDept" round style=" color: rgb(3, 152, 73);border: 1px solid rgb(3, 152, 73);">新建部门</el-button>
         </p>
-        <p style="padding:20px;text-align:left;">
+        <p style="padding:0px 20px;text-align:left;">
             <el-button @click.native="updDept" round style=" color: rgb(3, 152, 73);border: 1px solid rgb(3, 152, 73);">修改部门</el-button>
         </p>
-        <p style="padding:20px;text-align:left;" >
+        <p style="padding:0px 20px;text-align:left;" >
             <el-button @click.native="del" round style=" color: #E6A23C;border: 1px solid #E6A23C;">删除部门</el-button>
         </p>
-         <p style="padding:20px;text-align:left;" >
+         <p style="padding:0px 20px;text-align:left;" >
             <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
         </p>
-    </el-row>
+    </div>
     <div class="mydialog">
     <el-dialog title="新增部门" :visible.sync="dialogFormVisible" >
             <el-form :model="form"  ref="form"  >
@@ -59,7 +59,9 @@ export default {
             
           },{
             label: '福州市',
-            
+            children: [{
+            label: '福州文旅局',
+            }]
           },{
             label: '厦门市',
             
@@ -144,4 +146,9 @@ export default {
  .mydialog .el-dialog {
        width: 30% ;
    }
+  .el-button.is-round {
+    border-radius: 20px;
+    padding: 12px 23px;
+    width: 150px;
+}
 </style>

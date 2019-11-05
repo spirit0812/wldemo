@@ -9,7 +9,9 @@ import SpecialManage from '../views/projectManager/specialManage.vue';
 import EvaluateList from '../views/evaluateManager/evaluateList.vue';
 import EvaluateEdit from '../views/evaluateManager/evaluateEdit.vue';
 import SelfList from '../views/evaluateManager/selfList.vue';
-
+import roleManage from '../views/systemManager/roleManage.vue';
+import organizationManage from '../views/systemManager/organizationManage.vue';
+import personManage from '../views/systemManager/personManage.vue';
 
 Vue.use(VueRouter);
 
@@ -58,6 +60,21 @@ const routes = [
         path: '/selfList',
         name: 'selfList',
         component: SelfList
+      },
+      {
+        path: '/roleManage',
+        name: 'roleManage',
+        component: roleManage
+      },
+      {
+        path: '/organizationManage',
+        name: 'organizationManage',
+        component: organizationManage
+      },
+      {
+        path: '/personManage',
+        name: 'personManage',
+        component: personManage
       }
     ]
   },

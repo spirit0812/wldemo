@@ -1,6 +1,6 @@
 <template>
   <div class="pageMain">
-    <roleManageHead/>
+    <personManageHead/>
     <personManageTable/>
     <PageNavigation/>
   </div>
@@ -8,14 +8,14 @@
 
 
 <script>
-import roleManageHead from '../../components/roleManageHead.vue'
+import personManageHead from '../../components/personManageHead.vue'
 import personManageTable from '../../components/personManageTable.vue'
 import PageNavigation from '../../components/PageNavigation.vue'
 
 export default {
   name: 'roleManage',
   components: {
-    roleManageHead,
+    personManageHead,
     personManageTable,
     PageNavigation
   }

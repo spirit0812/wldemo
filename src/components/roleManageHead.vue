@@ -2,9 +2,8 @@
     <div >
     <el-row style="padding:30px 0px">
         <el-col :span="12" style="margin-top:10px;float:left;text-align: left;">
-            <el-button type="primary" @click.native="dialogFormVisible = true" > 添加成员</el-button>
-            <el-button type="primary" style="margin-left:30px;"> 重置密码 </el-button>
-            <el-button type="warning" @click="del" style="margin-left:30px;"> 删除成员 </el-button>
+            <el-button type="primary" @click.native="dialogFormVisible = true" > 添加角色</el-button>
+            <el-button type="warning" @click="del" style="margin-left:30px;"> 删除角色 </el-button>
          </el-col>
          <el-col :span="5" style="margin-top:10px;float:right;">
             <el-input  v-model="search" placeholder="请输入手机号/姓名" prefix-icon="el-icon-search" suffix-icon ="el-icon-position" >
@@ -12,43 +11,23 @@
 
         </el-col>
         </el-row>
-        <el-dialog title="新增成员" :visible.sync="dialogFormVisible" >
-            <el-form :model="form" :inline="true" ref="form"  >
-                <el-form-item label="姓名" :label-width="formLabelWidth" style="300px;" prop="name"
+        <div class="mydialog">
+        <el-dialog title="新增角色" :visible.sync="dialogFormVisible" >
+            <el-form :model="form"  ref="form"  >
+                <el-form-item label="角色名称" :label-width="formLabelWidth" prop="name"
                 :rules="[
-                    { required: true, message: '姓名不能为空'}
+                    { required: true, message: '角色名称不能为空'}
                 ]">
-                <el-input v-model="form.name" autocomplete="off" style="300px;"></el-input>
+                <el-input v-model="form.name" autocomplete="off" ></el-input>
                 </el-form-item>
-                <el-form-item label="昵称" :label-width="formLabelWidth" style="300px;" >
-                    <el-input v-model="form.nickName" autocomplete="off" style="300px;"></el-input>
+                <el-form-item label="角色描述" :label-width="formLabelWidth" >
+                    <el-input v-model="form.email" autocomplete="off" ></el-input>
                 </el-form-item>
-                 <el-form-item label="账号" :label-width="formLabelWidth" style="300px;" prop="account"
-                 :rules="[
-                    { required: true, message: '账号不能为空'}
-                 ]">
-                <el-input v-model="form.account" autocomplete="off" style="300px;"></el-input>
-                </el-form-item>
-                 <el-form-item label="性别" :label-width="formLabelWidth">
-                <el-select v-model="form.sex" style="300px;">
-                    <el-option label="男" value="b"></el-option>
-                    <el-option label="女" value="n"></el-option>
-                </el-select>
-                </el-form-item>
-                 <el-form-item label="手机号" :label-width="formLabelWidth" style="300px;" prop="phone"
-                  :rules="[
-                    { required: true, message: '账号不能为空'}
-                 ]">
-                <el-input v-model="form.phone" autocomplete="off" style="300px;"></el-input>
-                </el-form-item>
-                <el-form-item label="邮箱" :label-width="formLabelWidth" style="300px;">
-                    <el-input v-model="form.email" autocomplete="off" style="300px;"></el-input>
-                </el-form-item>
-                <el-form-item label="所属部门" :label-width="formLabelWidth">
-                <el-select v-model="form.dept" placeholder="请选择部门" style="300px;">
-                    <el-option label="产业发展处" value="cyfz"></el-option>
-                    <el-option label="市场管理处" value="scgl"></el-option>
-                     <el-option label="资源开发处" value="zykf"></el-option>
+                <el-form-item label="查看范围" :label-width="formLabelWidth">
+                <el-select v-model="form.dept" placeholder="请选择查看范围" >
+                    <el-option label="全部" value="cyfz"></el-option>
+                    <el-option label="默认" value="scgl"></el-option>
+                     <el-option label="指定部门" value="zykf"></el-option>
                 </el-select>
                 </el-form-item>
             </el-form>
@@ -59,6 +38,7 @@
                 </el-form-item>
             </el-form>
         </el-dialog>
+        </div>
     </div>
 </template>
 <script>
@@ -89,7 +69,7 @@ export default {
   },
     methods: {
       del() {
-        this.$confirm('此操作将永久删除该成员, 是否继续?', '提示', {
+        this.$confirm('此操作将永久删除该角色, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'
@@ -142,4 +122,9 @@ export default {
 .el-dialog__body .el-textarea__inner {
     width: 300px;
 }
+
+ .mydialog .el-dialog {
+       width: 30% ;
+   }
+
 </style>

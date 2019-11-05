@@ -2,14 +2,14 @@
 
   <div class="pageMain">
       <el-container >
-            <el-aside  style="border-right:1px solid #eee; width:15%;">
+            <el-aside  style="border-right:1px solid #eee; width:220px;">
                 <div >
                     <organizationManageBanner/>
                 </div>
             </el-aside>
-            <el-main style="width:85%;">
+            <el-main style="width:960px;">
                 <div >
-                    <roleManageHead/>
+                    <personManageHead/>
                     <organizationManageTable/>
                     <PageNavigation/>
                 </div>
@@ -19,14 +19,14 @@
 </template>
 
 <script>
-import roleManageHead from '../../components/roleManageHead.vue'
+import personManageHead from '../../components/personManageHead.vue'
 import organizationManageTable from '../../components/organizationManageTable.vue'
 import PageNavigation from '../../components/PageNavigation.vue'
 import organizationManageBanner from '../../components/organizationManageBanner.vue'
 export default {
   name: 'organizationManage',
   components: {
-    roleManageHead,
+    personManageHead,
     organizationManageTable,
     PageNavigation,
     organizationManageBanner
