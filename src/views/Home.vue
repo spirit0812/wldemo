@@ -36,8 +36,8 @@
               <i class="el-icon-data-line"></i>
               <span slot="title">绩效管理</span>
             </template>
-            <el-menu-item index="/evaluateList">考评列表</el-menu-item>
-            <el-menu-item index="/selfList">自评报告</el-menu-item>
+            <el-menu-item index="2-1">考评列表</el-menu-item>
+            <el-menu-item index="2-2">自评报告</el-menu-item>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
@@ -56,10 +56,10 @@
               <i class="el-icon-setting"></i>
               <span slot="title">系统管理</span>
             </template>
-            <el-menu-item index="4-1">人员管理</el-menu-item>
-            <el-menu-item index="4-2">组织机构管理</el-menu-item>
+            <el-menu-item index="/personManage">人员管理</el-menu-item>
+            <el-menu-item index="/organizationManage">组织机构管理</el-menu-item>
             <el-menu-item index="4-3">权限管理</el-menu-item>
-            <el-menu-item index="4-4">角色管理</el-menu-item>
+            <el-menu-item index="/roleManage">角色管理</el-menu-item>
             <el-menu-item index="4-6">日志管理</el-menu-item>
           </el-submenu>
         </el-menu>
