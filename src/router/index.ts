@@ -6,6 +6,10 @@ import ProjectImport from '../views/projectManager/projectImport.vue';
 import IndexPage from '../views/indexPage.vue';
 import ProjectView from '../views/projectManager/projectView.vue';
 import SpecialManage from '../views/projectManager/specialManage.vue';
+import EvaluateList from '../views/evaluateManager/evaluateList.vue';
+import EvaluateEdit from '../views/evaluateManager/evaluateEdit.vue';
+import SelfList from '../views/evaluateManager/selfList.vue';
+
 
 Vue.use(VueRouter);
 
@@ -39,6 +43,21 @@ const routes = [
         path: '/specialManage',
         name: 'specialManage',
         component: SpecialManage
+      },
+      {
+        path: '/evaluateList',
+        name: 'evaluateList',
+        component: EvaluateList
+      },
+      {
+        path: '/evaluateEdit',
+        name: 'evaluateEdit',
+        component: EvaluateEdit
+      },
+      {
+        path: '/selfList',
+        name: 'selfList',
+        component: SelfList
       }
     ]
   },

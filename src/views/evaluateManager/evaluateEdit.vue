@@ -1,0 +1,154 @@
+<template>
+<div class="pageMain" style="padding-bottom:100px;">
+<div><el-row>
+<el-button size="medium" round  @click="goback();" style="margin:10px 15px;float:right;">
+<span>
+<i class="el-icon-back" style="font-weight:bold;padding-right:5px;"></i>
+</span>返回</el-button>
+</el-row>
+</div>
+<div style="padding-left:30px;">
+<el-row>
+    <el-col :span="20" >
+        <div style="display:inline-block;float:left;margin-top:5px;">考评名称:</div>
+        <div style="display:inline-block;margin-left:30px;float:left;">
+        <el-input v-model="kpmc" placeholder="输入考评名称" style="width:450px;">
+        </el-input>
+        </div>
+    </el-col>
+</el-row>
+<el-row style="padding-top:15px;">
+    <el-col :span="20" >
+        <div style="display:inline-block;float:left;margin-top:5px;">项目名称:</div>
+        <div style="display:inline-block;margin-left:30px;float:left;">
+        <el-select v-model="xmmc" placeholder="选择项目名称" style="width:450px;">
+        <el-option
+            v-for="item in xmmcOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+        </el-option>
+        </el-select>
+        </div>
+    </el-col>
+</el-row>
+<el-row style="padding-top:15px;">
+    <el-col :span="20" >
+        <div style="display:inline-block;float:left;margin-top:5px;">考评时间:</div>
+        <div style="display:inline-block;margin-left:30px;float:left;">
+        <el-date-picker style="width:450px;"
+        v-model="date1"
+        type="daterange"
+        range-separator="至"
+        start-placeholder="开始日期"
+        end-placeholder="结束日期">
+        </el-date-picker>
+        </div>
+    </el-col>
+</el-row>
+</div>
+<div>
+<el-button type="primary" style="margin:10px 15px;float:right;" plain>添加考评内容</el-button>
+</div>
+<div style="text-align:left;margin-top:50px;">
+  <el-divider direction="vertical"></el-divider><span>投入指标</span>
+</div>
+  <el-table :data="tableData1" style="width:100%;padding-left:10px;padding-right:10px;">
+    <el-table-column prop="yjfl1" label="考评标准一级分类" style="width:20%;"></el-table-column>
+    <el-table-column prop="ejfl1" label="考评标准二级分类" style="width:20%;"></el-table-column>
+    <el-table-column prop="bznr1" label="考评标准内容" style="width:20%;"></el-table-column>
+    <el-table-column prop="dbbz1" label="考评达标标准" style="width:20%;"></el-table-column>
+    <el-table-column prop="bzqz1" label="考评标准权重" style="width:20%;"></el-table-column>
+    <el-table-column prop="createTime1" label="创建时间" style="width:20%;"></el-table-column>
+  </el-table>
+<div style="text-align:left;margin-top:50px;">
+  <el-divider direction="vertical"></el-divider><span>产出成本</span>
+</div>
+  <el-table :data="tableData2" style="width:100%;padding-left:10px;padding-right:10px;">
+    <el-table-column prop="yjfl2" label="考评标准一级分类" style="width:20%;"></el-table-column>
+    <el-table-column prop="ejfl2" label="考评标准二级分类" style="width:20%;"></el-table-column>
+    <el-table-column prop="bznr2" label="考评标准内容" style="width:20%;"></el-table-column>
+    <el-table-column prop="dbbz2" label="考评达标标准" style="width:20%;"></el-table-column>
+    <el-table-column prop="bzqz2" label="考评标准权重" style="width:20%;"></el-table-column>
+    <el-table-column prop="createTime2" label="创建时间" style="width:20%;"></el-table-column>
+  </el-table>
+<div style="text-align:left;margin-top:50px;">
+  <el-divider direction="vertical"></el-divider><span>效益指标</span>
+</div>
+  <el-table :data="tableData3" style="width:100%;padding-left:10px;padding-right:10px;">
+    <el-table-column prop="yjfl3" label="考评标准一级分类" style="width:20%;"></el-table-column>
+    <el-table-column prop="ejfl3" label="考评标准二级分类" style="width:20%;"></el-table-column>
+    <el-table-column prop="bznr3" label="考评标准内容" style="width:20%;"></el-table-column>
+    <el-table-column prop="dbbz3" label="考评达标标准" style="width:20%;"></el-table-column>
+    <el-table-column prop="bzqz3" label="考评标准权重" style="width:20%;"></el-table-column>
+    <el-table-column prop="createTime3" label="创建时间" style="width:20%;"></el-table-column>
+  </el-table>
+</div>
+</template>
+<script>
+export default {
+  name: 'evaluateEdit',
+  methods: {
+    goback() {
+      this.$router.go(-1);
+    }
+  },
+  data() {
+    return {
+      kpmc: '',
+      xmmc: '',
+      date1: '',
+      xmmcOptions: [{
+        value: '昙石山博物馆建设项目',
+        label: '昙石山博物馆建设项目'
+      },
+      {
+        value: '石柱山博物馆',
+        label: '石柱山博物馆'
+      }],
+      tableData1: [{
+        yjfl1: '投入成本',
+        ejfl1: '-',
+        bznr1: '2019年度总计投入达200万',
+        dbbz1: '200万',
+        bzqz1: '40',
+        createTime1: '2019-01-01'
+      }],
+      tableData2: [{
+        yjfl2: '工程建设',
+        ejfl2: '-',
+        bznr2: '完成昙石山博物馆建设',
+        dbbz2: '完成项目验收',
+        bzqz2: '40',
+        createTime2: '2019-01-01'
+      }],
+      tableData3: [{
+        yjfl3: '服务对象满意度',
+        ejfl3: '-',
+        bznr3: '群众满意度达85%',
+        dbbz3: '85%',
+        bzqz3: '20',
+        createTime3: '2019-01-01'
+      }]
+    }
+  }
+};
+</script>
+<style lang="scss" scoped>
+html,
+body,
+#app,
+.el-container,
+.pageMain {
+  /*设置内部填充为0，几个布局元素之间没有间距*/
+  padding: 0px;
+  /*外部间距也是如此设置*/
+  margin: 0px;
+  /*统一设置高度为100%*/
+  height: 100%;
+}
+.pageMain {
+  background-color: #FFFFFF;
+}
+</style>
+

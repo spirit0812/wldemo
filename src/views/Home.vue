@@ -36,8 +36,8 @@
               <i class="el-icon-data-line"></i>
               <span slot="title">绩效管理</span>
             </template>
-            <el-menu-item index="2-1">考评列表</el-menu-item>
-            <el-menu-item index="2-2">自评报告</el-menu-item>
+            <el-menu-item index="/evaluateList">考评列表</el-menu-item>
+            <el-menu-item index="/selfList">自评报告</el-menu-item>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
