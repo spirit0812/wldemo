@@ -15,7 +15,7 @@
     <el-table-column prop="cz" label="操作" width="200" >
     <template slot-scope="">
         <router-link to=''>
-        <el-button @click.native="edit" type="text" size="small">编辑</el-button> 
+        <el-button @click.native="edit" type="text" size="small">编辑</el-button>
         <span style="color:blue;margin:0px 1px;">|</span>
         <el-button  @click.native="del" type="text" size="small">删除</el-button>
         <span style="color:blue; margin:0px 1px;">|</span>
@@ -81,24 +81,24 @@ export default {
   name: 'organizationManageTable',
   data() {
     return {
-      statu:'ty',
+      statu: 'ty',
       dialogFormVisible: false,
-     form: {
-          name: '',
-          account: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: '',
-          dept:'',
-          nickName:'',
-          sex:'男',
-          email:'',
-          phone:'',
-        },
-        formLabelWidth: '120px',
+      form: {
+        name: '',
+        account: '',
+        date1: '',
+        date2: '',
+        delivery: false,
+        type: [],
+        resource: '',
+        desc: '',
+        dept: '',
+        nickName: '',
+        sex: '男',
+        email: '',
+        phone: '',
+      },
+      formLabelWidth: '120px',
       tableData: [
         {
           xh: '1',
@@ -109,11 +109,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '2',
+          xh: '2',
           ssdw: '福建省文旅厅',
           bm: '资源开发处',
           xm: '张强/zhangqiang',
@@ -121,11 +121,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '3',
+          xh: '3',
           ssdw: '福建省文旅厅',
           bm: '市场管理处',
           xm: '王小房/wangxiaofang',
@@ -133,11 +133,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '4',
+          xh: '4',
           ssdw: '福建省文旅厅',
           bm: '产业发展处',
           xm: '王小房/wangxiaofang',
@@ -145,7 +145,7 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
@@ -157,11 +157,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '6',
+          xh: '6',
           ssdw: '福建省文旅厅',
           bm: '产业发展处',
           xm: '王小房/wangxiaofang',
@@ -169,11 +169,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '7',
+          xh: '7',
           ssdw: '福建省文旅厅',
           bm: '产业发展处',
           xm: '王小房/wangxiaofang',
@@ -181,11 +181,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '8',
+          xh: '8',
           ssdw: '福建省文旅厅',
           bm: '产业发展处',
           xm: '王小房/wangxiaofang',
@@ -193,7 +193,7 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
@@ -205,11 +205,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '10',
+          xh: '10',
           ssdw: '福建省文旅厅',
           bm: '产业发展处',
           xm: '王小房/wangxiaofang',
@@ -217,60 +217,60 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         }],
-        title:'',
+      title: '',
     };
   },
-  methods:{
-    edit(){
-      this.dialogFormVisible=true;
-      this.title="编辑成员";
-      this.form.name='王小房';
-       this.form.nickName='王小房';
-       this.form.account='wangxiaofang';
-       this.form.sex='男';
-       this.form.phone='13062143145';
-       this.form.email='358889885@qq.com';
-       this.form.dept='cyfz';
+  methods: {
+    edit() {
+      this.dialogFormVisible = true;
+      this.title = '编辑成员';
+      this.form.name = '王小房';
+      this.form.nickName = '王小房';
+      this.form.account = 'wangxiaofang';
+      this.form.sex = '男';
+      this.form.phone = '13062143145';
+      this.form.email = '358889885@qq.com';
+      this.form.dept = 'cyfz';
     },
-    detail(){
-      this.dialogFormVisible=true;
-       this.title="成员详情";
-       this.form.name='王小房';
-       this.form.nickName='王小房';
-       this.form.account='wangxiaofang';
-       this.form.sex='男';
-       this.form.phone='13062143145';
-       this.form.email='358889885@qq.com';
-       this.form.dept='cyfz';
+    detail() {
+      this.dialogFormVisible = true;
+      this.title = '成员详情';
+      this.form.name = '王小房';
+      this.form.nickName = '王小房';
+      this.form.account = 'wangxiaofang';
+      this.form.sex = '男';
+      this.form.phone = '13062143145';
+      this.form.email = '358889885@qq.com';
+      this.form.dept = 'cyfz';
     },
-    del(){
+    del() {
       this.$confirm('此操作将永久删除该成员, 是否继续?', '提示', {
-                confirmButtonText: '确定',
-                cancelButtonText: '取消',
-                type: 'warning'
-              }).then(() => {
-                this.$message({
-                  type: 'success',
-                  message: '删除成功!'
-                });
-              }).catch(() => {
-                this.$message({
-                  type: 'info',
-                  message: '已取消删除'
-                });          
-              });
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: '删除成功!'
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        });
+      });
     },
-    status(a){
-         if(a=='ty') {
-           this.statu=='qy';
-         }
-           if(a=='qy') {
-           this.statu=='ty';
-         }
-         this.$message.success("状态更改成功")
+    status(a) {
+      if (a == 'ty') {
+        this.statu == 'qy';
+      }
+      if (a == 'qy') {
+        this.statu == 'ty';
+      }
+      this.$message.success('状态更改成功')
     }
   }
 };

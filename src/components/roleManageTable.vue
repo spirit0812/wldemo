@@ -16,19 +16,19 @@
         </router-link>
     </template>
     </el-table-column>
-   
+
     </el-table>
     <div class="mydialog">
         <el-dialog title="新增角色" :visible.sync="dialogFormVisible" >
             <el-form :model="form"  ref="form"  >
-                
+
                 <el-form-item label="角色名称" :label-width="formLabelWidth"  prop="u"
                 :rules="[
                     { required: true, message: '角色不能为空'}
                 ]">
                 <el-input v-model="form.dept" autocomplete="off"  placeholder="请输入角色名称"></el-input>
                 </el-form-item>
-                
+
                  <el-form-item label="角色描述" :label-width="formLabelWidth" prop="desc">
                 <el-input type="textarea" v-model="form.desc" :rows="4"  autocomplete="off"  placeholder="请输入角色描述"></el-input>
                 </el-form-item>
@@ -39,15 +39,15 @@
                         </el-tab-pane>
                         <el-tab-pane label="数据权限" name="second">
                             <p style=" padding: 0px;margin: 0px 10px;">
-                                <el-radio v-model="radio1" label="1" >默认</el-radio>    
+                                <el-radio v-model="radio1" label="1" >默认</el-radio>
                             </p>
                             <p style=" padding: 0px;margin: 0px 10px;">
-                                <el-radio v-model="radio1" label="2" >全部</el-radio>    
+                                <el-radio v-model="radio1" label="2" >全部</el-radio>
                             </p>
                             <p style=" padding: 0px;margin: 0px 10px;">
-                                <el-radio v-model="radio1" label="3" >指定部门</el-radio>    
+                                <el-radio v-model="radio1" label="3" >指定部门</el-radio>
                             </p>
-                           
+
                         </el-tab-pane>
                     </el-tabs>
                  </el-form-item>
@@ -56,12 +56,12 @@
                     <el-button type="success" @click="dialogFormVisible = false">保 存</el-button>
                 </el-form-item>
             </el-form>
-           
+
         </el-dialog>
 
     </div>
 </div>
-  
+
 </div>
 
 
@@ -71,18 +71,18 @@ export default {
   name: 'roleManageTable',
   data() {
     return {
-        radio1: '1',
-         activeName: 'first',
-         dialogFormVisible: false,
-        form: {
-          upDept: '',
-          dept: '',
-          sort: '',
-          desc:'',
-          u:'1',
-          
-        },
-        formLabelWidth: '120px',
+      radio1: '1',
+      activeName: 'first',
+      dialogFormVisible: false,
+      form: {
+        upDept: '',
+        dept: '',
+        sort: '',
+        desc: '',
+        u: '1',
+
+      },
+      formLabelWidth: '120px',
       tableData: [
         {
           jsmc: '华中HR',
@@ -91,19 +91,19 @@ export default {
           yh: '[1]王小房'
         },
         {
-         jsmc: '华中HR',
+          jsmc: '华中HR',
           ckfw: '指定部门',
           jsms: '通讯录管理',
           yh: '[1]王小房'
         },
         {
-         jsmc: '华中HR',
+          jsmc: '华中HR',
           ckfw: '指定部门',
           jsms: '通讯录管理',
           yh: '[1]方杰[fangjie]'
         },
         {
-         jsmc: '华中HR',
+          jsmc: '华中HR',
           ckfw: '指定部门',
           jsms: '通讯录管理',
           yh: '[2]王小房[wangxiaofang],张扬[zhangyang]'
@@ -115,19 +115,19 @@ export default {
           yh: '[0]'
         },
         {
-         jsmc: '华中HR',
+          jsmc: '华中HR',
           ckfw: '指定部门',
           jsms: '通讯录管理',
           yh: '[0]'
         },
         {
-         jsmc: '华中HR',
+          jsmc: '华中HR',
           ckfw: '指定部门',
           jsms: '通讯录管理',
           yh: '[2]王强[wangqiang],李勇[liyong]'
         },
         {
-         jsmc: '华中HR',
+          jsmc: '华中HR',
           ckfw: '指定部门',
           jsms: '通讯录管理',
           yh: '[3]王小房[wangxiaofang],周文杰[zhouwenjie],李依鹏[liyipeng]'
@@ -139,63 +139,63 @@ export default {
           yh: '[1]王小房'
         },
         {
-         jsmc: '华中HR',
+          jsmc: '华中HR',
           ckfw: '指定部门',
           jsms: '通讯录管理',
           yh: '[1]王小房'
         }],
-        data: [{
-          label: '项目管理',
-          children: [{
-            label: '项目列表',
-          },
-          {
-            label: '项目查重',
-          },
-          {
-            label: '项目导入',
-          },
-          {
-            label: '资金管理',
-          }]
+      data: [{
+        label: '项目管理',
+        children: [{
+          label: '项目列表',
+        },
+        {
+          label: '项目查重',
+        },
+        {
+          label: '项目导入',
+        },
+        {
+          label: '资金管理',
+        }]
+      }, {
+        label: '绩效管理',
+        children: [{
+          label: '考评列表',
+
         }, {
-          label: '绩效管理',
-          children: [{
-            label: '考评列表',
-            
-          }, {
-            label: '自评报告',
-          }]
+          label: '自评报告',
+        }]
+      }, {
+        label: '大数据分析',
+        children: [{
+          label: '决策分析',
+
         }, {
-          label: '大数据分析',
-          children: [{
-            label: '决策分析',
-            
-          }, {
-            label: '数据源管理',
-          }]
+          label: '数据源管理',
+        }]
+      }, {
+        label: '系统管理',
+        children: [{
+          label: '人员管理',
         }, {
-          label: '系统管理',
-          children: [{
-            label: '人员管理',
-          }, {
-            label: '组织机构管理',
-          },{
-            label: '角色管理',
-          }]
-        }],
-        defaultProps: {
-          children: 'children',
-          label: 'label'
-        }
-        
-    };
-  }, 
-   methods: {
-      handleClick(tab, event) {
-        console.log(tab, event);
+          label: '组织机构管理',
+        }, {
+          label: '角色管理',
+        }]
+      }],
+      defaultProps: {
+        children: 'children',
+        label: 'label'
       }
+
+    };
+  },
+  methods: {
+    handleClick(tab, event) {
+      console.log(tab, event);
     }
+  }
 };
 </script>
 <style >

@@ -92,45 +92,45 @@ export default {
     return {
       search: '',
       dialogFormVisible: false,
-      dialogFormVisible2:false,
-     form: {
-          name: '',
-          account: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: '',
-          dept:'',
-          nickName:'',
-          sex:'男',
-          email:'',
-          phone:'',
-        },
-        formLabelWidth: '120px'
-     
+      dialogFormVisible2: false,
+      form: {
+        name: '',
+        account: '',
+        date1: '',
+        date2: '',
+        delivery: false,
+        type: [],
+        resource: '',
+        desc: '',
+        dept: '',
+        nickName: '',
+        sex: '男',
+        email: '',
+        phone: '',
+      },
+      formLabelWidth: '120px'
+
     };
   },
-    methods: {
-      del() {
-        this.$confirm('此操作将永久删除该成员, 是否继续?', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning'
-        }).then(() => {
-          this.$message({
-            type: 'success',
-            message: '删除成功!'
-          });
-        }).catch(() => {
-          this.$message({
-            type: 'info',
-            message: '已取消删除'
-          });          
+  methods: {
+    del() {
+      this.$confirm('此操作将永久删除该成员, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: '删除成功!'
         });
-      }
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        });
+      });
     }
+  }
 };
 </script>
 <style lang="scss" >

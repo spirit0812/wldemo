@@ -23,6 +23,7 @@ import personManageHead from '../../components/personManageHead.vue'
 import organizationManageTable from '../../components/organizationManageTable.vue'
 import PageNavigation from '../../components/PageNavigation.vue'
 import organizationManageBanner from '../../components/organizationManageBanner.vue'
+
 export default {
   name: 'organizationManage',
   components: {

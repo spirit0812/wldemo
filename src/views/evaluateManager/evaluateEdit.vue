@@ -60,6 +60,17 @@
     <el-table-column prop="dbbz1" label="考评达标标准" style="width:20%;"></el-table-column>
     <el-table-column prop="bzqz1" label="考评标准权重" style="width:20%;"></el-table-column>
     <el-table-column prop="createTime1" label="创建时间" style="width:20%;"></el-table-column>
+    <el-table-column prop="oper" label="操作" style="width:5%;">
+        <template slot-scope="">
+            <router-link to=''>
+            <el-button type="primary" plain> 编 辑 </el-button>
+            </router-link>
+            &nbsp;
+            <router-link to=''>
+            <el-button type="primary" plain> 删 除 </el-button>
+            </router-link>
+        </template>
+    </el-table-column>
   </el-table>
 <div style="text-align:left;margin-top:50px;">
   <el-divider direction="vertical"></el-divider><span>产出成本</span>
@@ -71,6 +82,17 @@
     <el-table-column prop="dbbz2" label="考评达标标准" style="width:20%;"></el-table-column>
     <el-table-column prop="bzqz2" label="考评标准权重" style="width:20%;"></el-table-column>
     <el-table-column prop="createTime2" label="创建时间" style="width:20%;"></el-table-column>
+    <el-table-column prop="oper" label="操作" style="width:5%;">
+        <template slot-scope="">
+            <router-link to=''>
+            <el-button type="primary" plain> 编 辑 </el-button>
+            </router-link>
+            &nbsp;
+            <router-link to=''>
+            <el-button type="primary" plain> 删 除 </el-button>
+            </router-link>
+        </template>
+    </el-table-column>
   </el-table>
 <div style="text-align:left;margin-top:50px;">
   <el-divider direction="vertical"></el-divider><span>效益指标</span>
@@ -82,7 +104,24 @@
     <el-table-column prop="dbbz3" label="考评达标标准" style="width:20%;"></el-table-column>
     <el-table-column prop="bzqz3" label="考评标准权重" style="width:20%;"></el-table-column>
     <el-table-column prop="createTime3" label="创建时间" style="width:20%;"></el-table-column>
+    <el-table-column prop="oper" label="操作" style="width:5%;">
+        <template slot-scope="">
+            <router-link to=''>
+            <el-button type="primary" plain> 编 辑 </el-button>
+            </router-link>
+            &nbsp;
+            <router-link to=''>
+            <el-button type="primary" plain> 删 除 </el-button>
+            </router-link>
+        </template>
+    </el-table-column>
   </el-table>
+<el-row style="margin-top:15px;">
+      <el-col style="float:center;">
+        <el-button type="warning"> 预 览 </el-button>
+        <el-button type="primary"> 发 布 </el-button>
+      </el-col>
+</el-row>
 </div>
 </template>
 <script>

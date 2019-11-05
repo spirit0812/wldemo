@@ -15,7 +15,7 @@
     <el-table-column prop="cz" label="操作" width="150">
     <template slot-scope="">
         <router-link to=''>
-        <el-button type="text" size="small">编辑 </el-button> 
+        <el-button type="text" size="small">编辑 </el-button>
         <span style="color:blue;margin:0px 1px;">|</span>
         <el-button type="text" size="small">删除</el-button>
         <span style="color:blue;margin:0px 1px;">|</span>
@@ -43,11 +43,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '2',
+          xh: '2',
           ssdw: '福建省文旅厅',
           bm: '资源开发处',
           xm: '张强/zhangqiang',
@@ -55,11 +55,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '3',
+          xh: '3',
           ssdw: '福建省文旅厅',
           bm: '市场管理处',
           xm: '王小房/wangxiaofang',
@@ -67,11 +67,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '4',
+          xh: '4',
           ssdw: '福建省文旅厅',
           bm: '产业发展处',
           xm: '王小房/wangxiaofang',
@@ -79,7 +79,7 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
@@ -91,11 +91,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '6',
+          xh: '6',
           ssdw: '福建省文旅厅',
           bm: '产业发展处',
           xm: '王小房/wangxiaofang',
@@ -103,11 +103,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '7',
+          xh: '7',
           ssdw: '福建省文旅厅',
           bm: '产业发展处',
           xm: '王小房/wangxiaofang',
@@ -115,11 +115,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '8',
+          xh: '8',
           ssdw: '福建省文旅厅',
           bm: '产业发展处',
           xm: '王小房/wangxiaofang',
@@ -127,7 +127,7 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
@@ -139,11 +139,11 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         },
         {
-         xh: '10',
+          xh: '10',
           ssdw: '福建省文旅厅',
           bm: '产业发展处',
           xm: '王小房/wangxiaofang',
@@ -151,7 +151,7 @@ export default {
           zw: '-',
           yx: '-',
           sjsb: '-',
-         cjsj: '2019-07-16',
+          cjsj: '2019-07-16',
           zt: '正常'
         }]
     };

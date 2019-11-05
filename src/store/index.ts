@@ -9,6 +9,7 @@ import SpecialManage from '../views/projectManager/specialManage.vue';
 import roleManage from '../views/systemManager/roleManage.vue';
 import organizationManage from '../views/systemManager/organizationManage.vue';
 import personManage from '../views/systemManager/personManage.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
