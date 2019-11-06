@@ -1,10 +1,18 @@
 <template>
-  <div>首页</div>
+<div>
+<img src="../assets/index_bg.png"/>
+</div>
 </template>
 <script>
 export default {
   name: 'indexPage'
 };
 </script>
-<style lang="scss" scoped>
+<style>
+.el-main,.main_page{
+  overflow-y: hidden;
+}
+img{
+  width:100%;
+}
 </style>

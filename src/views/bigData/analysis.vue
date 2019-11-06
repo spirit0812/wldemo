@@ -41,8 +41,7 @@
 <div style="width:100%;height:360px">
   <div style="width:50%;height:100%;display:inline-block;">
     <div>
-    <el-select v-model="nf" placeholder=""
-    style="z-index:999;width:100px;float:right;postion:absolute;top:35px;right:80px;">
+    <el-select v-model="nf" placeholder="" style="z-index:999;width:100px;float:right;postion:absolute;top:35px;right:80px;">
         <el-option
             v-for="item in nfOptions"
             :key="item.value"
