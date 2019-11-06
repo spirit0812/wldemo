@@ -20,6 +20,8 @@ import CommonReport from '../views/bigData/commonReport.vue';
 import SelfEdit from '../views/evaluateManager/selfEdit.vue';
 import dataSetting from '../views/bigData/dataSetting.vue';
 import plainReport from '../views/bigData/plainReport.vue';
+import dataCollectList from '../views/bigData/dataCollectList.vue';
+import dataCollectEdit from '../views/bigData/dataCollectEdit.vue';
 
 Vue.use(VueRouter);
 
@@ -108,6 +110,16 @@ const routes = [
         path: '/plainReport',
         name: 'plainReport',
         component: plainReport
+      },
+      {
+        path: '/dataCollectList',
+        name: 'dataCollectList',
+        component: dataCollectList
+      },
+      {
+        path: '/dataCollectEdit',
+        name: 'dataCollectEdit',
+        component: dataCollectEdit
       }
 
     ]

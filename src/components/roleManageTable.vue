@@ -198,14 +198,14 @@ export default {
     },
     detail(){
       this.title="角色详情";
-      this.dept="华中HR";
-      this.desc="通讯录管理";
+      this.form.dept="华中HR";
+      this.form.desc="通讯录管理";
       this.dialogFormVisible=true;
     },
     edit(){
       this.title="用户分配";
-       this.dept="";
-      this.desc="";
+      this.form.dept="";
+      this.form.desc="";
       this.dialogFormVisible=true;
     }
   }
