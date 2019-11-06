@@ -14,7 +14,7 @@
     </div>
     <div>
         <div>
-        <el-table  :data="tableData" style="width:100%;" :header-cell-style="{background:'#b3d8ff',color:'#606266'}">
+        <el-table  :data="tableData" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
             <el-table-column prop="sjymc" label="数据源名称" style="width:15%;"></el-table-column>
             <el-table-column prop="ms" label="描述" style="width:15%;"></el-table-column>
             <el-table-column prop="jkdz" label="接口地址" style="width:15%;"></el-table-column>
@@ -89,7 +89,7 @@
                             <el-button type="primary" @click.native="dialogFormVisible2 = true" plain style="margin-left:30px;"> 删除 </el-button>
                         </el-col>
                     </el-row>
-                    <el-table  ref="multipleTable"  :data="childTableData" style="width:100%;" :header-cell-style="{background:'#b3d8ff',color:'#606266'}">
+                    <el-table  ref="multipleTable"  :data="childTableData" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
                         <el-table-column type="selection" width="55"></el-table-column>
                         <el-table-column prop="csmc" label="参数名称" style="width:15%;"></el-table-column>
                         <el-table-column prop="csms" label="参数描述" style="width:15%;"></el-table-column>
@@ -122,7 +122,7 @@ export default {
       radio1: '1',
       activeName: 'first',
       dialogFormVisible: false,
-      title: '',
+      title:'',
       form: {
         sjymc: '',
         ms: '',
@@ -261,7 +261,7 @@ export default {
       console.log(tab, event);
     },
     edit() {
-      this.title = '编辑接口数据源';
+      this.title='编辑接口数据源';
       this.dialogFormVisible = true;
       this.form.sjymc = '财政一体化平台';
       this.form.ms = '13ddfs';
@@ -275,7 +275,7 @@ export default {
       this.form.gs = 'JSON';
     },
     add() {
-      this.title = '新建接口数据源';
+      this.title='新建接口数据源';
       this.dialogFormVisible = true;
       this.form.sjymc = '';
       this.form.ms = '';
