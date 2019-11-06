@@ -30,8 +30,7 @@
             </el-table-column>
 
         </el-table>
-            <div class="mydialog">
-                <el-dialog title="新增" :visible.sync="dialogFormVisible" >
+                <el-dialog :title="title" :visible.sync="dialogFormVisible" >
                  <el-divider content-position="left">基础信息设置</el-divider>
                 <el-form :model="form" :inline="true" ref="form"  >
                         <el-form-item label="数据源名称" :label-width="formLabelWidth"  prop="sjymc"
@@ -102,7 +101,6 @@
                     </div>
                 </el-dialog>
 
-            </div>
         </div>
 
         </div>
@@ -124,6 +122,7 @@ export default {
       radio1: '1',
       activeName: 'first',
       dialogFormVisible: false,
+      title:'',
       form: {
         sjymc: '',
         ms: '',
@@ -262,6 +261,7 @@ export default {
       console.log(tab, event);
     },
     edit() {
+      this.title='编辑接口数据源';
       this.dialogFormVisible = true;
       this.form.sjymc = '财政一体化平台';
       this.form.ms = '13ddfs';
@@ -275,6 +275,7 @@ export default {
       this.form.gs = 'JSON';
     },
     add() {
+      this.title='新建接口数据源';
       this.dialogFormVisible = true;
       this.form.sjymc = '';
       this.form.ms = '';
@@ -329,8 +330,8 @@ body,
 /* thead,th{background-color:#E6F1FC;} */
 </style>
 <style >
-    .mydialog .el-dialog {
-       width: 960px;
+    .el-dialog {
+       width: 960px ;
    }
    .el-divider--horizontal {
     display: block;

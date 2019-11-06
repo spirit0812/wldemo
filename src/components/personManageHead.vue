@@ -1,12 +1,12 @@
 <template>
     <div >
     <el-row style="padding:30px 0px">
-        <el-col :span="12" style="margin-top:10px;float:left;text-align: left;">
+        <el-col :span="30" style="margin-top:10px;float:left;text-align: left;">
             <el-button type="primary" @click.native="dialogFormVisible = true" > 添加成员</el-button>
             <el-button type="primary" @click.native="dialogFormVisible2 = true" style="margin-left:30px;"> 重置密码 </el-button>
             <el-button type="warning" @click="del" style="margin-left:30px;"> 删除成员 </el-button>
          </el-col>
-         <el-col :span="5" style="margin-top:10px;float:right;">
+         <el-col :span="10" style="margin-top:10px;float:right;">
             <el-input  v-model="search" placeholder="请输入手机号/姓名" prefix-icon="el-icon-search" suffix-icon ="el-icon-position" >
             </el-input>
 
@@ -167,11 +167,12 @@ export default {
 .el-dialog__body .el-textarea__inner {
     width: 300px;
 }
-.el-dialog {
-       width: 960px ;
-   }
+
 .mydialog .el-dialog {
-    width: 30% ;
+    width: 560px !important ;
 }
+.el-dialog {
+       width: 960px !important ;
+   }
 
 </style>
