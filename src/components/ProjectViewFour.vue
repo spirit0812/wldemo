@@ -2,7 +2,7 @@
   <div class="pageMain">
     <div>
 <el-row>
-    <div style="margin-top:30px;">
+    <div style="margin:10px 0 0 10px;">
     <el-col :span="7" >
         <div style="display:inline-block;float:left;margin-top:5px;">文件名称:</div>
         <div style="display:inline-block;margin-left:5px;float:left;">
@@ -25,7 +25,7 @@
     </div>
 </el-row>
 <el-row>
-<el-col :span="5" style="margin-top:10px;float:left;">
+<el-col :span="4" style="margin-top:10px;float:left;">
     <el-button type="success" style="margin-left:30px;"> 搜 索 </el-button>
     <el-button type="primary" plain> 添 加 </el-button>
     </el-col>

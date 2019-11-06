@@ -355,6 +355,9 @@ export default {
         tooltip: {
           trigger: 'axis'
         },
+        itemStyle: {
+          barBorderRadius: [50, 50, 0, 0]
+        },
         legend: {
           x: 'right',
           data: ['2017', '2018']
@@ -386,6 +389,9 @@ export default {
         color: ['#13ACE5'],
         tooltip: {
           trigger: 'axis'
+        },
+        itemStyle: {
+          barBorderRadius: [50, 50, 0, 0]
         },
         xAxis: {
           type: 'category',
@@ -443,8 +449,8 @@ export default {
         },
         series: [{
           type: 'pie',
-          center: ['30%', '50%'],
-          radius: ['30%', '50%'],
+          center: ['20%', '50%'],
+          radius: ['20%', '30%'],
           avoidLabelOverlap: false,
           label: {
             normal: {
