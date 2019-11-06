@@ -2,7 +2,7 @@
 <div class="pageMain">
          <el-row>
                 <div style="margin-top:30px;">
-                <el-col :span="5" >
+                <el-col :span="8" >
                     <div style="display:inline-block;float:left;margin-top:5px;">报表名称:</div>
                     <div style="display:inline-block;margin-left:5px;float:left;">
                       <el-select v-model="xmlb" placeholder="请选择" >
@@ -18,7 +18,7 @@
         <div v-if="xmlb=='项目列表(含自评)'">
             <el-row>
                 <div style="margin-top:30px;">
-                <el-col :span="5" >
+                <el-col :span="8" >
                     <div style="display:inline-block;float:left;margin-top:5px;">项目名称:</div>
                     <div style="display:inline-block;margin-left:5px;float:left;">
                     <el-input v-model="xmmc" placeholder="输入项目名称">
@@ -63,7 +63,7 @@
         <div v-if="xmlb=='项目列表(资金)'">
             <el-row>
                 <div style="margin-top:30px;">
-                <el-col :span="5" >
+                <el-col :span="8" >
                     <div style="display:inline-block;float:left;margin-top:5px;">项目名称:</div>
                     <div style="display:inline-block;margin-left:5px;float:left;">
                     <el-input v-model="xmmc" placeholder="输入项目名称">
