@@ -87,7 +87,7 @@
                     </div>
                 </el-col>
             </el-row>
-             <el-table  :data="tableData1" style="width:100%;" >
+             <el-table  :data="tableData1" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}" >
                 <el-table-column prop="zdmc" label="字段名称" style="width:15%;"></el-table-column>
                 <el-table-column prop="mbbzdmc" label="目标表字段名称" style="width:15%;"></el-table-column>
                 <el-table-column prop="zdlx" label="字段类型" style="width:15%;"></el-table-column>
@@ -109,7 +109,7 @@
             <el-button type="primary"  style="float:right; " plain>保存清洗规则</el-button>
             <el-button type="primary"  style="float:right; margin-right:15px;" plain>新增清洗规则</el-button>
         </el-row>
-        <el-table  :data="tableData2" style="width:100%;" >
+        <el-table  :data="tableData2" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
                 <el-table-column prop="gzmc" label="规则名称" style="width:20%;"></el-table-column>
                 <el-table-column prop="gzlx" label="规则类型" style="width:20%;"></el-table-column>
                 <el-table-column prop="zdms" label="字段描述" style="width:40%;"></el-table-column>
@@ -117,7 +117,7 @@
                 <template slot-scope="scope">
                     <router-link to=''>
                     <el-button  @click="edit" type="primary" plain size="small">编辑 </el-button>
-                    <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="primary" plain size="small">删除</el-button>
+                    <el-button @click="deleteRow(scope.$index, tableData)" type="primary" plain size="small">删除</el-button>
                     </router-link>
                 </template>
                  
@@ -132,12 +132,6 @@
         <el-dialog title="任务定时规则" :visible.sync="dialogFormVisible" >
             <el-form :model="form"  ref="form"  >
                 <el-form-item label="定时类型" :label-width="formLabelWidth"  >
-                    <!-- <el-radio-group v-model="form.dslx" >
-                        <el-radio-button label="每月执行">每月执行</el-radio-button>
-                        <el-radio-button label="每周执行">每周执行</el-radio-button>
-                        <el-radio-button label="每天执行">每天执行</el-radio-button>
-                        <el-radio-button label="指定时间">指定时间</el-radio-button>
-                    </el-radio-group> -->
                     <el-radio-group v-model="form.dslx" v-for="item in tabs" :key="item.id" @click="toggleTab(item.id)">
                         <el-radio-button :label="item.name">{{item.name}}</el-radio-button>
                     </el-radio-group>
@@ -335,11 +329,11 @@ export default {
       ],
       activeName: 'first',
       gzmc: '',
-      gzlx: '',
-      zxgz: '',
+      gzlx: '接口数据采集',
+      zxgz: '定时执行',
       date1: '',
-      sjy:'',
-      mbb:'',
+      sjy:'财政一体化平台专项接口',
+      mbb:'专项表【tf_specifiy_fund】',
       gzlxOptions: [{
         value: '接口数据采集',
         label: '接口数据采集'

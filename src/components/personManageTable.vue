@@ -16,11 +16,11 @@
     <template slot-scope="">
         <router-link to=''>
         <el-button type="text" size="small">编辑 </el-button>
-        <span style="color:blue;margin:0px 1px;">|</span>
+        <span style="color:#409EFF;margin:0px 2px;">|</span>
         <el-button type="text" size="small">删除</el-button>
-        <span style="color:blue;margin:0px 1px;">|</span>
+        <span style="color:#409EFF;margin:0px 2px;">|</span>
         <el-button type="text" size="small">详情</el-button>
-        <span style="color:blue;margin:0px 1px;">|</span>
+        <span style="color:#409EFF;margin:0px 2px;">|</span>
         <el-button type="text" size="small">停用</el-button>
         </router-link>
     </template>

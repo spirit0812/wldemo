@@ -18,10 +18,10 @@
                 :rules="[
                     { required: true, message: '角色名称不能为空'}
                 ]">
-                <el-input v-model="form.name" autocomplete="off" ></el-input>
+                <el-input v-model="form.name" autocomplete="off" placeholder="请输入角色名称"></el-input>
                 </el-form-item>
                 <el-form-item label="角色描述" :label-width="formLabelWidth" >
-                    <el-input v-model="form.email" autocomplete="off" ></el-input>
+                    <el-input v-model="form.email" type="textarea" placeholder="请输入角色描述" autocomplete="off" ></el-input>
                 </el-form-item>
                 <el-form-item label="" :label-width="formLabelWidth" >
                     <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
