@@ -24,16 +24,33 @@
     <el-divider direction="vertical"></el-divider><span>数据导入记录</span>
   </div>
   <br/>
-  <div style="text-align:left;margin-left:30px;font-size:14px;">
-    <a style="margin-left:15px;">2017年项目数据.xlsx
+  <div style="margin-left: 30px;">
+    <el-row>
+        <el-col :span="8" >
+         <div style="display:inline-block;float:left;margin-top:8px;font-size:14px;">导入类型:</div>
+        <div style="display:inline-block;margin-left:5px;float:left;">
+        <el-select v-model="drlx" placeholder="选择导入类型">
+          <el-option label="项目导入" value="项目导入"></el-option>
+          <el-option label="资金导入" value="资金导入"></el-option>
+        </el-select>
+        </div>
+    </el-col>
+    </el-row>
+  </div>
+  <div style="margin-top:15px;">
+  <div style="text-align:left;margin:8px 0 0 30px;font-size:14px;display:inline-block;float:left;">
+    <a>2017年项目数据.xlsx
       <span><i class="el-icon-error"></i></span>
     </a>
   </div>
-<el-row>
-<el-col :span="3" style="margin-top:10px;">
-    <el-button type="primary" plain> 导 入 </el-button>
-</el-col>
-</el-row>
+  <div style="display:inline-block;float:left;">
+    <el-row>
+    <el-col :span="3" style="margin-left:10px;">
+        <el-button type="primary" plain> 导 入 </el-button>
+    </el-col>
+    </el-row>
+  </div>
+  </div>
 <ProjectImportTable/>
 <PageNavigation/>
 </div>
@@ -47,6 +64,11 @@ export default {
   components: {
     ProjectImportTable,
     PageNavigation
+  },
+  data() {
+    return {
+      drlx: ''
+    }
   }
 };
 </script>
@@ -61,7 +83,7 @@ body,
   /*外部间距也是如此设置*/
   margin: 0px;
   /*统一设置高度为100%*/
-  height: 100%;
+  height: auto;
 }
 .pageMain {
   background-color: #FFFFFF;
@@ -72,4 +94,3 @@ body,
   margin-bottom:3px;
 }
 </style>
-
