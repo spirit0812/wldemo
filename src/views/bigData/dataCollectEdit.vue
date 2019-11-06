@@ -68,8 +68,8 @@
                    
                     </div>
                 </el-col>
-                 <el-button type="primary" style="margin-right:15px;" plain>保存基本设置</el-button>
-                <el-button type="primary"  plain>新增字段</el-button>
+                 <el-button type="primary" style="float:right;" plain>保存基本设置</el-button>
+                <el-button type="primary" style="float:right; margin-right:15px;" plain>新增字段</el-button>
             </el-row>
             <el-row style="padding-top:15px;margin-bottom:30px;">
                 <el-col :span="15" >
@@ -106,8 +106,8 @@
     </el-tab-pane>
     <el-tab-pane label="数据清洗规则" name="second">
          <el-row style="padding-top:15px;  text-align: right; margin-bottom:30px;">
-            <el-button type="primary" style="margin-right:15px;" plain>保存清洗规则</el-button>
-            <el-button type="primary"  plain>新增清洗规则</el-button>
+            <el-button type="primary"  style="float:right; " plain>保存清洗规则</el-button>
+            <el-button type="primary"  style="float:right; margin-right:15px;" plain>新增清洗规则</el-button>
         </el-row>
         <el-table  :data="tableData2" style="width:100%;" >
                 <el-table-column prop="gzmc" label="规则名称" style="width:20%;"></el-table-column>
@@ -315,8 +315,6 @@ body,
    .myTab .el-tabs__item {
     font-size:18px !important;
     }
-    .el-tabs--top .el-tabs__item.is-top:nth-child(2) {
-    padding-left: 20px !important;
-   }
+   
 </style>
 
