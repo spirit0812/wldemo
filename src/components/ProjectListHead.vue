@@ -46,7 +46,7 @@
         </el-input>
         </div>
     </el-col>
-    <el-col :span="11" >
+    <el-col :span="13" >
         <div style="display:inline-block;float:left;margin-top:5px;">项目时间:</div>
         <div style="display:inline-block;margin-left:5px;float:left;">
         <el-date-picker style="width:450px;"
@@ -75,7 +75,7 @@
         </el-select>
         </div>
     </el-col>
-    <el-col :span="11" >
+    <el-col :span="13" >
         <div style="display:inline-block;float:left;margin-top:5px;">项目时间:</div>
         <div style="display:inline-block;margin-left:5px;float:left;">
         <el-date-picker style="width:450px;"
