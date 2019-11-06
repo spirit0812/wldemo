@@ -22,6 +22,9 @@ import dataSetting from '../views/bigData/dataSetting.vue';
 import plainReport from '../views/bigData/plainReport.vue';
 import dataCollectList from '../views/bigData/dataCollectList.vue';
 import dataCollectEdit from '../views/bigData/dataCollectEdit.vue';
+import EvaluateView from '../views/evaluateManager/evaluateView.vue';
+import SelfView from '../views/evaluateManager/selfView.vue';
+
 
 Vue.use(VueRouter);
 
@@ -154,6 +157,16 @@ const routes = [
         name: 'dataCollectEdit',
         component: dataCollectEdit,
         props: (route: any) => ({ pageName: route.query.pageName })
+      },
+      {
+        path: '/evaluateView',
+        name: 'evaluateView',
+        component: EvaluateView
+      },
+      {
+        path: '/selfView',
+        name: 'selfView',
+        component: SelfView
       }
 
     ]

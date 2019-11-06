@@ -27,7 +27,7 @@
 <el-row>
 <el-col :span="4" style="margin-top:10px;float:left;">
     <el-button type="success" style="margin-left:30px;"> 搜 索 </el-button>
-    <el-button type="primary" plain> 添 加 </el-button>
+    <el-button type="primary" plain @click="edit"> 添 加 </el-button>
     </el-col>
 </el-row>
 </div>
@@ -54,6 +54,34 @@
     :total="800"
     ></el-pagination>
 </div>
+
+<div class="mydialog">
+  <el-dialog :title="title" :visible.sync="dialogFormVisible" >
+      <el-form :model="form"  ref="form"  >
+          <el-form-item label="文件名称 " :label-width="formLabelWidth" prop="name"
+          :rules="[
+              { required: true, message: '文件名称不能为空'}
+          ]">
+          <el-input v-model="form.name" autocomplete="off" ></el-input>
+          </el-form-item>
+          <el-form-item label="文件类型 " :label-width="formLabelWidth">
+          <el-select v-model="form.nf" placeholder="请选择文件类型" >
+              <el-option label="招标文件" value="招标文件"></el-option>
+          </el-select>
+          </el-form-item>
+          <el-form-item label="文号 " :label-width="formLabelWidth" >
+              <el-input v-model="form.wh" autocomplete="off" ></el-input>
+          </el-form-item>
+      </el-form>
+      <el-form>
+          <el-form-item label="" :label-width="formLabelWidth" >
+              <el-button type="warning" @click="dialogFormVisible = false">取 消</el-button>
+              <el-button type="success" @click="dialogFormVisible = false">保 存</el-button>
+          </el-form-item>
+      </el-form>
+  </el-dialog>
+</div>
+
   </div>
 </template>
 
@@ -119,8 +147,25 @@ export default {
           scsj: '2019-10-11',
           cjr: '张文博',
           jysm: '政府报告'
-        }]
+        }],
+      dialogFormVisible: false,
+      form: {
+        name: '',
+        wh: '',
+        nf: ''
+      },
+      formLabelWidth: '120px'
     };
+  },
+  methods: {
+    edit() {
+      this.title = '新增相关文件';
+      this.form.name = '';
+      this.form.wh = '';
+      this.form.nf = '';
+      this.form.file = '';
+      this.dialogFormVisible = true;
+    }
   }
 };
 </script>

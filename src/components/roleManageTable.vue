@@ -1,7 +1,7 @@
 <template>
 <div>
     <div>
-<el-table ref="multipleTable" :data="tableData" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
+<el-table ref="multipleTable" :data="tableData" style="width:100%;" :header-cell-style="{background:'#b3d8ff',color:'#606266'}">
     <el-table-column type="selection" width="55"></el-table-column>
     <el-table-column prop="jsmc" label="角色名称" style="width:15%;"></el-table-column>
     <el-table-column prop="ckfw" label="查看范围" style="width:15%;"></el-table-column>
@@ -196,17 +196,17 @@ export default {
     handleClick(tab, event) {
       console.log(tab, event);
     },
-    detail(){
-      this.title="角色详情";
-      this.form.dept="华中HR";
-      this.form.desc="通讯录管理";
-      this.dialogFormVisible=true;
+    detail() {
+      this.title = '角色详情';
+      this.form.dept = '华中HR';
+      this.form.desc = '通讯录管理';
+      this.dialogFormVisible = true;
     },
-    edit(){
-      this.title="用户分配";
-      this.form.dept="";
-      this.form.desc="";
-      this.dialogFormVisible=true;
+    edit() {
+      this.title = '用户分配';
+      this.form.dept = '';
+      this.form.desc = '';
+      this.dialogFormVisible = true;
     }
   }
 };

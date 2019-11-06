@@ -1,6 +1,6 @@
 <template>
 <div>
-<el-table ref="multipleTable" :data="tableData" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
+<el-table ref="multipleTable" :data="tableData" style="width:100%;" :header-cell-style="{background:'#b3d8ff',color:'#606266'}">
     <el-table-column type="selection" width="55"></el-table-column>
     <el-table-column prop="xh" width="55" style="width:5%;" label="序号"></el-table-column>
     <el-table-column prop="ssdw" label="所属单位"  style="width:8%;" ></el-table-column>
