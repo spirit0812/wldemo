@@ -35,91 +35,125 @@ const routes = [
         path: '/indexPage',
         name: 'indexPage',
         component: IndexPage,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/projectList',
         name: 'projectList',
         component: ProjectList,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/projectImport',
         name: 'projectImport',
         component: ProjectImport,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/projectView',
         name: 'projectView',
         component: ProjectView,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/specialManage',
         name: 'specialManage',
-        component: SpecialManage
+        component: SpecialManage,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/evaluateList',
         name: 'evaluateList',
-        component: EvaluateList
+        component: EvaluateList,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/evaluateEdit',
         name: 'evaluateEdit',
-        component: EvaluateEdit
+        component: EvaluateEdit,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/selfList',
         name: 'selfList',
-        component: SelfList
+        component: SelfList,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/analysis',
         name: 'analysis',
-        component: Analysis
+        component: Analysis,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/roleManage',
         name: 'roleManage',
-        component: roleManage
+        component: roleManage,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/organizationManage',
         name: 'organizationManage',
-        component: organizationManage
+        component: organizationManage,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/personManage',
         name: 'personManage',
-        component: personManage
+        component: personManage,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/commonReport',
         name: 'commonReport',
-        component: CommonReport
+        component: CommonReport,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/selfEdit',
         name: 'selfEdit',
-        component: SelfEdit
+        component: SelfEdit,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/dataSetting',
         name: 'dataSetting',
-        component: dataSetting
+        component: dataSetting,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/plainReport',
         name: 'plainReport',
-        component: plainReport
+        component: plainReport,
+        props: (route: any) => ({ pageName: route.query.pageName })
+
       },
       {
         path: '/dataCollectList',
         name: 'dataCollectList',
-        component: dataCollectList
+        component: dataCollectList,
+        props: (route: any) => ({ pageName: route.query.pageName })
       },
       {
         path: '/dataCollectEdit',
         name: 'dataCollectEdit',
-        component: dataCollectEdit
+        component: dataCollectEdit,
+        props: (route: any) => ({ pageName: route.query.pageName })
       }
 
     ]

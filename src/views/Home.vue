@@ -6,7 +6,7 @@
           <img src="../assets/main_logo.png" style="width:63%" />
         </div>
         <el-menu
-          default-active="/indexPage"
+          default-active="/indexPage?pageName=首页"
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
@@ -17,7 +17,7 @@
           :unique-opened="uniqueOpened"
           :router="isUseRounter"
         >
-          <el-menu-item index="/indexPage">
+          <el-menu-item index="/indexPage?pageName=首页">
             <i class="el-icon-discount"></i>
             <span slot="title">首 页</span>
           </el-menu-item>
@@ -70,7 +70,11 @@
         </el-menu>
       </el-aside>
       <el-container class="main_container">
-        <el-header style="text-align: left; font-size: 12px" class="main_head"></el-header>
+        <el-header style="text-align: left; font-size: 12px" class="main_head">
+          <!-- <div><img src="../assets/Hamburger.png"/>{{pageName}}</div> -->
+          <img class="head_img" src="../assets/Hamburger.png"/>
+         <span>{{pageName}}</span>
+        </el-header>
         <el-main class="main_page">
           <router-view></router-view>
         </el-main>
@@ -90,7 +94,8 @@ export default {
   data() {
     return {
       uniqueOpened: true,
-      isUseRounter: true
+      isUseRounter: true,
+      pageName: this.$route.query.pageName,
     };
   },
   methods: {
@@ -128,5 +133,9 @@ border-bottom: 1px solid;
 }
 .main_page {
   margin: 20px 20px 20px 20px;
+}
+.head_img {
+  width: 30px;
+  height: 30px;
 }
 </style>
