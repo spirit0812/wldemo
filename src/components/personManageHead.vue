@@ -6,7 +6,7 @@
             <el-button type="primary" @click.native="dialogFormVisible2 = true" style="margin-left:30px;"> 重置密码 </el-button>
             <el-button type="warning" @click="del" style="margin-left:30px;"> 删除成员 </el-button>
          </el-col>
-         <el-col :span="10" style="margin-top:10px;float:right;">
+         <el-col :span="5" style="margin-top:10px;float:right;">
             <el-input  v-model="search" placeholder="请输入手机号/姓名" prefix-icon="el-icon-search" suffix-icon ="el-icon-position" >
             </el-input>
 
@@ -37,7 +37,7 @@
                 </el-form-item>
                  <el-form-item label="手机号" :label-width="formLabelWidth" style="300px;" prop="phone"
                   :rules="[
-                    { required: true, message: '账号不能为空'}
+                    { required: true, message: '手机号不能为空'}
                  ]">
                 <el-input v-model="form.phone" autocomplete="off" style="300px;"></el-input>
                 </el-form-item>
