@@ -18,7 +18,7 @@
     </div>
     <div>
         <div>
-        <el-table  :data="tableData" style="width:100%;" :header-cell-style="{background:'#b3d8ff',color:'#606266'}">
+        <el-table  :data="tableData" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
             <el-table-column prop="bbmc" label="报表名称" style="width:15%;"></el-table-column>
             <el-table-column prop="bbbm" label="报表编码" style="width:15%;"></el-table-column>
             <el-table-column prop="dz" label="url地址" style="width:15%;"></el-table-column>
