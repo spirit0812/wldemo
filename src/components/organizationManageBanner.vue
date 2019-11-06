@@ -15,7 +15,7 @@
         </p>
     </div>
     <div class="mydialog">
-    <el-dialog title="新增部门" :visible.sync="dialogFormVisible" >
+    <el-dialog :title="title" :visible.sync="dialogFormVisible" >
             <el-form :model="form"  ref="form"  >
                 <el-form-item label="上级部门" :label-width="formLabelWidth"  prop="u"
                 :rules="[
@@ -109,6 +109,7 @@ export default {
       console.log(data);
     },
     addDept() {
+      this.title='新增部门';
       this.dialogFormVisible = true;
       this.form.upDept = '';
       this.form.dept = '';
@@ -116,6 +117,7 @@ export default {
       this.form.desc = '';
     },
     updDept() {
+      this.title='编辑部门';
       this.dialogFormVisible = true;
       this.form.upDept = '资源部';
       this.form.dept = '资源开发处';
@@ -144,7 +146,7 @@ export default {
 </script>
 <style >
  .mydialog .el-dialog {
-       width: 30% ;
+       width: 560px !important;
    }
   .el-button.is-round {
     border-radius: 20px;

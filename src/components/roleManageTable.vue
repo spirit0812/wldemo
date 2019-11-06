@@ -10,16 +10,16 @@
     <el-table-column prop="cz" label="操作" style="width:10%;">
     <template slot-scope="">
         <router-link to=''>
-        <el-button  @click="dialogFormVisible=true" type="text" size="small">查看详情 </el-button>
+        <el-button  @click="detail" type="text" size="small">查看详情 </el-button>
          <span style="color:blue;">|</span>
-        <el-button @click="dialogFormVisible=true" type="text" size="small">分配用户</el-button>
+        <el-button @click="edit" type="text" size="small">分配用户</el-button>
         </router-link>
     </template>
     </el-table-column>
 
     </el-table>
     <div class="mydialog">
-        <el-dialog title="新增角色" :visible.sync="dialogFormVisible" >
+        <el-dialog :title="title" :visible.sync="dialogFormVisible" >
             <el-form :model="form"  ref="form"  >
 
                 <el-form-item label="角色名称" :label-width="formLabelWidth"  prop="u"
@@ -29,13 +29,13 @@
                 <el-input v-model="form.dept" autocomplete="off"  placeholder="请输入角色名称"></el-input>
                 </el-form-item>
 
-                 <el-form-item label="角色描述" :label-width="formLabelWidth" prop="desc">
+                 <el-form-item label="角色描述" :label-width="formLabelWidth" prop="u">
                 <el-input type="textarea" v-model="form.desc" :rows="4"  autocomplete="off"  placeholder="请输入角色描述"></el-input>
                 </el-form-item>
                 <el-form-item label="" :label-width="formLabelWidth" >
                     <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
                         <el-tab-pane label="功能权限" name="first">
-                            <el-tree :data="data" :props="defaultProps" ></el-tree>
+                            <el-tree show-checkbox :data="data" :props="defaultProps" ></el-tree>
                         </el-tab-pane>
                         <el-tab-pane label="数据权限" name="second">
                             <p style=" padding: 0px;margin: 0px 10px;">
@@ -52,8 +52,8 @@
                     </el-tabs>
                  </el-form-item>
                 <el-form-item label="" :label-width="formLabelWidth" >
-                    <el-button type="warning" @click="dialogFormVisible = false">取 消</el-button>
-                    <el-button type="success" @click="dialogFormVisible = false">保 存</el-button>
+                    <el-button v-if="title=='用户分配'" type="warning" @click="dialogFormVisible = false">取 消</el-button>
+                    <el-button v-if="title=='用户分配'" type="success" @click="dialogFormVisible = false">保 存</el-button>
                 </el-form-item>
             </el-form>
 
@@ -71,6 +71,7 @@ export default {
   name: 'roleManageTable',
   data() {
     return {
+      title:'',
       radio1: '1',
       activeName: 'first',
       dialogFormVisible: false,
@@ -194,12 +195,24 @@ export default {
   methods: {
     handleClick(tab, event) {
       console.log(tab, event);
+    },
+    detail(){
+      this.title="角色详情";
+      this.dept="华中HR";
+      this.desc="通讯录管理";
+      this.dialogFormVisible=true;
+    },
+    edit(){
+      this.title="用户分配";
+       this.dept="";
+      this.desc="";
+      this.dialogFormVisible=true;
     }
   }
 };
 </script>
 <style >
  .mydialog .el-dialog {
-       width: 30% ;
+       width: 560px !important;
    }
 </style>

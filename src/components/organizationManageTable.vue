@@ -68,9 +68,9 @@
                 </el-form-item>
             </el-form>
             <el-form>
-                <el-form-item label="" :label-width="formLabelWidth" >
-                    <el-button type="warning" @click="dialogFormVisible = false">取 消</el-button>
-                    <el-button type="success" @click="dialogFormVisible = false">保 存</el-button>
+                <el-form-item label="" :label-width="formLabelWidth"  >
+                    <el-button v-if="title =='编辑成员'" type="warning" @click="dialogFormVisible = false">取 消</el-button>
+                    <el-button v-if="title =='编辑成员'" type="success" @click="dialogFormVisible = false">保 存</el-button>
                 </el-form-item>
             </el-form>
      </el-dialog>
@@ -225,8 +225,8 @@ export default {
   },
   methods: {
     edit() {
+      this.title ='编辑成员';
       this.dialogFormVisible = true;
-      this.title = '编辑成员';
       this.form.name = '王小房';
       this.form.nickName = '王小房';
       this.form.account = 'wangxiaofang';
@@ -236,8 +236,8 @@ export default {
       this.form.dept = 'cyfz';
     },
     detail() {
-      this.dialogFormVisible = true;
       this.title = '成员详情';
+      this.dialogFormVisible = true;
       this.form.name = '王小房';
       this.form.nickName = '王小房';
       this.form.account = 'wangxiaofang';
