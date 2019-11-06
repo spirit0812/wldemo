@@ -18,19 +18,19 @@
                 :rules="[
                     { required: true, message: '姓名不能为空'}
                 ]">
-                <el-input v-model="form.name" autocomplete="off" style="300px;"></el-input>
+                <el-input v-model="form.name" autocomplete="off" style="300px;" placeholder="请输入姓名"></el-input>
                 </el-form-item>
                 <el-form-item label="昵称" :label-width="formLabelWidth" style="300px;" >
-                    <el-input v-model="form.nickName" autocomplete="off" style="300px;"></el-input>
+                    <el-input v-model="form.nickName" autocomplete="off" style="300px;" placeholder="请输入昵称"></el-input>
                 </el-form-item>
                  <el-form-item label="账号" :label-width="formLabelWidth" style="300px;" prop="account"
                  :rules="[
                     { required: true, message: '账号不能为空'}
                  ]">
-                <el-input v-model="form.account" autocomplete="off" style="300px;"></el-input>
+                <el-input v-model="form.account" autocomplete="off" style="300px;" placeholder="请输入账号"></el-input>
                 </el-form-item>
                  <el-form-item label="性别" :label-width="formLabelWidth">
-                <el-select v-model="form.sex" style="300px;">
+                <el-select v-model="form.sex" style="300px;" placeholder="请选择性别">
                     <el-option label="男" value="b"></el-option>
                     <el-option label="女" value="n"></el-option>
                 </el-select>
@@ -39,10 +39,10 @@
                   :rules="[
                     { required: true, message: '手机号不能为空'}
                  ]">
-                <el-input v-model="form.phone" autocomplete="off" style="300px;"></el-input>
+                <el-input v-model="form.phone" autocomplete="off" style="300px;" placeholder="请输入手机号"></el-input>
                 </el-form-item>
                 <el-form-item label="邮箱" :label-width="formLabelWidth" style="300px;">
-                    <el-input v-model="form.email" autocomplete="off" style="300px;"></el-input>
+                    <el-input v-model="form.email" autocomplete="off" style="300px;" placeholder="请输入邮箱"></el-input>
                 </el-form-item>
                 <el-form-item label="所属部门" :label-width="formLabelWidth">
                 <el-select v-model="form.dept" placeholder="请选择部门" style="300px;">
