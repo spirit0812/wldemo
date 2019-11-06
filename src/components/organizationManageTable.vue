@@ -225,7 +225,7 @@ export default {
   },
   methods: {
     edit() {
-      this.title ='编辑成员';
+      this.title = '编辑成员';
       this.dialogFormVisible = true;
       this.form.name = '王小房';
       this.form.nickName = '王小房';

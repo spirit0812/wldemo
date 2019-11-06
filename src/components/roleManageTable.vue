@@ -71,7 +71,7 @@ export default {
   name: 'roleManageTable',
   data() {
     return {
-      title:'',
+      title: '',
       radio1: '1',
       activeName: 'first',
       dialogFormVisible: false,
