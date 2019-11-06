@@ -181,4 +181,9 @@ body,
 .pageMain {
   background-color: #FFFFFF;
 }
+.el-divider--vertical{
+  background-color:#5B9EF3;
+  width:10px;
+  margin-bottom:3px;
+}
 </style>
