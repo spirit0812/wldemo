@@ -5,7 +5,7 @@
         <el-col :span="7">
             <el-form-item label="预算单位: ">
               <div style="float:left;">
-                <el-select v-model="form.ysdw" placeholder="选择预算单位">
+                <el-select v-model="ysdw" placeholder="选择预算单位">
                     <el-option
                     v-for="item in ysdwOptions"
                     :key="item.value"
@@ -19,7 +19,7 @@
         <el-col :span="9">
             <el-form-item label="业务处室: " style="margin-left:100px;">
               <div style="float:left;">
-                <el-select v-model="form.ywcs" placeholder="选择业务处室">
+                <el-select v-model="ywcs" placeholder="选择业务处室">
                     <el-option
                     v-for="item in ywcsOptions"
                     :key="item.value"
@@ -62,7 +62,7 @@
         <el-col :span="9">
             <el-form-item label="项目年份: " style="margin-left:100px;">
                 <div style="float:left;">
-                <el-select v-model="form.xmnf" placeholder="选择项目年份">
+                <el-select v-model="xmnf" placeholder="选择项目年份">
                     <el-option
                     v-for="item in xmnfOptions"
                     :key="item.value"
@@ -117,15 +117,11 @@ export default {
   name: 'ProjectViewFirst',
   data() {
     return {
-      date1: '',
-      date2: '',
-      date3: '',
-      ysdw: '',
-      ywcs: '',
-      zbwh: '',
-      lxbh: '',
-      ms: '',
       ysdwOptions: [{
+        value: '福建省闽台文化交流中心',
+        label: '福建省闽台文化交流中心'
+      },
+      {
         value: '[33366076]景石山博物馆',
         label: '[33366076]景石山博物馆'
       },
@@ -141,7 +137,6 @@ export default {
         value: '文化部处',
         label: '文化部处'
       }],
-      xmnf: '',
       xmnfOptions: [{
         value: '2018',
         label: '2018'
@@ -154,9 +149,17 @@ export default {
         value: '2020',
         label: '2020'
       }],
+      zbwh: '闽财指[2019]0123号',
+      date1: '2019-01-01',
+      date2: '2019',
+      date3: '2019-12-01',
+      lxbh: '[2019]0123号',
+      ysdw: '福建省闽台文化交流中心',
+      ywcs: '教科文处',
+      ms: '闽财指[2019]0123号,2019年福建省与台湾交流',
+      xmnf: '2018',
       form: {
-        name: '',
-        region: '',
+        name: ''
       }
     }
   }
