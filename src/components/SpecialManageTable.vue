@@ -2,11 +2,11 @@
 <div style="margin-top:5px;">
 <el-table :data="tableData" :header-cell-style="{background:'#E8F1FB'}"
  style="width:100%;">
-    <el-table-column prop="xh" label="序号" width="50"></el-table-column>
-    <el-table-column prop="zxmc" label="专项名称" style="width:20%;"></el-table-column>
-    <el-table-column prop="zjwh" label="专项资金文号" style="width:20%;"></el-table-column>
-    <el-table-column prop="nf" label="年份" width="100"></el-table-column>
-    <el-table-column prop="sbzn" label="专项资金申报指南" style="width:5%;">
+    <el-table-column prop="xh" label="序号" min-width="5%"></el-table-column>
+    <el-table-column prop="zxmc" label="专项名称" min-width="40%"></el-table-column>
+    <el-table-column prop="zjwh" label="专项资金文号" min-width="20%"></el-table-column>
+    <el-table-column prop="nf" label="年份" min-width="10%"></el-table-column>
+    <el-table-column prop="sbzn" label="专项资金申报指南" min-width="20%">
     <template slot-scope="">
         <router-link to=''>
         <el-button type="text" size="small">申报指南下载</el-button>

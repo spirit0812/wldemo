@@ -2,12 +2,12 @@
 <div style="margin-top:5px;">
 <el-table :data="tableData" :header-cell-style="{background:'#E8F1FB'}"
  style="width:100%;">
-    <el-table-column prop="name" label="项目名称" style="width:20%;"></el-table-column>
-    <el-table-column prop="ysdw" label="预算单位" style="width:20%;"></el-table-column>
-    <el-table-column prop="ywcs" label="业务处室" style="width:20%;"></el-table-column>
-    <el-table-column prop="zbwh" label="指标文号" style="width:20%;"></el-table-column>
-    <el-table-column prop="createTime" label="创建时间" style="width:20%;"></el-table-column>
-    <el-table-column prop="oper" label="操作" style="width:5%;">
+    <el-table-column prop="name" label="项目名称" min-width="30%"></el-table-column>
+    <el-table-column prop="ysdw" label="预算单位" min-width="30%"></el-table-column>
+    <el-table-column prop="ywcs" label="业务处室" min-width="20%"></el-table-column>
+    <el-table-column prop="zbwh" label="指标文号" min-width="20%"></el-table-column>
+    <el-table-column prop="createTime" label="创建时间" min-width="15%"></el-table-column>
+    <el-table-column prop="oper" label="操作" min-width="15%;">
     <template slot-scope="">
         <router-link to='/projectView'>
         <el-button type="primary" plain>查看</el-button>

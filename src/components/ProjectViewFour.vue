@@ -3,14 +3,14 @@
     <div>
 <el-row>
     <div style="margin-top:30px;">
-    <el-col :span="8" >
+    <el-col :span="7" >
         <div style="display:inline-block;float:left;margin-top:5px;">文件名称:</div>
         <div style="display:inline-block;margin-left:5px;float:left;">
         <el-input v-model="wjmc" placeholder="输入文件名称">
         </el-input>
         </div>
     </el-col>
-    <el-col :span="11" >
+    <el-col :span="14" >
         <div style="display:inline-block;float:left;margin-top:5px;">项目时间:</div>
         <div style="display:inline-block;margin-left:5px;float:left;">
         <el-date-picker style="width:450px;"
@@ -34,13 +34,13 @@
 <div>
   <el-table :data="tableData" :header-cell-style="{background:'#E8F1FB'}"
   style="width:100%;padding:5px 10px 0 10px;">
-      <el-table-column prop="xh" label="序号" width="50"></el-table-column>
-      <el-table-column prop="wjmc" label="文件名称" style="width:20%;"></el-table-column>
-      <el-table-column prop="wjlx" label="文件类型" style="width:20%;"></el-table-column>
-      <el-table-column prop="wh" label="文号" width="200"></el-table-column>
-      <el-table-column prop="scsj" label="上传时间" width="100"></el-table-column>
-      <el-table-column prop="cjr" label="创建人" width="100"></el-table-column>
-      <el-table-column prop="jysm" label="文件简要说明" style="width:20%;"></el-table-column>
+      <el-table-column prop="xh" label="序号" min-width="5%"></el-table-column>
+      <el-table-column prop="wjmc" label="文件名称" min-width="30%"></el-table-column>
+      <el-table-column prop="wjlx" label="文件类型" min-width="15%"></el-table-column>
+      <el-table-column prop="wh" label="文号" min-width="20%"></el-table-column>
+      <el-table-column prop="scsj" label="上传时间" min-width="15%"></el-table-column>
+      <el-table-column prop="cjr" label="创建人" min-width="10%"></el-table-column>
+      <el-table-column prop="jysm" label="文件简要说明" min-width="20%"></el-table-column>
   </el-table>
 </div>
 <div class="block" style="margin-bottom:15px;">
