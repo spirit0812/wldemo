@@ -34,8 +34,7 @@
 <el-row>
 <el-col :span="5" style="margin-top:10px;float:left;">
     <el-button type="warning"> 清 空 </el-button>
-    <el-button type="success" style="margin-left:30px;"
-     @click="detail"> 查 阅 </el-button>
+    <el-button type="success" style="margin-left:30px;"> 查 阅 </el-button>
     </el-col>
     <el-col :span="5" style="margin-top:10px;float:right;">
     <el-button type="primary" plain @click="edit"> 添 加 </el-button>
