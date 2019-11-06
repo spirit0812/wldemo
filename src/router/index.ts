@@ -25,6 +25,7 @@ import dataCollectEdit from '../views/bigData/dataCollectEdit.vue';
 import EvaluateView from '../views/evaluateManager/evaluateView.vue';
 import SelfView from '../views/evaluateManager/selfView.vue';
 
+
 Vue.use(VueRouter);
 
 const routes = [
