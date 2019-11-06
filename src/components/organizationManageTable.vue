@@ -6,7 +6,7 @@
     <el-table-column prop="ssdw" label="所属单位"  style="width:8%;" ></el-table-column>
     <el-table-column prop="bm" label="部门"  style="width:8%;" ></el-table-column>
     <el-table-column prop="xm" label="姓名/账号"  style="width:8%;" ></el-table-column>
-    <el-table-column prop="sjh" label="手机号"  style="width:5%;" ></el-table-column>
+    <el-table-column prop="sjh" label="手机号" width="150" style="width:8%;" ></el-table-column>
     <el-table-column prop="zw" label="职务"  style="width:5%;" ></el-table-column>
     <el-table-column prop="yx" label="邮箱"  style="width:5%;"></el-table-column>
     <el-table-column prop="sjsb" label="手机设备" style="width:8%;" ></el-table-column>
