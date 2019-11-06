@@ -23,13 +23,25 @@
                 <el-form-item label="角色描述" :label-width="formLabelWidth" >
                     <el-input v-model="form.email" autocomplete="off" ></el-input>
                 </el-form-item>
-                <el-form-item label="查看范围" :label-width="formLabelWidth">
-                <el-select v-model="form.dept" placeholder="请选择查看范围" >
-                    <el-option label="全部" value="cyfz"></el-option>
-                    <el-option label="默认" value="scgl"></el-option>
-                     <el-option label="指定部门" value="zykf"></el-option>
-                </el-select>
-                </el-form-item>
+                <el-form-item label="" :label-width="formLabelWidth" >
+                    <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
+                        <el-tab-pane label="功能权限" name="first">
+                            <el-tree show-checkbox :data="data" :props="defaultProps" ></el-tree>
+                        </el-tab-pane>
+                        <el-tab-pane label="数据权限" name="second">
+                            <p style=" padding: 0px;margin: 0px 10px;">
+                                <el-radio v-model="radio1" label="1" >默认</el-radio>
+                            </p>
+                            <p style=" padding: 0px;margin: 0px 10px;">
+                                <el-radio v-model="radio1" label="2" >全部</el-radio>
+                            </p>
+                            <p style=" padding: 0px;margin: 0px 10px;">
+                                <el-radio v-model="radio1" label="3" >指定部门</el-radio>
+                            </p>
+
+                        </el-tab-pane>
+                    </el-tabs>
+                 </el-form-item>
             </el-form>
             <el-form>
                 <el-form-item label="" :label-width="formLabelWidth" >
@@ -47,6 +59,8 @@ export default {
   data() {
     return {
       search: '',
+      radio1: '1',
+      activeName: 'first',
       dialogFormVisible: false,
       form: {
         name: '',
@@ -62,6 +76,50 @@ export default {
         sex: '男',
         email: '',
         phone: '',
+      },
+      data: [{
+        label: '项目管理',
+        children: [{
+          label: '项目列表',
+        },
+        {
+          label: '项目查重',
+        },
+        {
+          label: '项目导入',
+        },
+        {
+          label: '资金管理',
+        }]
+      }, {
+        label: '绩效管理',
+        children: [{
+          label: '考评列表',
+
+        }, {
+          label: '自评报告',
+        }]
+      }, {
+        label: '大数据分析',
+        children: [{
+          label: '决策分析',
+
+        }, {
+          label: '数据源管理',
+        }]
+      }, {
+        label: '系统管理',
+        children: [{
+          label: '人员管理',
+        }, {
+          label: '组织机构管理',
+        }, {
+          label: '角色管理',
+        }]
+      }],
+      defaultProps: {
+        children: 'children',
+        label: 'label'
       },
       formLabelWidth: '120px'
 
