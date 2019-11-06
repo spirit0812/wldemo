@@ -178,47 +178,47 @@ export default {
     deleteRow(index, rows) {
       rows.splice(index, 1);
     },
-    addReq(){
-        var arr={};
-        arr.tjmc1=this.tjmc;
-        arr.tjbm1=this.tjbm;
-        arr.tjlx1=this.tjlx;
-        arr.sfbt1=this.sfbt;
-        arr.mrz1=this.mrz;
-        arr.px=this.px;
-        this.tableData1.push(arr);
-        this.dialogFormVisible = false;
+    addReq() {
+      const arr = {};
+      arr.tjmc1 = this.tjmc;
+      arr.tjbm1 = this.tjbm;
+      arr.tjlx1 = this.tjlx;
+      arr.sfbt1 = this.sfbt;
+      arr.mrz1 = this.mrz;
+      arr.px = this.px;
+      this.tableData1.push(arr);
+      this.dialogFormVisible = false;
     },
-    addys(){
-        var arr={};
-        arr.ysmc2=this.ysmc;
-        arr.ysbm2=this.ysbm;
-        arr.sql2=this.bds;
-        arr.sfzs2=this.sfzs;
-        arr.px2=this.px;
-        this.tableData2.push(arr);
-        this.dialogFormVisible2 = false;
+    addys() {
+      const arr = {};
+      arr.ysmc2 = this.ysmc;
+      arr.ysbm2 = this.ysbm;
+      arr.sql2 = this.bds;
+      arr.sfzs2 = this.sfzs;
+      arr.px2 = this.px;
+      this.tableData2.push(arr);
+      this.dialogFormVisible2 = false;
     }
   },
   data() {
     return {
-       formLabelWidth: '120px',
-      dialogFormVisible:false,
-      dialogFormVisible2:false,
-      title:'查询条件配置',
+      formLabelWidth: '120px',
+      dialogFormVisible: false,
+      dialogFormVisible2: false,
+      title: '查询条件配置',
       bbmc: '',
       bburl: '',
       radio: '',
-      tjmc:'',
-      tjbm:'',
-      tjlx:'',
-      sfbt:'',
-      mrz:'',
-      px:'',
-      ysmc:'',
-      ysbm:'',
-      bds:'',
-      sfzs:'',
+      tjmc: '',
+      tjbm: '',
+      tjlx: '',
+      sfbt: '',
+      mrz: '',
+      px: '',
+      ysmc: '',
+      ysbm: '',
+      bds: '',
+      sfzs: '',
       tableData1: [{
         tjmc1: '项目名称',
         tjbm1: 'PROJECT_NAME',

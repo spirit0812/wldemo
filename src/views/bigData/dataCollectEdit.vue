@@ -107,7 +107,8 @@
     <el-tab-pane label="数据清洗规则" name="second">
          <el-row style="padding-top:15px;  text-align: right; margin-bottom:30px;">
             <el-button type="primary"  style="float:right; " plain>保存清洗规则</el-button>
-            <el-button type="primary"  style="float:right; margin-right:15px;" plain>新增清洗规则</el-button>
+            <el-button type="primary"  style="float:right; margin-right:15px;" plain
+            @click="editRule">新增清洗规则</el-button>
         </el-row>
         <el-table  :data="tableData2" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
                 <el-table-column prop="gzmc" label="规则名称" style="width:20%;"></el-table-column>
@@ -211,6 +212,93 @@
             </el-form>
         </el-dialog>
     </div>
+    <div class="mydialog">
+        <el-dialog title="清洗规则" :visible.sync="dialogRuleVisible" >
+ <el-tabs v-model="activeName2"  @tab-click="handleClick2">
+    <el-tab-pane label="字段级清洗" name="first">
+      <el-row>
+        <el-col style="width:100%;">
+          <div style="width:100px;display:inline-block;float:left;margin-top:5px;">
+            <div style="float:right;">清洗方式:</div></div>
+          <div style="margin-left:15px;display:inline-block;float:left;">
+              <el-select v-model="qxgs" placeholder="请选择清洗方式" @change="selChange">
+                <el-option label="字符串填充" value="1"></el-option>
+                <el-option label="删除空格" value="2"></el-option>
+                <el-option label="全半角转换" value="3"></el-option>
+                <el-option label="日期格式转换" value="4"></el-option>
+            </el-select>
+        </div>
+        </el-col>
+      </el-row>
+      <el-row style="margin-top:15px;">
+        <el-col style="width:100%;">
+          <div style="width:100px;display:inline-block;float:left;margin-top:5px;">
+            <div style="float:right;">字段:</div></div>
+          <div style="margin-left:15px;display:inline-block;float:left;">
+              <el-select v-model="zd" placeholder="请选择字段">
+                <el-option label="spe_name" value="1"></el-option>
+                <el-option label="doc_no" value="2"></el-option>
+                <el-option label="year" value="3"></el-option>
+                <el-option label="create_time" value="4"></el-option>
+            </el-select>
+        </div>
+        </el-col>
+      </el-row>
+      <el-row v-if="showDateFormat==true" style="margin-top:15px;">
+        <el-col style="width:100%;">
+          <div style="width:100px;display:inline-block;float:left;margin-top:5px;">
+              <div style="float:right;">日期格式:</div></div>
+          <div style="margin-left:15px;display:inline-block;float:left;">
+              <el-select v-model="rqgs" placeholder="请选择日期格式">
+                <el-option label="年-月-日" value="1"></el-option>
+                <el-option label="年/月/日" value="2"></el-option>
+                <el-option label="月/日/年" value="3"></el-option>
+                <el-option label="月-日-年" value="4"></el-option>
+            </el-select>
+        </div>
+        </el-col>
+      </el-row>
+    </el-tab-pane>
+    <el-tab-pane label="记录级清洗" name="second">
+       <el-row>
+        <el-col :span="3">
+            <div style="float:right;">记录去重</div>
+        </el-col>
+       </el-row>
+       <el-row style="margin-top:15px;">
+        <el-col style="width:100%;">
+          <div style="width:100px;display:inline-block;float:left;margin-top:5px;">
+              <div style="float:right;">去重比对字段:</div></div>
+          <div style="margin-left:15px;display:inline-block;float:left;">
+              <el-select v-model="zd2" multiple placeholder="请选择字段">
+                <el-option label="spe_name" value="1"></el-option>
+                <el-option label="doc_no" value="2"></el-option>
+                <el-option label="year" value="3"></el-option>
+                <el-option label="create_time" value="4"></el-option>
+            </el-select>
+        </div>
+        </el-col>
+       </el-row>
+       <!-- <el-row style="margin-top:15px;">
+        <el-col style="width:100%;">
+          <div style="display:inline-block;float:left;">
+              <el-select v-model="zd2" placeholder="请选择字段">
+                <el-option label="spe_name" value="1"></el-option>
+                <el-option label="doc_no" value="2"></el-option>
+                <el-option label="year" value="3"></el-option>
+                <el-option label="create_time" value="4"></el-option>
+            </el-select>
+        </div>
+        </el-col>
+      </el-row> -->
+    </el-tab-pane>
+  </el-tabs>
+    <span slot="footer" class="dialog-footer">
+           <el-button type="warning" @click="dialogRuleVisible = false">取 消</el-button>
+           <el-button type="success" @click="dialogRuleVisible = false">保 存</el-button>
+    </span>
+        </el-dialog>
+    </div>
 </div>
 <el-row style="margin-top:15px;">
       <el-col style="float:center;">
@@ -227,102 +315,108 @@ export default {
     goback() {
       this.$router.go(-1);
     },
-    toggleTab(id){
-        if(id=='1'){
-            this.form.dslx='每月执行';
-        }
-        if(id=='2'){
-            this.form.dslx='每周执行';
-        }
-        if(id=='3'){
-            this.form.dslx='每天执行';
-        }
-        if(id=='4'){
-            this.form.dslx='指定时间';
-        }
+    toggleTab(id) {
+      if (id == '1') {
+        this.form.dslx = '每月执行';
+      }
+      if (id == '2') {
+        this.form.dslx = '每周执行';
+      }
+      if (id == '3') {
+        this.form.dslx = '每天执行';
+      }
+      if (id == '4') {
+        this.form.dslx = '指定时间';
+      }
     },
     deleteRow(index, rows) {
       rows.splice(index, 1);
+    },
+    editRule() {
+      this.dialogRuleVisible = true;
+    },
+    selChange() {
+      this.showDateFormat = true;
     }
   },
   data() {
     return {
-        dialogFormVisible:false,
-        formLabelWidth: '120px',
-        month:'',
-        week:'',
-         monthOptions: [{
-          value: '1月',
-          label: '1月'
-        }, {
-          value: '2月',
-          label: '2月'
-        }, {
-          value: '3月',
-          label: '3月'
-        }, {
-          value: '4月',
-          label: '4月'
-        }, {
-          value: '5月',
-          label: '5月'
-        }, {
-          value: '6月',
-          label: '6月'
-        }, {
-          value: '7月',
-          label: '7月'
-        }, {
-          value: '8月',
-          label: '8月'
-        }, {
-          value: '9月',
-          label: '9月'
-        }, {
-          value: '10月',
-          label: '10月'
-        }, {
-          value: '11月',
-          label: '11月'
-        }, {
-          value: '12月',
-          label: '12月'
-        }],
-        weekOptions: [{
-          value: '周一',
-          label: '周一'
-        }, {
-          value: '周二',
-          label: '周二'
-        }, {
-          value: '周三',
-          label: '周三'
-        }, {
-          value: '周四',
-          label: '周四'
-        }, {
-          value: '周五',
-          label: '周五'
-        }, {
-          value: '周六',
-          label: '周六'
-        }, {
-          value: '周日',
-          label: '周日'
-        }],
-        tabs: [
-            { id: '1', name: '每月执行' },
-            { id: '2', name: '每周执行' },
-            { id: '3', name: '每天执行' },
-            { id: '4', name: '指定时间' }
-        ],
-        form: {
-            dslx: '每天执行',
-            mt: '',
-            ksrq: '',
-            jsrq: '',
-        },
-       items: [
+      dialogFormVisible: false,
+      formLabelWidth: '120px',
+      month: '',
+      week: '',
+      monthOptions: [{
+        value: '1月',
+        label: '1月'
+      }, {
+        value: '2月',
+        label: '2月'
+      }, {
+        value: '3月',
+        label: '3月'
+      }, {
+        value: '4月',
+        label: '4月'
+      }, {
+        value: '5月',
+        label: '5月'
+      }, {
+        value: '6月',
+        label: '6月'
+      }, {
+        value: '7月',
+        label: '7月'
+      }, {
+        value: '8月',
+        label: '8月'
+      }, {
+        value: '9月',
+        label: '9月'
+      }, {
+        value: '10月',
+        label: '10月'
+      }, {
+        value: '11月',
+        label: '11月'
+      }, {
+        value: '12月',
+        label: '12月'
+      }],
+      weekOptions: [{
+        value: '周一',
+        label: '周一'
+      }, {
+        value: '周二',
+        label: '周二'
+      }, {
+        value: '周三',
+        label: '周三'
+      }, {
+        value: '周四',
+        label: '周四'
+      }, {
+        value: '周五',
+        label: '周五'
+      }, {
+        value: '周六',
+        label: '周六'
+      }, {
+        value: '周日',
+        label: '周日'
+      }],
+      tabs: [
+        { id: '1', name: '每月执行' },
+        { id: '2', name: '每周执行' },
+        { id: '3', name: '每天执行' },
+        { id: '4', name: '指定时间' }
+      ],
+      form: {
+        dslx: '每天执行',
+        mt: '',
+        ksrq: '',
+        jsrq: '',
+      },
+      items: [
         { type: '', label: '基础设置' },
         { type: '', label: '数据清洗规则' }
         
@@ -332,8 +426,8 @@ export default {
       gzlx: '接口数据采集',
       zxgz: '定时执行',
       date1: '',
-      sjy:'财政一体化平台专项接口',
-      mbb:'专项表【tf_specifiy_fund】',
+      sjy: '财政一体化平台专项接口',
+      mbb: '专项表【tf_specifiy_fund】',
       gzlxOptions: [{
         value: '接口数据采集',
         label: '接口数据采集'
@@ -342,7 +436,7 @@ export default {
         value: '其他数据采集',
         label: '其他数据采集'
       }],
-       zxgzOptions: [{
+      zxgzOptions: [{
         value: '定时执行',
         label: '定时执行'
       },
@@ -376,19 +470,19 @@ export default {
         zdlx: '文本型',
         zdcd: '30',
         zdms: '专项名称',
-      },{
+      }, {
         zdmc: 'doc_no',
         mbbzdmc: 'doc_no',
         zdlx: '文本型',
         zdcd: '30',
         zdms: '文号',
-      },{
+      }, {
         zdmc: 'year',
         mbbzdmc: 'year',
         zdlx: '文本型',
         zdcd: '10',
         zdms: '年份',
-      },{
+      }, {
         zdmc: 'create_time',
         mbbzdmc: 'create_time',
         zdlx: '时间型',
@@ -400,11 +494,18 @@ export default {
         gzmc: '专项唯一性规则',
         gzlx: '专项唯一性规则',
         zdms: '用于过滤重复选项，保证专项数据被重复录入',
-      },{
+      }, {
         gzmc: '创建时间格式转换',
         gzlx: '转换规则',
         zdms: '用于将创建日期格式转换为："YYYY-MM-DD"',
-      }]
+      }],
+      dialogRuleVisible: false,
+      activeName2: 'first',
+      qxgs: '',
+      zd: '',
+      showDateFormat: false,
+      rqgs: '',
+      zd2: ''
     }
   }
 };

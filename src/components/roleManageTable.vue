@@ -96,23 +96,23 @@ export default {
         u: '1',
 
       },
-      user:'',
+      user: '',
       userOptions: [{
-          value: '王小房',
-          label: '王小房'
-        }, {
-          value: '周文杰',
-          label: '周文杰'
-        }, {
-          value: '李祥',
-          label: '李祥'
-        }, {
-          value: '李依鹏',
-          label: '李依鹏'
-        }, {
-          value: '张一正',
-          label: '张一正'
-        }],
+        value: '王小房',
+        label: '王小房'
+      }, {
+        value: '周文杰',
+        label: '周文杰'
+      }, {
+        value: '李祥',
+        label: '李祥'
+      }, {
+        value: '李依鹏',
+        label: '李依鹏'
+      }, {
+        value: '张一正',
+        label: '张一正'
+      }],
       formLabelWidth: '120px',
       tableData: [
         {
@@ -226,17 +226,17 @@ export default {
     handleClick(tab, event) {
       console.log(tab, event);
     },
-    detail(){
-      this.title="角色详情";
-      this.form.dept="华中HR";
-      this.form.desc="通讯录管理";
-      this.dialogFormVisible=true;
+    detail() {
+      this.title = '角色详情';
+      this.form.dept = '华中HR';
+      this.form.desc = '通讯录管理';
+      this.dialogFormVisible = true;
     },
-    edit(){
-      this.title="用户分配";
-      this.form.dept="华中HR";
-      this.form.desc="";
-      this.dialogFormVisible=true;
+    edit() {
+      this.title = '用户分配';
+      this.form.dept = '华中HR';
+      this.form.desc = '';
+      this.dialogFormVisible = true;
     }
   }
 };
