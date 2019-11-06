@@ -2,11 +2,11 @@
 <div style="margin-top:5px;">
 <el-table :data="tableData" :header-cell-style="{background:'#E8F1FB'}"
  style="width:100%;">
-    <el-table-column prop="xh" label="序号" width="100"></el-table-column>
-    <el-table-column prop="kpmc" label="考评名称" style="width:20%;"></el-table-column>
-    <el-table-column prop="bzgs" label="考评标准个数" style="width:20%;"></el-table-column>
-    <el-table-column prop="createTime" label="创建时间" style="width:20%;"></el-table-column>
-    <el-table-column prop="oper" label="操作" style="width:5%;">
+    <el-table-column prop="xh" label="序号" min-width="5%"></el-table-column>
+    <el-table-column prop="kpmc" label="考评名称" min-width="40%"></el-table-column>
+    <el-table-column prop="bzgs" label="考评标准个数" min-width="20%"></el-table-column>
+    <el-table-column prop="createTime" label="创建时间" min-width="15%"></el-table-column>
+    <el-table-column prop="oper" label="操作" min-width="20%;">
     <template slot-scope="">
         <router-link to='/evaluateEdit'>
         <el-button type="primary" plain> 详 情 </el-button>
