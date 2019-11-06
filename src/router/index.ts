@@ -24,7 +24,7 @@ import dataCollectList from '../views/bigData/dataCollectList.vue';
 import dataCollectEdit from '../views/bigData/dataCollectEdit.vue';
 import EvaluateView from '../views/evaluateManager/evaluateView.vue';
 import SelfView from '../views/evaluateManager/selfView.vue';
-
+import myReport from '../views/bigData/myReport.vue';
 
 Vue.use(VueRouter);
 
@@ -149,6 +149,11 @@ const routes = [
         path: '/selfView',
         name: 'selfView',
         component: SelfView
+      },
+      {
+        path: '/myReport',
+        name: 'myReport',
+        component: myReport
       }
 
     ]
