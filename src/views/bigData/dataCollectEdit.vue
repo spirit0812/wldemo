@@ -336,7 +336,12 @@ export default {
       this.dialogRuleVisible = true;
     },
     selChange() {
-      this.showDateFormat = true;
+      if (this.qxgs == '4') {
+        this.showDateFormat = true;
+      }
+      if (this.qxgs != '4') {
+        this.showDateFormat = false;
+      }
     }
   },
   data() {
