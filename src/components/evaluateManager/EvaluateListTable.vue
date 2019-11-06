@@ -8,7 +8,7 @@
     <el-table-column prop="createTime" label="创建时间" min-width="15%"></el-table-column>
     <el-table-column prop="oper" label="操作" min-width="20%;">
     <template slot-scope="">
-        <router-link to='/evaluateEdit'>
+        <router-link to='/evaluateView'>
         <el-button type="primary" plain> 详 情 </el-button>
         </router-link>
     </template>

@@ -12,7 +12,7 @@
 </div>
 </div>
 <br/><br/><br/><br/>
-<div style="float:left;padding-left:10px;width:100%;background-color:#FFFFFF;">
+<div style="float:left;padding:15px 0 50px 30px;width:98%;background-color:#FFFFFF;">
   <el-tabs v-model="activeName" @tab-click="handleClick" >
     <el-tab-pane label="基础信息" name="first" style="padding-left:10px;">
       <div><PorjectViewFirst/></div>

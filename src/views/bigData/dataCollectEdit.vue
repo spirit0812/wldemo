@@ -65,7 +65,7 @@
                         :value="item.value">
                     </el-option>
                     </el-select>
-                   
+
                     </div>
                 </el-col>
                  <el-button type="primary" style="float:right;" plain>保存基本设置</el-button>
@@ -83,11 +83,11 @@
                         :value="item.value">
                     </el-option>
                     </el-select>
-                    
+
                     </div>
                 </el-col>
             </el-row>
-             <el-table  :data="tableData1" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}" >
+             <el-table  :data="tableData1" style="width:100%;" >
                 <el-table-column prop="zdmc" label="字段名称" style="width:15%;"></el-table-column>
                 <el-table-column prop="mbbzdmc" label="目标表字段名称" style="width:15%;"></el-table-column>
                 <el-table-column prop="zdlx" label="字段类型" style="width:15%;"></el-table-column>
@@ -109,7 +109,7 @@
             <el-button type="primary"  style="float:right; " plain>保存清洗规则</el-button>
             <el-button type="primary"  style="float:right; margin-right:15px;" plain>新增清洗规则</el-button>
         </el-row>
-        <el-table  :data="tableData2" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
+        <el-table  :data="tableData2" style="width:100%;" >
                 <el-table-column prop="gzmc" label="规则名称" style="width:20%;"></el-table-column>
                 <el-table-column prop="gzlx" label="规则类型" style="width:20%;"></el-table-column>
                 <el-table-column prop="zdms" label="字段描述" style="width:40%;"></el-table-column>
@@ -117,10 +117,10 @@
                 <template slot-scope="scope">
                     <router-link to=''>
                     <el-button  @click="edit" type="primary" plain size="small">编辑 </el-button>
-                    <el-button @click="deleteRow(scope.$index, tableData)" type="primary" plain size="small">删除</el-button>
+                    <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="primary" plain size="small">删除</el-button>
                     </router-link>
                 </template>
-                 
+
                 </el-table-column>
             </el-table>
       <div>
@@ -132,54 +132,14 @@
         <el-dialog title="任务定时规则" :visible.sync="dialogFormVisible" >
             <el-form :model="form"  ref="form"  >
                 <el-form-item label="定时类型" :label-width="formLabelWidth"  >
-                    <el-radio-group v-model="form.dslx" v-for="item in tabs" :key="item.id" @click="toggleTab(item.id)">
-                        <el-radio-button :label="item.name">{{item.name}}</el-radio-button>
+                    <el-radio-group v-model="form.dslx" >
+                        <el-radio-button label="每月执行">每月执行</el-radio-button>
+                        <el-radio-button label="每周执行">每周执行</el-radio-button>
+                        <el-radio-button label="每天执行">每天执行</el-radio-button>
+                        <el-radio-button label="指定时间">指定时间</el-radio-button>
                     </el-radio-group>
                 </el-form-item>
-                <el-form-item class="myTime" v-if="form.dslx=='每月执行'" label="每月" :label-width="formLabelWidth" >
-                    <el-select v-model="month" placeholder="请选择">
-                        <el-option style="width:80px;margin-right:20px;"
-                        v-for="item in monthOptions"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value">
-                        </el-option>
-                    </el-select>
-                    <el-time-picker style="width:80px;"
-                        v-model="form.mt"
-                        :picker-options="{
-                        selectableRange: '00:00:00 - 23:59:59'
-                        }"
-                        placeholder="请选择时间">
-                    </el-time-picker>
-                </el-form-item>
-                <el-form-item class="myTime" v-if="form.dslx=='每周执行'" label="每周" :label-width="formLabelWidth" >
-                    <el-select v-model="week" placeholder="请选择">
-                        <el-option style="width:80px;margin-right:20px;"
-                        v-for="item in weekOptions"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value">
-                        </el-option>
-                    </el-select>
-                    <el-time-picker style="width:80px;"
-                        v-model="form.mt"
-                        :picker-options="{
-                        selectableRange: '00:00:00 - 23:59:59'
-                        }"
-                        placeholder="请选择时间">
-                    </el-time-picker>
-                </el-form-item>
-                <el-form-item v-if="form.dslx=='每天执行'" label="每天" :label-width="formLabelWidth" >
-                    <el-time-picker
-                        v-model="form.mt"
-                        :picker-options="{
-                        selectableRange: '00:00:00 - 23:59:59'
-                        }"
-                        placeholder="请选择时间">
-                    </el-time-picker>
-                </el-form-item>
-                <el-form-item v-if="form.dslx=='指定时间'" label="指定时间" :label-width="formLabelWidth" >
+                <el-form-item label="每天" :label-width="formLabelWidth" >
                     <el-time-picker
                         v-model="form.mt"
                         :picker-options="{
@@ -227,113 +187,32 @@ export default {
     goback() {
       this.$router.go(-1);
     },
-    toggleTab(id){
-        if(id=='1'){
-            this.form.dslx='每月执行';
-        }
-        if(id=='2'){
-            this.form.dslx='每周执行';
-        }
-        if(id=='3'){
-            this.form.dslx='每天执行';
-        }
-        if(id=='4'){
-            this.form.dslx='指定时间';
-        }
-    },
     deleteRow(index, rows) {
       rows.splice(index, 1);
     }
   },
   data() {
     return {
-        dialogFormVisible:false,
-        formLabelWidth: '120px',
-        month:'',
-        week:'',
-         monthOptions: [{
-          value: '1月',
-          label: '1月'
-        }, {
-          value: '2月',
-          label: '2月'
-        }, {
-          value: '3月',
-          label: '3月'
-        }, {
-          value: '4月',
-          label: '4月'
-        }, {
-          value: '5月',
-          label: '5月'
-        }, {
-          value: '6月',
-          label: '6月'
-        }, {
-          value: '7月',
-          label: '7月'
-        }, {
-          value: '8月',
-          label: '8月'
-        }, {
-          value: '9月',
-          label: '9月'
-        }, {
-          value: '10月',
-          label: '10月'
-        }, {
-          value: '11月',
-          label: '11月'
-        }, {
-          value: '12月',
-          label: '12月'
-        }],
-        weekOptions: [{
-          value: '周一',
-          label: '周一'
-        }, {
-          value: '周二',
-          label: '周二'
-        }, {
-          value: '周三',
-          label: '周三'
-        }, {
-          value: '周四',
-          label: '周四'
-        }, {
-          value: '周五',
-          label: '周五'
-        }, {
-          value: '周六',
-          label: '周六'
-        }, {
-          value: '周日',
-          label: '周日'
-        }],
-        tabs: [
-            { id: '1', name: '每月执行' },
-            { id: '2', name: '每周执行' },
-            { id: '3', name: '每天执行' },
-            { id: '4', name: '指定时间' }
-        ],
-        form: {
-            dslx: '每天执行',
-            mt: '',
-            ksrq: '',
-            jsrq: '',
-        },
-       items: [
+      dialogFormVisible: false,
+      formLabelWidth: '120px',
+      form: {
+        dslx: '每天执行',
+        mt: '',
+        ksrq: '',
+        jsrq: '',
+      },
+      items: [
         { type: '', label: '基础设置' },
         { type: '', label: '数据清洗规则' }
-        
+
       ],
       activeName: 'first',
       gzmc: '',
-      gzlx: '接口数据采集',
-      zxgz: '定时执行',
+      gzlx: '',
+      zxgz: '',
       date1: '',
-      sjy:'财政一体化平台专项接口',
-      mbb:'专项表【tf_specifiy_fund】',
+      sjy: '',
+      mbb: '',
       gzlxOptions: [{
         value: '接口数据采集',
         label: '接口数据采集'
@@ -342,7 +221,7 @@ export default {
         value: '其他数据采集',
         label: '其他数据采集'
       }],
-       zxgzOptions: [{
+      zxgzOptions: [{
         value: '定时执行',
         label: '定时执行'
       },
@@ -376,19 +255,19 @@ export default {
         zdlx: '文本型',
         zdcd: '30',
         zdms: '专项名称',
-      },{
+      }, {
         zdmc: 'doc_no',
         mbbzdmc: 'doc_no',
         zdlx: '文本型',
         zdcd: '30',
         zdms: '文号',
-      },{
+      }, {
         zdmc: 'year',
         mbbzdmc: 'year',
         zdlx: '文本型',
         zdcd: '10',
         zdms: '年份',
-      },{
+      }, {
         zdmc: 'create_time',
         mbbzdmc: 'create_time',
         zdlx: '时间型',
@@ -400,7 +279,7 @@ export default {
         gzmc: '专项唯一性规则',
         gzlx: '专项唯一性规则',
         zdms: '用于过滤重复选项，保证专项数据被重复录入',
-      },{
+      }, {
         gzmc: '创建时间格式转换',
         gzlx: '转换规则',
         zdms: '用于将创建日期格式转换为："YYYY-MM-DD"',
@@ -434,19 +313,8 @@ body,
 </style>
 <style >
    .myTab .el-tabs__item {
-    font-size:16px !important;
+    font-size:18px !important;
     }
-    .myTime .el-input__inner {
-        width: 140px !important; 
-    }
-    .myTime .el-input__icon {
-    margin-left: 20px;
-}
-    .myTime .el-input--prefix .el-input__inner {
-    padding-left: 30px;
-    margin-left: 20px;
-}
-    
-   
+
 </style>
 

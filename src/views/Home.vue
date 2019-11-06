@@ -28,7 +28,6 @@
             </template>
             <el-menu-item index="/specialManage">专项管理</el-menu-item>
             <el-menu-item index="/projectList">项目列表</el-menu-item>
-            <el-menu-item index="/projectView">项目查重</el-menu-item>
             <el-menu-item index="/projectImport">项目导入</el-menu-item>
           </el-submenu>
           <el-submenu index="2">
@@ -45,15 +44,18 @@
               <span slot="title">大数据分析</span>
             </template>
             <el-menu-item index="/analysis">决策分析</el-menu-item>
+            <!-- <el-menu-item index="3-2">应用接入</el-menu-item> -->
             <el-menu-item index="/dataSetting">数据源配置</el-menu-item>
             <el-menu-item index="/dataCollectList">数据采集</el-menu-item>
+            <!-- <el-menu-item index="3-4">数据抓取配置</el-menu-item>
+            <el-menu-item index="3-5">数据抓日志</el-menu-item> -->
             <el-submenu index="31">
               <template slot="title">
                 <span slot="title">自定义报表</span>
               </template>
               <el-menu-item index="/plainReport">普通报表配置</el-menu-item>
-              <el-menu-item index="31-4">规则报表配置</el-menu-item>
-              <el-menu-item index="31-5">不规则报表配置</el-menu-item>
+              <!-- <el-menu-item index="31-4">规则报表配置</el-menu-item>
+              <el-menu-item index="31-5">不规则报表配置</el-menu-item> -->
             </el-submenu>
           </el-submenu>
           <el-submenu index="4">

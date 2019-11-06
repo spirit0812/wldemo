@@ -1,7 +1,7 @@
 <template>
 <div>
     <div>
-<el-table ref="multipleTable" :data="tableData" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
+<el-table ref="multipleTable" :data="tableData" style="width:100%;" :header-cell-style="{background:'#b3d8ff',color:'#606266'}">
     <el-table-column type="selection" width="55"></el-table-column>
     <el-table-column prop="jsmc" label="角色名称" style="width:15%;"></el-table-column>
     <el-table-column prop="ckfw" label="查看范围" style="width:15%;"></el-table-column>
@@ -11,7 +11,7 @@
     <template slot-scope="">
         <router-link to=''>
         <el-button  @click="detail" type="text" size="small">查看详情 </el-button>
-         <span style="color:#409EFF;margin:0px 2px;">|</span>
+         <span style="color:blue;">|</span>
         <el-button @click="edit" type="text" size="small">分配用户</el-button>
         </router-link>
     </template>
@@ -29,21 +29,8 @@
                 <el-input v-model="form.dept" autocomplete="off"  placeholder="请输入角色名称"></el-input>
                 </el-form-item>
 
-                 <el-form-item v-if="title=='用户分配'" label="用户" :label-width="formLabelWidth" prop="u"
-                 :rules="[
-                    { required: true, message: '用户不能为空'}
-                ]">
-                    <el-select v-model="user" multiple placeholder="请选择用户">
-                      <el-option
-                        v-for="item in userOptions"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value">
-                      </el-option>
-                    </el-select>
-                </el-form-item>
-                <el-form-item v-if="title=='角色详情'" label="角色描述" :label-width="formLabelWidth" >
-                    <el-input v-model="form.desc" type="textarea"  autocomplete="off" ></el-input>
+                 <el-form-item label="角色描述" :label-width="formLabelWidth" prop="u">
+                <el-input type="textarea" v-model="form.desc" :rows="4"  autocomplete="off"  placeholder="请输入角色描述"></el-input>
                 </el-form-item>
                 <el-form-item label="" :label-width="formLabelWidth" >
                     <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
@@ -96,23 +83,6 @@ export default {
         u: '1',
 
       },
-      user:'',
-      userOptions: [{
-          value: '王小房',
-          label: '王小房'
-        }, {
-          value: '周文杰',
-          label: '周文杰'
-        }, {
-          value: '李祥',
-          label: '李祥'
-        }, {
-          value: '李依鹏',
-          label: '李依鹏'
-        }, {
-          value: '张一正',
-          label: '张一正'
-        }],
       formLabelWidth: '120px',
       tableData: [
         {
@@ -226,17 +196,17 @@ export default {
     handleClick(tab, event) {
       console.log(tab, event);
     },
-    detail(){
-      this.title="角色详情";
-      this.form.dept="华中HR";
-      this.form.desc="通讯录管理";
-      this.dialogFormVisible=true;
+    detail() {
+      this.title = '角色详情';
+      this.form.dept = '华中HR';
+      this.form.desc = '通讯录管理';
+      this.dialogFormVisible = true;
     },
-    edit(){
-      this.title="用户分配";
-      this.form.dept="华中HR";
-      this.form.desc="";
-      this.dialogFormVisible=true;
+    edit() {
+      this.title = '用户分配';
+      this.form.dept = '';
+      this.form.desc = '';
+      this.dialogFormVisible = true;
     }
   }
 };

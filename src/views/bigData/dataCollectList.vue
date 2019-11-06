@@ -18,7 +18,7 @@
     </div>
     <div>
         <div>
-        <el-table  :data="tableData" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
+        <el-table  :data="tableData" style="width:100%;" :header-cell-style="{background:'#b3d8ff',color:'#606266'}">
             <el-table-column prop="sjymc" label="数据源名称" style="width:15%;"></el-table-column>
             <el-table-column prop="gzmc" label="数据采集规则名称" style="width:15%;"></el-table-column>
             <el-table-column prop="gzlx" label="数据采集规则类型" style="width:15%;"></el-table-column>
@@ -33,7 +33,7 @@
             </el-table-column>
 
         </el-table>
-                
+
 
         </div>
 
@@ -56,7 +56,7 @@ export default {
       radio1: '1',
       activeName: 'first',
       dialogFormVisible: false,
-      title:'',
+      title: '',
       form: {
         sjymc: '',
         gzmc: '',
@@ -164,16 +164,15 @@ export default {
     handleClick(tab, event) {
       console.log(tab, event);
     },
-    copy(){
-        var arr={};
-        arr.sjymc= '财政一体化平台';
-        arr.gzmc='财政一体化平台资金数据采集规则A';
-        arr.gzlx='接口采集';
-        this.tableData.push(arr);
-
+    copy() {
+      const arr = {};
+      arr.sjymc = '财政一体化平台';
+      arr.gzmc = '财政一体化平台资金数据采集规则A';
+      arr.gzlx = '接口采集';
+      this.tableData.push(arr);
     },
     edit() {
-      this.title='编辑接口数据源';
+      this.title = '编辑接口数据源';
       this.dialogFormVisible = true;
       this.form.sjymc = '财政一体化平台';
       this.form.ms = '13ddfs';
@@ -187,7 +186,7 @@ export default {
       this.form.gs = 'JSON';
     },
     add() {
-      this.title='新建接口数据源';
+      this.title = '新建接口数据源';
       this.dialogFormVisible = true;
       this.form.sjymc = '';
       this.form.ms = '';

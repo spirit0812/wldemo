@@ -140,7 +140,7 @@
             <el-input v-model="form.ejfl" autocomplete="off" ></el-input>
           </el-form-item>
           <el-form-item label="考评标准内容 " :label-width="formLabelWidth" >
-              <el-input v-model="form.bzrn" autocomplete="off" ></el-input>
+              <el-input v-model="form.bznr" autocomplete="off" ></el-input>
           </el-form-item>
           <el-form-item label="考评达标标准 " :label-width="formLabelWidth" >
               <el-input v-model="form.dbbz" autocomplete="off" ></el-input>
@@ -152,7 +152,7 @@
       <el-form>
           <el-form-item label="" :label-width="formLabelWidth" >
               <el-button type="warning" @click="dialogFormVisible = false">取 消</el-button>
-              <el-button type="success" @click="dialogFormVisible = false">保 存</el-button>
+              <el-button type="success" @click="onSubmit">保 存</el-button>
           </el-form-item>
       </el-form>
   </el-dialog>
@@ -176,13 +176,46 @@ export default {
       this.form.nf = '';
       this.form.file = '';
       this.dialogFormVisible = true;
+    },
+    onSubmit() {
+      if (this.form.lx === '投入指标') {
+        this.tableData1.push({
+          yjfl1: this.form.yjfl,
+          ejfl1: this.form.ejfl,
+          bznr1: this.form.bznr,
+          dbbz1: this.form.dbbz,
+          bzqz1: this.form.bzqz,
+          createTime1: '2019-11-07'
+        });
+      }
+      if (this.form.lx === '产出成本') {
+        this.tableData2.push({
+          yjfl2: this.form.yjfl,
+          ejfl2: this.form.ejfl,
+          bznr2: this.form.bznr,
+          dbbz2: this.form.dbbz,
+          bzqz2: this.form.bzqz,
+          createTime2: '2019-11-07'
+        });
+      }
+      if (this.form.lx === '效益指标') {
+        this.tableData3.push({
+          yjfl3: this.form.yjfl,
+          ejfl3: this.form.ejfl,
+          bznr3: this.form.bznr,
+          dbbz3: this.form.dbbz,
+          bzqz3: this.form.bzqz,
+          createTime3: '2019-11-07'
+        });
+      }
+      this.dialogFormVisible = false;
     }
   },
   data() {
     return {
-      kpmc: '',
-      xmmc: '',
-      date1: '',
+      kpmc: '昙石山文号博物馆建设项目考评',
+      xmmc: '昙石山文号博物馆',
+      date1: ['2019-08-30', '2019-09-31'],
       xmmcOptions: [{
         value: '昙石山博物馆建设项目',
         label: '昙石山博物馆建设项目'
@@ -191,9 +224,30 @@ export default {
         value: '石柱山博物馆',
         label: '石柱山博物馆'
       }],
-      tableData1: [],
-      tableData2: [],
-      tableData3: [],
+      tableData1: [{
+        yjfl1: '投入成本',
+        ejfl1: '-',
+        bznr1: '2019年度总计投入达200万',
+        dbbz1: '200万',
+        bzqz1: '40',
+        createTime1: '2019-01-01'
+      }],
+      tableData2: [{
+        yjfl2: '工程建设',
+        ejfl2: '-',
+        bznr2: '完成昙石山博物馆建设',
+        dbbz2: '完成项目验收',
+        bzqz2: '40',
+        createTime2: '2019-01-01'
+      }],
+      tableData3: [{
+        yjfl3: '服务对象满意度',
+        ejfl3: '-',
+        bznr3: '群众满意度达85%',
+        dbbz3: '85%',
+        bzqz3: '20',
+        createTime3: '2019-01-01'
+      }],
       dialogFormVisible: false,
       form: {
         yjfl: '',

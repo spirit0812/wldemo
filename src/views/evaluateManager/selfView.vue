@@ -54,12 +54,12 @@
     <el-table-column prop="bzqz1" label="考评标准权重" style="width:20%;"></el-table-column>
     <el-table-column label="实际完成情况" style="width:20%;">
      <template slot-scope="scope">
-     <el-input v-model="scope.row.qk1" placeholder=""></el-input>
+     <el-input type="textarea"  v-model="scope.row.qk1" placeholder=""></el-input>
      </template>
     </el-table-column>
     <el-table-column prop="oper" label="操作" style="width:5%;">
-        <template slot-scope="">
-            <el-checkbox v-model="checked">达成目标</el-checkbox>
+        <template slot-scope="scope">
+            <el-checkbox v-model="scope.row.checked">达成目标</el-checkbox>
         </template>
     </el-table-column>
   </el-table>
@@ -75,12 +75,12 @@
     <el-table-column prop="bzqz2" label="考评标准权重" style="width:20%;"></el-table-column>
     <el-table-column label="实际完成情况" style="width:20%;">
         <template slot-scope="scope">
-     <el-input v-model="scope.row.qk1" placeholder=""></el-input>
+     <el-input type="textarea" v-model="scope.row.qk2" placeholder=""></el-input>
      </template>
     </el-table-column>
     <el-table-column prop="oper" label="操作" style="width:5%;">
-        <template slot-scope="">
-            <el-checkbox v-model="checked">达成目标</el-checkbox>
+        <template slot-scope="scope">
+            <el-checkbox v-model="scope.row.checked">达成目标</el-checkbox>
         </template>
     </el-table-column>
   </el-table>
@@ -96,12 +96,12 @@
     <el-table-column prop="bzqz3" label="考评标准权重" style="width:20%;"></el-table-column>
     <el-table-column prop="qk3" label="实际完成情况" style="width:20%;">
      <template slot-scope="scope">
-     <el-input v-model="scope.row.qk1" placeholder=""></el-input>
+     <el-input type="textarea" v-model="scope.row.qk3" placeholder=""></el-input>
      </template>
     </el-table-column>
     <el-table-column prop="oper" label="操作" style="width:5%;">
-        <template slot-scope="">
-            <el-checkbox v-model="checked">达成目标</el-checkbox>
+        <template slot-scope="scope">
+            <el-checkbox v-model="scope.row.checked">达成目标</el-checkbox>
         </template>
     </el-table-column>
   </el-table>
@@ -110,7 +110,7 @@
         <div>
         <el-button type="primary" style="float:right;margin-right:50px;"> 提 交 </el-button>
         </div>
-        <div style="display:inline-block;float:right;margin:8px 30px 0 0;"></div>
+        <div style="display:inline-block;float:right;margin:8px 30px 0 0;">总分:80 </div>
       </el-col>
 </el-row>
 </div>
@@ -125,9 +125,9 @@ export default {
   },
   data() {
     return {
-      xmmc: '',
-      kplx: '',
-      kpnr: '',
+      xmmc: '昙石山文号博物馆建设项目2019年考评',
+      kplx: '自评',
+      kpnr: '昙石山文号博物馆',
       kplxOptions: [{
         value: '自评',
         label: '自评'
@@ -142,21 +142,26 @@ export default {
         bznr1: '2019年度总计投入达200万',
         dbbz1: '200万',
         bzqz1: '40',
-        qk1: ''
+        qk1: '210万元',
+        checked: true
       }],
       tableData2: [{
         yjfl2: '工程建设',
         ejfl2: '-',
         bznr2: '完成昙石山博物馆建设',
         dbbz2: '完成项目验收',
-        bzqz2: '40'
+        bzqz2: '40',
+        qk2: '已于2019/11/01完成验收工作',
+        checked: true
       }],
       tableData3: [{
         yjfl3: '服务对象满意度',
         ejfl3: '-',
         bznr3: '群众满意度达85%',
         dbbz3: '85%',
-        bzqz3: '20'
+        bzqz3: '20',
+        qk3: '79%',
+        checked: false
       }]
     }
   }
