@@ -67,6 +67,7 @@
           <el-form-item label="文件类型 " :label-width="formLabelWidth">
           <el-select v-model="form.nf" placeholder="请选择文件类型" >
               <el-option label="招标文件" value="招标文件"></el-option>
+              <el-option label="政府报告" value="政府报告"></el-option>
           </el-select>
           </el-form-item>
           <el-form-item label="文号 " :label-width="formLabelWidth" >
