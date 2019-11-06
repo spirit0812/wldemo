@@ -1,6 +1,7 @@
 <template>
-<div>
-<el-table :data="tableData" style="width:100%;">
+<div style="margin-top:5px;">
+<el-table :data="tableData" :header-cell-style="{background:'#E8F1FB'}"
+ style="width:100%;">
     <el-table-column prop="xh" label="序号" width="50"></el-table-column>
     <el-table-column prop="zxmc" label="专项名称" style="width:20%;"></el-table-column>
     <el-table-column prop="zjwh" label="专项资金文号" style="width:20%;"></el-table-column>

@@ -45,7 +45,8 @@
 <div style="text-align:left;margin-top:50px;">
   <el-divider direction="vertical"></el-divider><span>投入指标评分</span>
 </div>
-  <el-table :data="tableData1" style="width:100%;padding-left:10px;padding-right:10px;">
+  <el-table :data="tableData1" :header-cell-style="{background:'#E8F1FB'}"
+  style="width:100%;padding:5px 10px 0 10px;">
     <el-table-column prop="yjfl1" label="考评标准一级分类" style="width:20%;"></el-table-column>
     <el-table-column prop="ejfl1" label="考评标准二级分类" style="width:20%;"></el-table-column>
     <el-table-column prop="bznr1" label="考评标准内容" style="width:20%;"></el-table-column>
@@ -65,7 +66,8 @@
 <div style="text-align:left;margin-top:50px;">
   <el-divider direction="vertical"></el-divider><span>产出指标评分</span>
 </div>
-  <el-table :data="tableData2" style="width:100%;padding-left:10px;padding-right:10px;">
+  <el-table :data="tableData2" :header-cell-style="{background:'#E8F1FB'}"
+  style="width:100%;padding:5px 10px 0 10px;">
     <el-table-column prop="yjfl2" label="考评标准一级分类" style="width:20%;"></el-table-column>
     <el-table-column prop="ejfl2" label="考评标准二级分类" style="width:20%;"></el-table-column>
     <el-table-column prop="bznr2" label="考评标准内容" style="width:20%;"></el-table-column>
@@ -85,7 +87,8 @@
 <div style="text-align:left;margin-top:50px;">
   <el-divider direction="vertical"></el-divider><span>效益指标评分</span>
 </div>
-  <el-table :data="tableData3" style="width:100%;padding-left:10px;padding-right:10px;">
+  <el-table :data="tableData3" :header-cell-style="{background:'#E8F1FB'}"
+  style="width:100%;padding:5px 10px 0 10px;">
     <el-table-column prop="yjfl3" label="考评标准一级分类" style="width:20%;"></el-table-column>
     <el-table-column prop="ejfl3" label="考评标准二级分类" style="width:20%;"></el-table-column>
     <el-table-column prop="bznr3" label="考评标准内容" style="width:20%;"></el-table-column>

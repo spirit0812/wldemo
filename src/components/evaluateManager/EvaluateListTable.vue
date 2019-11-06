@@ -1,6 +1,7 @@
 <template>
-<div>
-<el-table :data="tableData" style="width:100%;">
+<div style="margin-top:5px;">
+<el-table :data="tableData" :header-cell-style="{background:'#E8F1FB'}"
+ style="width:100%;">
     <el-table-column prop="xh" label="序号" width="100"></el-table-column>
     <el-table-column prop="kpmc" label="考评名称" style="width:20%;"></el-table-column>
     <el-table-column prop="bzgs" label="考评标准个数" style="width:20%;"></el-table-column>

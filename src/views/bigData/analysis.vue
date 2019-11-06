@@ -100,32 +100,32 @@ export default {
   data() {
     return {
       rmac: '',
-      nf: '',
+      nf: '2018',
       nfOptions: [{
-        value: '2018',
-        label: '2018'
+        value: '2017',
+        label: '2017'
       },
       {
-        value: '2019',
-        label: '2019'
+        value: '2018',
+        label: '2018'
       }],
-      nf2: '',
+      nf2: '2018',
       nf2Options: [{
-        value: '2018',
-        label: '2018'
+        value: '2017',
+        label: '2017'
       },
       {
-        value: '2019',
-        label: '2019'
+        value: '2018',
+        label: '2018'
       }],
-      nf3: '',
+      nf3: '2018',
       nf3Options: [{
-        value: '2018',
-        label: '2018'
+        value: '2017',
+        label: '2017'
       },
       {
-        value: '2019',
-        label: '2019'
+        value: '2018',
+        label: '2018'
       }]
     }
   },

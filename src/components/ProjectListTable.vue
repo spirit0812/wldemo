@@ -1,6 +1,7 @@
 <template>
-<div>
-<el-table :data="tableData" style="width:100%;">
+<div style="margin-top:5px;">
+<el-table :data="tableData" :header-cell-style="{background:'#E8F1FB'}"
+ style="width:100%;">
     <el-table-column prop="name" label="项目名称" style="width:20%;"></el-table-column>
     <el-table-column prop="ysdw" label="预算单位" style="width:20%;"></el-table-column>
     <el-table-column prop="ywcs" label="业务处室" style="width:20%;"></el-table-column>

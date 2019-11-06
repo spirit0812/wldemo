@@ -32,7 +32,8 @@
 </el-row>
 </div>
 <div>
-  <el-table :data="tableData" style="width:100%;padding-left:10px;padding-right:10px;">
+  <el-table :data="tableData" :header-cell-style="{background:'#E8F1FB'}"
+  style="width:100%;padding:5px 10px 0 10px;">
       <el-table-column prop="xh" label="序号" width="50"></el-table-column>
       <el-table-column prop="wjmc" label="文件名称" style="width:20%;"></el-table-column>
       <el-table-column prop="wjlx" label="文件类型" style="width:20%;"></el-table-column>

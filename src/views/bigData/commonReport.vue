@@ -40,19 +40,20 @@
   <el-divider direction="vertical"></el-divider><span>查询条件配置</span>
 </div>
 <div>
-    <el-button type="primary" style="float:right;margin:50px 15px 0 0;" plain>
+    <el-button type="primary" style="float:right;margin:50px 15px 5px 0;" plain>
         新增查询条件
     </el-button>
  </div>
 </div>
-  <el-table :data="tableData1" style="width:100%;padding-left:10px;padding-right:10px;">
-    <el-table-column prop="tjmc1" label="条件名称" style="width:20%;"></el-table-column>
-    <el-table-column prop="tjbm1" label="条件编码" style="width:20%;"></el-table-column>
-    <el-table-column prop="tjlx1" label="条件类型" style="width:20%;"></el-table-column>
-    <el-table-column prop="sfbt1" label="是否必填" style="width:20%;"></el-table-column>
-    <el-table-column prop="mrz1" label="默认值" style="width:20%;"></el-table-column>
-    <el-table-column prop="px" label="排序" style="width:20%;"></el-table-column>
-    <el-table-column prop="oper" label="操作" style="width:5%;">
+  <el-table :data="tableData1" :header-cell-style="{background:'#E8F1FB'}"
+  style="width:100%;padding-left:10px;padding-right:10px;">
+    <el-table-column prop="tjmc1" label="条件名称" min-width="20%"></el-table-column>
+    <el-table-column prop="tjbm1" label="条件编码" min-width="20%"></el-table-column>
+    <el-table-column prop="tjlx1" label="条件类型" min-width="20%"></el-table-column>
+    <el-table-column prop="sfbt1" label="是否必填" min-width="20%"></el-table-column>
+    <el-table-column prop="mrz1" label="默认值" min-width="10%"></el-table-column>
+    <el-table-column prop="px" label="排序" min-width="10%"></el-table-column>
+    <el-table-column prop="oper" label="操作" min-width="25%">
         <template slot-scope="">
             <router-link to=''>
             <el-button type="primary" plain> 编 辑 </el-button>
@@ -69,18 +70,19 @@
   <el-divider direction="vertical"></el-divider><span>展示要素</span>
 </div>
 <div>
-    <el-button type="primary" style="float:right;margin:50px 15px 0 0;" plain>
+    <el-button type="primary" style="float:right;margin:50px 15px 5px 0;" plain>
         新增展现要素
     </el-button>
  </div>
 </div>
-  <el-table :data="tableData2" style="width:100%;padding-left:10px;padding-right:10px;">
-    <el-table-column prop="ysmc2" label="要素名称" style="width:20%;"></el-table-column>
-    <el-table-column prop="ysbm2" label="要素编码" style="width:20%;"></el-table-column>
-    <el-table-column prop="sql2" label="SQL表达式" style="width:20%;"></el-table-column>
-    <el-table-column prop="px2" label="排序" style="width:20%;"></el-table-column>
-    <el-table-column prop="sfzs2" label="是否展示" style="width:20%;"></el-table-column>
-    <el-table-column prop="oper" label="操作" style="width:5%;">
+  <el-table :data="tableData2" :header-cell-style="{background:'#E8F1FB'}"
+ style="width:100%;padding-left:10px;padding-right:10px;">
+    <el-table-column prop="ysmc2" label="要素名称" min-width="20%"></el-table-column>
+    <el-table-column prop="ysbm2" label="要素编码" min-width="20%"></el-table-column>
+    <el-table-column prop="sql2" label="SQL表达式" min-width="35%"></el-table-column>
+    <el-table-column prop="px2" label="排序" min-width="10%"></el-table-column>
+    <el-table-column prop="sfzs2" label="是否展示" min-width="10%"></el-table-column>
+    <el-table-column prop="oper" label="操作" min-width="25%">
         <template slot-scope="">
             <router-link to=''>
             <el-button type="primary" plain> 编 辑 </el-button>
