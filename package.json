@@ -37,7 +37,9 @@
     "eslintConfig": {
         "root": true,
         "env": {
-            "node": true
+            "browser": true,
+            "node": true,
+            "es6": true
         },
         "extends": [
             "plugin:vue/essential",
@@ -59,7 +61,14 @@
             ],
             "comma-dangle": [
                 0
-            ]
+            ],
+            "max-line-length": [
+                true, 1000
+            ],
+            "max-len": ["error", { "code": 2000 }],
+            "no-trailing-spaces": "off",
+            "eqeqeq": "off",
+            "no-unused-expressions": "off"
         },
         "parserOptions": {
             "parser": "@typescript-eslint/parser"

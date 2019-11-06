@@ -21,7 +21,7 @@
 </el-form-item>
 <el-checkbox style="float:left;">记住密码</el-checkbox>
 <el-form-item>
-    <router-link to="/home">
+    <router-link to="/indexPage">
 <el-button type="">登&nbsp;&nbsp;录<i class=""></i></el-button>
     </router-link>
 </el-form-item>

@@ -38,9 +38,7 @@ body,
 }
 .pageMain {
   background-color: #FFFFFF;
-  
 }
-
 /* thead,th{background-color:#E6F1FC;} */
 </style>
 <style lang="scss" >

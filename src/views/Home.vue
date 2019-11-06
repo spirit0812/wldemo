@@ -6,7 +6,7 @@
           <img src="../assets/main_logo.png" style="width:63%" />
         </div>
         <el-menu
-          default-active="/indexPage?pageName=首页"
+          default-active="/indexPage"
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
@@ -17,7 +17,7 @@
           :unique-opened="uniqueOpened"
           :router="isUseRounter"
         >
-          <el-menu-item index="/indexPage?pageName=首页">
+          <el-menu-item index="/indexPage">
             <i class="el-icon-discount"></i>
             <span slot="title">首 页</span>
           </el-menu-item>
@@ -74,8 +74,8 @@
       <el-container class="main_container">
         <el-header style="text-align: left; font-size: 12px" class="main_head">
           <!-- <div><img src="../assets/Hamburger.png"/>{{pageName}}</div> -->
-          <img class="head_img" src="../assets/Hamburger.png"/>
-         <span>{{pageName}}</span>
+          <div class="titleImgDiv"><img class="head_img" src="../assets/Hamburger.png"/></div>
+         <div class="titleDiv">福建省文旅专项资金数据综合管理平台</div>
         </el-header>
         <el-main class="main_page">
           <router-view></router-view>
@@ -106,11 +106,8 @@ export default {
       console.log(key);
     },
     handleClose: (key, keyPath) => {
-      // console.log(key, keyPath);
     },
     handleSelect: (index, indexPath) => {
-      console.log(index);
-      console.log(indexPath);
     }
   }
 };
@@ -136,8 +133,19 @@ border-bottom: 1px solid;
 .main_page {
   margin: 20px 20px 20px 20px;
 }
+.titleImgDiv {
+   float: left;
+}
 .head_img {
+  margin-top: 12px;
   width: 30px;
   height: 30px;
+}
+.titleDiv {
+  float: left;
+  color: #ffffff;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-left: 12px;
 }
 </style>
