@@ -173,7 +173,7 @@ body,
   /*外部间距也是如此设置*/
   margin: 0px;
   /*统一设置高度为100%*/
-  height: 100%;
+  height: auto;
 }
 .pageMain {
   background-color: #FFFFFF;
