@@ -54,14 +54,13 @@
     <el-table-column prop="mrz1" label="默认值" min-width="10%"></el-table-column>
     <el-table-column prop="px" label="排序" min-width="10%"></el-table-column>
     <el-table-column prop="oper" label="操作" min-width="25%">
-        <template slot-scope="">
+        <template slot-scope="scope">
             <router-link to=''>
             <el-button type="primary" plain> 编 辑 </el-button>
             </router-link>
             &nbsp;
-            <router-link to=''>
-            <el-button type="primary" plain> 删 除 </el-button>
-            </router-link>
+            <el-button type="primary" plain
+            @click.native.prevent="deleteRow(scope.$index, tableData1)"> 删 除 </el-button>
         </template>
     </el-table-column>
   </el-table>
@@ -83,14 +82,13 @@
     <el-table-column prop="px2" label="排序" min-width="10%"></el-table-column>
     <el-table-column prop="sfzs2" label="是否展示" min-width="10%"></el-table-column>
     <el-table-column prop="oper" label="操作" min-width="25%">
-        <template slot-scope="">
+        <template slot-scope="scope">
             <router-link to=''>
             <el-button type="primary" plain> 编 辑 </el-button>
             </router-link>
             &nbsp;
-            <router-link to=''>
-            <el-button type="primary" plain> 删 除 </el-button>
-            </router-link>
+            <el-button type="primary" plain
+            @click.native.prevent="deleteRow(scope.$index, tableData2)"> 删 除 </el-button>
         </template>
     </el-table-column>
   </el-table>
@@ -117,6 +115,9 @@ export default {
   methods: {
     goback() {
       this.$router.go(-1);
+    },
+    deleteRow(index, rows) {
+      rows.splice(index, 1);
     }
   },
   data() {
