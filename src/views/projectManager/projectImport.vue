@@ -40,8 +40,11 @@
   <div style="margin-top:15px;">
   <div style="text-align:left;margin:8px 0 0 30px;font-size:14px;display:inline-block;float:left;">
     <a>2017年项目数据.xlsx
-      <span><i class="el-icon-error"></i></span>
+     <!--  <span><i class="el-icon-error"></i></span> -->
     </a>
+    <div style="display:inline-block;">
+    <img src="../../assets/del.png"
+    style="width:14px;heigh:14px;float:left;"/></div>
   </div>
   <div style="display:inline-block;float:left;">
     <el-row>
