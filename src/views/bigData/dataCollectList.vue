@@ -33,7 +33,7 @@
             </el-table-column>
 
         </el-table>
-                
+
 
         </div>
 
@@ -56,7 +56,7 @@ export default {
       radio1: '1',
       activeName: 'first',
       dialogFormVisible: false,
-      title:'',
+      title: '',
       form: {
         sjymc: '',
         gzmc: '',
@@ -164,16 +164,15 @@ export default {
     handleClick(tab, event) {
       console.log(tab, event);
     },
-    copy(){
-        var arr={};
-        arr.sjymc= '财政一体化平台';
-        arr.gzmc='财政一体化平台资金数据采集规则A';
-        arr.gzlx='接口采集';
-        this.tableData.push(arr);
-
+    copy() {
+      const arr = {};
+      arr.sjymc = '财政一体化平台';
+      arr.gzmc = '财政一体化平台资金数据采集规则A';
+      arr.gzlx = '接口采集';
+      this.tableData.push(arr);
     },
     edit() {
-      this.title='编辑接口数据源';
+      this.title = '编辑接口数据源';
       this.dialogFormVisible = true;
       this.form.sjymc = '财政一体化平台';
       this.form.ms = '13ddfs';
@@ -187,7 +186,7 @@ export default {
       this.form.gs = 'JSON';
     },
     add() {
-      this.title='新建接口数据源';
+      this.title = '新建接口数据源';
       this.dialogFormVisible = true;
       this.form.sjymc = '';
       this.form.ms = '';

@@ -65,7 +65,7 @@
                         :value="item.value">
                     </el-option>
                     </el-select>
-                   
+
                     </div>
                 </el-col>
                  <el-button type="primary" style="float:right;" plain>保存基本设置</el-button>
@@ -83,7 +83,7 @@
                         :value="item.value">
                     </el-option>
                     </el-select>
-                    
+
                     </div>
                 </el-col>
             </el-row>
@@ -120,7 +120,7 @@
                     <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="primary" plain size="small">删除</el-button>
                     </router-link>
                 </template>
-                 
+
                 </el-table-column>
             </el-table>
       <div>
@@ -193,26 +193,26 @@ export default {
   },
   data() {
     return {
-        dialogFormVisible:false,
-        formLabelWidth: '120px',
-        form: {
-            dslx: '每天执行',
-            mt: '',
-            ksrq: '',
-            jsrq: '',
-        },
-       items: [
+      dialogFormVisible: false,
+      formLabelWidth: '120px',
+      form: {
+        dslx: '每天执行',
+        mt: '',
+        ksrq: '',
+        jsrq: '',
+      },
+      items: [
         { type: '', label: '基础设置' },
         { type: '', label: '数据清洗规则' }
-        
+
       ],
       activeName: 'first',
       gzmc: '',
       gzlx: '',
       zxgz: '',
       date1: '',
-      sjy:'',
-      mbb:'',
+      sjy: '',
+      mbb: '',
       gzlxOptions: [{
         value: '接口数据采集',
         label: '接口数据采集'
@@ -221,7 +221,7 @@ export default {
         value: '其他数据采集',
         label: '其他数据采集'
       }],
-       zxgzOptions: [{
+      zxgzOptions: [{
         value: '定时执行',
         label: '定时执行'
       },
@@ -255,19 +255,19 @@ export default {
         zdlx: '文本型',
         zdcd: '30',
         zdms: '专项名称',
-      },{
+      }, {
         zdmc: 'doc_no',
         mbbzdmc: 'doc_no',
         zdlx: '文本型',
         zdcd: '30',
         zdms: '文号',
-      },{
+      }, {
         zdmc: 'year',
         mbbzdmc: 'year',
         zdlx: '文本型',
         zdcd: '10',
         zdms: '年份',
-      },{
+      }, {
         zdmc: 'create_time',
         mbbzdmc: 'create_time',
         zdlx: '时间型',
@@ -279,7 +279,7 @@ export default {
         gzmc: '专项唯一性规则',
         gzlx: '专项唯一性规则',
         zdms: '用于过滤重复选项，保证专项数据被重复录入',
-      },{
+      }, {
         gzmc: '创建时间格式转换',
         gzlx: '转换规则',
         zdms: '用于将创建日期格式转换为："YYYY-MM-DD"',
@@ -315,6 +315,6 @@ body,
    .myTab .el-tabs__item {
     font-size:18px !important;
     }
-   
+
 </style>
 

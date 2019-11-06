@@ -196,17 +196,17 @@ export default {
     handleClick(tab, event) {
       console.log(tab, event);
     },
-    detail(){
-      this.title="角色详情";
-      this.form.dept="华中HR";
-      this.form.desc="通讯录管理";
-      this.dialogFormVisible=true;
+    detail() {
+      this.title = '角色详情';
+      this.form.dept = '华中HR';
+      this.form.desc = '通讯录管理';
+      this.dialogFormVisible = true;
     },
-    edit(){
-      this.title="用户分配";
-      this.form.dept="";
-      this.form.desc="";
-      this.dialogFormVisible=true;
+    edit() {
+      this.title = '用户分配';
+      this.form.dept = '';
+      this.form.desc = '';
+      this.dialogFormVisible = true;
     }
   }
 };
