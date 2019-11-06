@@ -31,7 +31,9 @@
     <el-button type="success" style="margin-left:30px;"> 查 阅 </el-button>
     </el-col>
     <el-col :span="5" style="margin-top:10px;float:right;">
+      <router-link to='/selfEdit'>
     <el-button type="primary" plain> 项目考评 </el-button>
+      </router-link>
     </el-col>
 </el-row>
 </div>
