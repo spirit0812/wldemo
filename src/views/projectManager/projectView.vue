@@ -20,7 +20,6 @@
     <el-tab-pane label="资金情况" name="second">
       <div><PorjectViewSecond/></div>
     </el-tab-pane>
-    <el-tab-pane label="建设情况" name="third">建设情况</el-tab-pane>
     <el-tab-pane label="相关文件" name="fourth">
       <div><PorjectViewFour/></div>
     </el-tab-pane>
