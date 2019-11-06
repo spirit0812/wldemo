@@ -122,7 +122,7 @@ export default {
       radio1: '1',
       activeName: 'first',
       dialogFormVisible: false,
-      title:'',
+      title: '',
       form: {
         sjymc: '',
         ms: '',
@@ -261,7 +261,7 @@ export default {
       console.log(tab, event);
     },
     edit() {
-      this.title='编辑接口数据源';
+      this.title = '编辑接口数据源';
       this.dialogFormVisible = true;
       this.form.sjymc = '财政一体化平台';
       this.form.ms = '13ddfs';
@@ -275,7 +275,7 @@ export default {
       this.form.gs = 'JSON';
     },
     add() {
-      this.title='新建接口数据源';
+      this.title = '新建接口数据源';
       this.dialogFormVisible = true;
       this.form.sjymc = '';
       this.form.ms = '';

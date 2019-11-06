@@ -109,7 +109,7 @@ export default {
       console.log(data);
     },
     addDept() {
-      this.title='新增部门';
+      this.title = '新增部门';
       this.dialogFormVisible = true;
       this.form.upDept = '';
       this.form.dept = '';
@@ -117,7 +117,7 @@ export default {
       this.form.desc = '';
     },
     updDept() {
-      this.title='编辑部门';
+      this.title = '编辑部门';
       this.dialogFormVisible = true;
       this.form.upDept = '资源部';
       this.form.dept = '资源开发处';

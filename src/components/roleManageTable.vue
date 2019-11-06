@@ -71,7 +71,7 @@ export default {
   name: 'roleManageTable',
   data() {
     return {
-      title:'',
+      title: '',
       radio1: '1',
       activeName: 'first',
       dialogFormVisible: false,
@@ -196,17 +196,17 @@ export default {
     handleClick(tab, event) {
       console.log(tab, event);
     },
-    detail(){
-      this.title="角色详情";
-      this.dept="华中HR";
-      this.desc="通讯录管理";
-      this.dialogFormVisible=true;
+    detail() {
+      this.title = '角色详情';
+      this.dept = '华中HR';
+      this.desc = '通讯录管理';
+      this.dialogFormVisible = true;
     },
-    edit(){
-      this.title="用户分配";
-       this.dept="";
-      this.desc="";
-      this.dialogFormVisible=true;
+    edit() {
+      this.title = '用户分配';
+      this.dept = '';
+      this.desc = '';
+      this.dialogFormVisible = true;
     }
   }
 };
