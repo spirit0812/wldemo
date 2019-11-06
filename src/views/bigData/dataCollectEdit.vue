@@ -132,14 +132,60 @@
         <el-dialog title="任务定时规则" :visible.sync="dialogFormVisible" >
             <el-form :model="form"  ref="form"  >
                 <el-form-item label="定时类型" :label-width="formLabelWidth"  >
-                    <el-radio-group v-model="form.dslx" >
+                    <!-- <el-radio-group v-model="form.dslx" >
                         <el-radio-button label="每月执行">每月执行</el-radio-button>
                         <el-radio-button label="每周执行">每周执行</el-radio-button>
                         <el-radio-button label="每天执行">每天执行</el-radio-button>
                         <el-radio-button label="指定时间">指定时间</el-radio-button>
+                    </el-radio-group> -->
+                    <el-radio-group v-model="form.dslx" v-for="item in tabs" :key="item.id" @click="toggleTab(item.id)">
+                        <el-radio-button :label="item.name">{{item.name}}</el-radio-button>
                     </el-radio-group>
                 </el-form-item>
-                <el-form-item label="每天" :label-width="formLabelWidth" >
+                <el-form-item class="myTime" v-if="form.dslx=='每月执行'" label="每月" :label-width="formLabelWidth" >
+                    <el-select v-model="month" placeholder="请选择">
+                        <el-option style="width:80px;margin-right:20px;"
+                        v-for="item in monthOptions"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
+                    <el-time-picker style="width:80px;"
+                        v-model="form.mt"
+                        :picker-options="{
+                        selectableRange: '00:00:00 - 23:59:59'
+                        }"
+                        placeholder="请选择时间">
+                    </el-time-picker>
+                </el-form-item>
+                <el-form-item class="myTime" v-if="form.dslx=='每周执行'" label="每周" :label-width="formLabelWidth" >
+                    <el-select v-model="week" placeholder="请选择">
+                        <el-option style="width:80px;margin-right:20px;"
+                        v-for="item in weekOptions"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
+                    <el-time-picker style="width:80px;"
+                        v-model="form.mt"
+                        :picker-options="{
+                        selectableRange: '00:00:00 - 23:59:59'
+                        }"
+                        placeholder="请选择时间">
+                    </el-time-picker>
+                </el-form-item>
+                <el-form-item v-if="form.dslx=='每天执行'" label="每天" :label-width="formLabelWidth" >
+                    <el-time-picker
+                        v-model="form.mt"
+                        :picker-options="{
+                        selectableRange: '00:00:00 - 23:59:59'
+                        }"
+                        placeholder="请选择时间">
+                    </el-time-picker>
+                </el-form-item>
+                <el-form-item v-if="form.dslx=='指定时间'" label="指定时间" :label-width="formLabelWidth" >
                     <el-time-picker
                         v-model="form.mt"
                         :picker-options="{
@@ -187,6 +233,20 @@ export default {
     goback() {
       this.$router.go(-1);
     },
+    toggleTab(id){
+        if(id=='1'){
+            this.form.dslx='每月执行';
+        }
+        if(id=='2'){
+            this.form.dslx='每周执行';
+        }
+        if(id=='3'){
+            this.form.dslx='每天执行';
+        }
+        if(id=='4'){
+            this.form.dslx='指定时间';
+        }
+    },
     deleteRow(index, rows) {
       rows.splice(index, 1);
     }
@@ -195,6 +255,73 @@ export default {
     return {
         dialogFormVisible:false,
         formLabelWidth: '120px',
+        month:'',
+        week:'',
+         monthOptions: [{
+          value: '1月',
+          label: '1月'
+        }, {
+          value: '2月',
+          label: '2月'
+        }, {
+          value: '3月',
+          label: '3月'
+        }, {
+          value: '4月',
+          label: '4月'
+        }, {
+          value: '5月',
+          label: '5月'
+        }, {
+          value: '6月',
+          label: '6月'
+        }, {
+          value: '7月',
+          label: '7月'
+        }, {
+          value: '8月',
+          label: '8月'
+        }, {
+          value: '9月',
+          label: '9月'
+        }, {
+          value: '10月',
+          label: '10月'
+        }, {
+          value: '11月',
+          label: '11月'
+        }, {
+          value: '12月',
+          label: '12月'
+        }],
+        weekOptions: [{
+          value: '周一',
+          label: '周一'
+        }, {
+          value: '周二',
+          label: '周二'
+        }, {
+          value: '周三',
+          label: '周三'
+        }, {
+          value: '周四',
+          label: '周四'
+        }, {
+          value: '周五',
+          label: '周五'
+        }, {
+          value: '周六',
+          label: '周六'
+        }, {
+          value: '周日',
+          label: '周日'
+        }],
+        tabs: [
+            { id: '1', name: '每月执行' },
+            { id: '2', name: '每周执行' },
+            { id: '3', name: '每天执行' },
+            { id: '4', name: '指定时间' }
+        ],
         form: {
             dslx: '每天执行',
             mt: '',
@@ -313,8 +440,19 @@ body,
 </style>
 <style >
    .myTab .el-tabs__item {
-    font-size:18px !important;
+    font-size:16px !important;
     }
+    .myTime .el-input__inner {
+        width: 140px !important; 
+    }
+    .myTime .el-input__icon {
+    margin-left: 20px;
+}
+    .myTime .el-input--prefix .el-input__inner {
+    padding-left: 30px;
+    margin-left: 20px;
+}
+    
    
 </style>
 

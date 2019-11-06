@@ -181,6 +181,7 @@ body,
 }
 .pageMain {
   background-color: #FFFFFF;
+  height: 1050px;
 }
 .el-divider--vertical{
   background-color:#5B9EF3;

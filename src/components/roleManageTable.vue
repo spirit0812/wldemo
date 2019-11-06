@@ -1,7 +1,7 @@
 <template>
 <div>
     <div>
-<el-table ref="multipleTable" :data="tableData" style="width:100%;" :header-cell-style="{background:'#b3d8ff',color:'#606266'}">
+<el-table ref="multipleTable" :data="tableData" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
     <el-table-column type="selection" width="55"></el-table-column>
     <el-table-column prop="jsmc" label="角色名称" style="width:15%;"></el-table-column>
     <el-table-column prop="ckfw" label="查看范围" style="width:15%;"></el-table-column>

@@ -18,7 +18,7 @@
     </div>
     <div>
         <div>
-        <el-table  :data="tableData" style="width:100%;" :header-cell-style="{background:'#b3d8ff',color:'#606266'}">
+        <el-table  :data="tableData" style="width:100%;" :header-cell-style="{background:'rgb(232, 241, 251)',color:'#606266'}">
             <el-table-column prop="sjymc" label="数据源名称" style="width:15%;"></el-table-column>
             <el-table-column prop="gzmc" label="数据采集规则名称" style="width:15%;"></el-table-column>
             <el-table-column prop="gzlx" label="数据采集规则类型" style="width:15%;"></el-table-column>
